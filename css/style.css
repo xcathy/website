@@ -26,13 +26,16 @@ a{
 ul{
   list-style-type: none;
 }
+i{
+  transition: 0.6s ease;
+}
 /*--------x-------*/
 /*---navbar--*/
 .nav{
   background: #fff;
   padding: 0 2rem;
   height: 0rem;
-  min-height: 40vh;
+  min-height: 20vh;
   overflow: hidden;
 
 }
@@ -40,12 +43,32 @@ ul{
 .nav .nav-menu{
   justify-content: space-between;
 }
+
+.nav .toggle-collapse{
+  position: absolute;
+  top: 2%;
+  width: 80%;
+  cursor: pointer;
+  display: none;
+}
+
+.nav .toggle-collapse i{
+  font-size: 1.6rem;
+  color: midnightblue;
+}
+
+.nav .toggle-collapse .toggle-icons{
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.7rem 0;
+}
 .nav .nav-items{
   display: flex;
   margin: 0.2;
 }
 
 .nav .nav-items .nav-link{
+  border: 2px solid transparent;
   padding: 1.6rem 2rem;
   font-family: var(--Roboto);
   font-size: 1.1rem;
@@ -53,11 +76,9 @@ ul{
   transition: 0.6s ease;
 }
 /*---x--*/
-
 .nav .nav-items .nav-link:hover{
   background-color: dimgray;
 }
-
 .nav .nav-items .nav-link a:hover{
   color: white;
 }
@@ -81,3 +102,16 @@ ul{
 .nav .social i:hover{
   color: salmon;
 }
+
+/*-----viewport <= 750px ----*/
+@media only screen and (max-width: 750px){
+  .nav .nav-menu, .nav .nav-items{
+    flex-direction: column;
+  }
+
+  .nav .toggle-collapse{
+    display: initial;
+  }
+  
+}
+/*--------------x-------------*/
