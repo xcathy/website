@@ -37,6 +37,7 @@ i{
   height: 0rem;
   min-height: 20vh;
   overflow: hidden;
+  transition: height 1s ease-in-out;
 
 }
 
@@ -61,6 +62,11 @@ i{
   display: flex;
   justify-content: flex-end;
   padding: 1.7rem 0;
+}
+
+.collapse{
+  height: 50rem;
+
 }
 .nav .nav-items{
   display: flex;
