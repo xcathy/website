@@ -1,0 +1,11 @@
+/*Roboto*/
+@font-face{
+    font-family: Roboto;
+    src:url('../Roboto/Roboto-Regular.ttf');
+}
+
+/*Titillium_Web*/
+@font-face{
+    font-family: Titillium_Web;
+    src:url('../Titillium_Web/TitilliumWeb-Regular.ttf');
+}
