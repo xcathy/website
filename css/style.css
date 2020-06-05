@@ -10,6 +10,7 @@ html,body{
   /*theme font-family*/
   --Roboto:'Roboto', cursive;
   --Titillium_Web:'Titillium', cursive;
+  --Roboto_Thin: 'Roboto_Thin', cursive;
   
 }
 /*--------global classes-------*/
@@ -35,7 +36,7 @@ i{
   background: #fff;
   padding: 0 2rem;
   height: 0rem;
-  min-height: 20vh;
+  min-height: 4.8rem;
   overflow: hidden;
   transition: height 1s ease-in-out;
 
@@ -48,7 +49,7 @@ i{
 .nav .toggle-collapse{
   position: absolute;
   top: 2%;
-  width: 80%;
+  width: 85%;
   cursor: pointer;
   display: none;
 }
@@ -61,7 +62,7 @@ i{
 .nav .toggle-collapse .toggle-icons{
   display: flex;
   justify-content: flex-end;
-  padding: 1.7rem 0;
+  padding: 0.8rem 0;
 }
 
 .collapse{
@@ -70,7 +71,7 @@ i{
 }
 .nav .nav-items{
   display: flex;
-  margin: 0.2;
+  margin: 0;
 }
 
 .nav .nav-items .nav-link{
@@ -92,12 +93,12 @@ i{
 .nav .nav-brand a{
   font-family: var(--Roboto);
   font-size: 1.6rem;
-  padding: 2.3rem 1.6rem;
+  padding: 1.6rem 1.1rem;
   display: block;
 }
 
 .nav .social{
-  padding: 2.3rem 0;
+  padding: 1.6rem 0;
 }
 
 .nav .social i{
@@ -109,14 +110,56 @@ i{
   color: salmon;
 }
 
+/*---------MAIN---------*/
+/*-------site title------*/
+main .site-title{
+  background: url('../assets/tree_blur.jpg');
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+main .site-title .site-background{
+  padding-top: 14rem;
+  text-align: center;
+  color: white;
+}
+
+main .site-title h1{
+  font-family: var(--Roboto_Thin);
+  font-size: 2rem;
+}
+/*-------site title end-------*/
+/*--------site content-------*/
+main .site-content{
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+/*---------site content end-----------*/
+/*-----------X----------*/
+
 /*-----viewport <= 750px ----*/
 @media only screen and (max-width: 750px){
+
   .nav .nav-menu, .nav .nav-items{
     flex-direction: column;
   }
+  .nav .social{
+    padding-left: 4rem;
+  }
 
+  .nav .social i{
+    font-size: 3rem;
+    padding: 1rem;
+  }
   .nav .toggle-collapse{
     display: initial;
+  }
+
+  main .site-title .site-background{
+    padding-top: 10rem;
   }
   
 }

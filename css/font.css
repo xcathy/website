@@ -4,6 +4,11 @@
     src:url('../Roboto/Roboto-Regular.ttf');
 }
 
+/*Roboto Thin*/
+@font-face{
+    font-family: Roboto_Thin;
+    src:url('../Roboto/Roboto-Thin.ttf');
+}
 /*Titillium_Web*/
 @font-face{
     font-family: Titillium_Web;
