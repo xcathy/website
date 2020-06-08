@@ -14,3 +14,48 @@
     font-family: Titillium_Web;
     src:url('../Titillium_Web/TitilliumWeb-Regular.ttf');
 }
+/*Anton*/
+@font-face{
+    font-family: Anton;
+    src: url('../Anton/Anton-Regular.ttf');
+}
+
+/*PTSans*/
+@font-face{
+    font-family: PT_Sans;
+    src:url('../PT_Sans/PTSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: PT_Sans_Bold;
+    src:url('../PT_Sans/PTSans-Bold.ttf');
+}
+@font-face{
+    font-family: PT_Sans_BoldItalic;
+    src:url('../PT_Sans/PTSans-BoldItalic.ttf');
+}
+@font-face{
+    font-family: PT_Sans_Italic;
+    src:url('../PT_Sans/PTSans-Italic.ttf');
+}
+
+/*Dosis*/
+
+@font-face{
+    font-family: Dosis;
+    src:url('../Dosis/static/Dosis-Regular.ttf');
+}
+@font-face{
+    font-family: Dosis_Light;
+    src:url('../Dosis/static/Dosis-Light.ttf');
+}
+
+@font-face{
+    font-family: Dosis_Medium;
+    src:url('../Dosis/static/Dosis-Medium.ttf');
+}
+
+@font-face{
+    font-family: Dosis_ExLight;
+    src:url('../Dosis/static/Dosis-ExtraLight.ttf');
+}
