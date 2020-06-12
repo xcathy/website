@@ -32,6 +32,7 @@ html,body{
   --lemon:#f9b024;
 
   --link: #3366BB;
+  --lighter_blue: #daf9ff;
   --light_blue: #b1f2ff;
   --plain_blue:#00a6c0;
   --dim_blue:#3e6787;
@@ -300,6 +301,18 @@ main .posts > hr{
   width: 70%;
 }
 
+/*--------side bar-------*/
+/*-------- clock --------*/
+main .site-content .sidebar > .clock{
+  width: 40%;
+  height: auto; 
+  background-color: transparent;
+  display: block;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+/*---------clock end--------*/
+/*----------side bar end-------------*/
 /*---------site content end-----------*/
 /*-----------X----------*/
 
