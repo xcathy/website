@@ -30,9 +30,12 @@ function drawFace(ctx, radius) {
     ctx.fill();
 
     /* clock face color */
-    grad = ctx.createRadialGradient(0, 0 ,radius * 0.98, 0, 0, radius * 1);
-    grad.addColorStop(0, '#f0c88c');
-    grad.addColorStop(1, '#c1905e');
+    grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
+    grad.addColorStop(0, 'white');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(0.7, '#b1f2ff');
+    grad.addColorStop(0.9, '#2e616f');
+    grad.addColorStop(1, 'white');
    
     ctx.strokeStyle = grad;
     ctx.lineWidth = radius*0.1;
@@ -44,11 +47,11 @@ function drawFace(ctx, radius) {
     ctx.fill();
     /*shadow effecy on clock center */
     grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
-    grad.addColorStop(0, '#aaa9ad');
-    grad.addColorStop(0.25, '#aaa9ad');
+    grad.addColorStop(0, '#daf9ff');
+    grad.addColorStop(0.25, '#b1f2ff');
     grad.addColorStop(0.5, 'white');
-    grad.addColorStop(0.75, '#c1905e');
-    grad.addColorStop(1, '#f0c88c');
+    grad.addColorStop(0.75, '#3e6787');
+    grad.addColorStop(1, '#daf9ff');
     ctx.strokeStyle = grad;
     ctx.lineWidth = radius*0.08;
     ctx.stroke();

@@ -236,6 +236,7 @@ main .site-title .site-background{
 }
 
 main .site-title h1{
+  
   font-family: var(--Roboto);
   font-size: 3rem;
   
@@ -310,7 +311,16 @@ main .site-content .sidebar > .clock{
   display: block;
   margin-left: 10%;
   margin-top: 10%;
+  transition: .2s ease;
 }
+
+main .site-content .sidebar > .clock:hover{
+  margin-left:8%;
+  margin-top: 8%; 
+  width: 44%;
+  height: auto;
+}
+
 /*---------clock end--------*/
 /*----------side bar end-------------*/
 /*---------site content end-----------*/
