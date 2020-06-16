@@ -315,6 +315,7 @@ main .site-content .sidebar .clocks > span .clock{
 }
 
 main .site-content .sidebar .clocks > span .clock:hover{
+  margin-top: 5%;
   margin-left: 4%;
   width: 42%;
   height: auto;
