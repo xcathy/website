@@ -6,7 +6,8 @@ $(document).ready(function(){
         $nav.toggleClass('collapse');
     });
 });
-/*------side clock--------*/
+/*------side clocks--------*/
+/*-------BC Clock UTC -8 --------*/
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
@@ -14,12 +15,12 @@ ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
 
-
 function drawClock() {
     drawFace(ctx, radius);
     drawNumbers(ctx, radius);
     drawTime(ctx, radius);
 }
+
 
 function drawFace(ctx, radius) {
     var grad;
@@ -110,3 +111,55 @@ function drawTime(ctx, radius){
     ctx.rotate(-pos);
     
   }
+/*------BC Clock end------- */
+/*------SH Clock UTC +8 --------- */
+var SHcanvas = document.getElementById("SHcanvas");
+var SHctx = SHcanvas.getContext("2d");
+var SHradius = SHcanvas.height / 2;
+SHctx.translate(SHradius, SHradius);
+SHradius = SHradius * 0.90
+setInterval(drawSHClock, 1000); 
+
+
+function drawSHClock(){
+    drawSHFace(SHctx, SHradius);
+    drawNumbers(SHctx, SHradius);
+    drawSHTime(ctx, radius);
+}
+
+function drawSHFace(ctx, radius) {
+    var grad;
+  
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    /* clock face color */
+    grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
+    grad.addColorStop(0, 'white');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(0.7, '#ffe2e7');
+    grad.addColorStop(0.9, '#ffb7c5');
+    grad.addColorStop(1, 'white');
+   
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius*0.1;
+    ctx.stroke();
+  
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    /*shadow effecy on clock center */
+    grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
+    grad.addColorStop(0, '#ffe2e7');
+    grad.addColorStop(0.25, '#ffb7c5');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(0.75, '#f4539c');
+    grad.addColorStop(1, '#ffe2e7');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius*0.08;
+    ctx.stroke();
+}
+/*------SH Clock end------- */

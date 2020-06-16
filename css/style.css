@@ -304,23 +304,21 @@ main .posts > hr{
 
 /*--------side bar-------*/
 /*-------- clock --------*/
-main .site-content .sidebar > .clock{
+
+main .site-content .sidebar .clocks > span .clock{
   width: 40%;
-  height: auto; 
+  height: auto;
+  margin-top: 7%;
+  margin-left: 5%;
   background-color: transparent;
-  display: block;
-  margin-left: 10%;
-  margin-top: 10%;
   transition: .2s ease;
 }
 
-main .site-content .sidebar > .clock:hover{
-  margin-left:8%;
-  margin-top: 8%; 
-  width: 44%;
+main .site-content .sidebar .clocks > span .clock:hover{
+  margin-left: 4%;
+  width: 42%;
   height: auto;
 }
-
 /*---------clock end--------*/
 /*----------side bar end-------------*/
 /*---------site content end-----------*/
