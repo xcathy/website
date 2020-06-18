@@ -16,46 +16,97 @@ radius = radius * 0.90
 setInterval(drawClock, 1000);
 
 function drawClock() {
-    drawFace(ctx, radius);
+    drawFace(ctx, "blue", radius);
     drawNumbers(ctx, radius);
-    drawTime(ctx, radius);
+    drawTime(ctx, "BC", radius);
 }
 
+/*------BC Clock end------- */
+/*------SH Clock UTC +8 --------- */
+var SHcanvas = document.getElementById("SHcanvas");
+var SHctx = SHcanvas.getContext("2d");
+var SHradius = SHcanvas.height / 2;
+SHctx.translate(SHradius, SHradius);
+SHradius = SHradius * 0.90
+setInterval(drawSHClock, 1000); 
 
-function drawFace(ctx, radius) {
+
+function drawSHClock(){
+    drawFace(SHctx, "pink", SHradius);
+    drawNumbers(SHctx, SHradius);
+    drawTime(SHctx, "SH", radius);
+}
+
+/*------SH Clock end------- */
+
+
+function drawFace(ctx, theme, radius) {
     var grad;
-  
+
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0, 2 * Math.PI);
     ctx.fillStyle = 'white';
     ctx.fill();
 
-    /* clock face color */
-    grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
-    grad.addColorStop(0, 'white');
-    grad.addColorStop(0.5, 'white');
-    grad.addColorStop(0.7, '#b1f2ff');
-    grad.addColorStop(0.9, '#2e616f');
-    grad.addColorStop(1, 'white');
-   
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = radius*0.1;
+    if (theme == "pink"){
+        /* clock face color pink theme*/
+        grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
+        grad.addColorStop(0, 'white');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(0.7, '#ffe2e7');
+        grad.addColorStop(0.9, '#ec366e');
+        grad.addColorStop(1, 'white');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius*0.1;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        /*shadow effect on clock center pink theme */
+        grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
+        grad.addColorStop(0, '#ffe2e7');
+        grad.addColorStop(0.25, '#ffb7c5');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(0.75, '#f4539c');
+        grad.addColorStop(1, '#ffe2e7');
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius*0.08;
+    }
+    else{
+        /* default theme blue theme*/
+        /* clock face color blue theme */
+        grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
+        grad.addColorStop(0, 'white');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(0.7, '#b1f2ff');
+        grad.addColorStop(0.9, '#2e616f');
+        grad.addColorStop(1, 'white');
+    
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius*0.1;
+        ctx.stroke();
+    
+        ctx.beginPath();
+        ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        /*shadow effecy on clock center blue theme*/
+        blue = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
+        grad.addColorStop(0, '#daf9ff');
+        grad.addColorStop(0.25, '#b1f2ff');
+        grad.addColorStop(0.5, 'white');
+        grad.addColorStop(0.75, '#3e6787');
+        grad.addColorStop(1, '#daf9ff');
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = radius*0.08;
+    }
+
     ctx.stroke();
-  
-    ctx.beginPath();
-    ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-    /*shadow effecy on clock center */
-    grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
-    grad.addColorStop(0, '#daf9ff');
-    grad.addColorStop(0.25, '#b1f2ff');
-    grad.addColorStop(0.5, 'white');
-    grad.addColorStop(0.75, '#3e6787');
-    grad.addColorStop(1, '#daf9ff');
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = radius*0.08;
-    ctx.stroke();
+    
 }
 
 function drawNumbers(ctx, radius) {
@@ -81,26 +132,45 @@ function drawNumbers(ctx, radius) {
 
 }
 
-function drawTime(ctx, radius){
+function drawTime(ctx, location, radius){
     var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
+
+    if (location == "SH"){
+        var local = now.getTime();
+        var localOffset = now.getTimezoneOffset(); //default in minutes
+        localOffset = localOffset * 60000; //make it into milliseconds
+        var utc = local + localOffset;
+        var offset = 8; //Shanghai timezone = utc +8
+        var SH = utc + (3600000 * offset);
+        var SHTime = new Date(SH);
+
+        var hour = SHTime.getHours();
+        var minute = SHTime.getMinutes();
+        var second = SHTime.getSeconds();
+    }
+    else{
+        /* default timezone = local timezone */
+        /* which is BC now */
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+    }
+    
     //hour
     hour = hour%12;
     hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.4, radius*0.06, "red");
+    drawHand(ctx, hour, radius*0.4, radius*0.06, "black");
     //minute
     minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.6, radius*0.04, "green");
+    drawHand(ctx, minute, radius*0.6, radius*0.04, "black");
     // second
     second = (second*Math.PI/30);
-    drawHand(ctx, second, radius*0.7, radius*0.02, "blue");
+    drawHand(ctx, second, radius*0.7, radius*0.02, "black");
 }
 
   function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = color;
     ctx.lineCap = "round";
     ctx.lineWidth = width;
 
@@ -111,55 +181,3 @@ function drawTime(ctx, radius){
     ctx.rotate(-pos);
     
   }
-/*------BC Clock end------- */
-/*------SH Clock UTC +8 --------- */
-var SHcanvas = document.getElementById("SHcanvas");
-var SHctx = SHcanvas.getContext("2d");
-var SHradius = SHcanvas.height / 2;
-SHctx.translate(SHradius, SHradius);
-SHradius = SHradius * 0.90
-setInterval(drawSHClock, 1000); 
-
-
-function drawSHClock(){
-    drawSHFace(SHctx, SHradius);
-    drawNumbers(SHctx, SHradius);
-    drawSHTime(ctx, radius);
-}
-
-function drawSHFace(ctx, radius) {
-    var grad;
-  
-    ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-
-    /* clock face color */
-    grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
-    grad.addColorStop(0, 'white');
-    grad.addColorStop(0.5, 'white');
-    grad.addColorStop(0.7, '#ffe2e7');
-    grad.addColorStop(0.9, '#ffb7c5');
-    grad.addColorStop(1, 'white');
-   
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = radius*0.1;
-    ctx.stroke();
-  
-    ctx.beginPath();
-    ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-    /*shadow effecy on clock center */
-    grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
-    grad.addColorStop(0, '#ffe2e7');
-    grad.addColorStop(0.25, '#ffb7c5');
-    grad.addColorStop(0.5, 'white');
-    grad.addColorStop(0.75, '#f4539c');
-    grad.addColorStop(1, '#ffe2e7');
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = radius*0.08;
-    ctx.stroke();
-}
-/*------SH Clock end------- */
