@@ -94,7 +94,7 @@ function drawFace(ctx, theme, radius) {
         ctx.fillStyle = 'white';
         ctx.fill();
         /*shadow effecy on clock center blue theme*/
-        blue = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
+        grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
         grad.addColorStop(0, '#daf9ff');
         grad.addColorStop(0.25, '#b1f2ff');
         grad.addColorStop(0.5, 'white');
