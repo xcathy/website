@@ -76,6 +76,12 @@ span{
   font-family: var(--Titillium_Web);
   color:var(--plain_gray);
 }
+.text-title{
+  font-size: 1.6rem;
+  padding-inline: .3rem;
+  font-family: var(--Anton);
+  color:var(--plain_gray);
+}
 .pagination {
   justify-content: center;
   font-size: 1.4rem;
@@ -309,23 +315,32 @@ main .site-content .sidebar .clocks > span .clock{
   width: 40%;
   height: auto;
   margin-top: 7%;
-  margin-left: 5%;
+  margin-left: 6%;
   background-color: transparent;
   transition: .2s ease;
 }
 
-main .site-content .sidebar .clocks > span .clock:hover{
-  margin-top: 5%;
-  margin-left: 4%;
-  width: 42%;
-  height: auto;
+
+main .site-content .sidebar .clock-description ul{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+main .site-content .sidebar .clock-description ul li{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /*---------clock end--------*/
 /*----------side bar end-------------*/
 /*---------site content end-----------*/
 /*-----------X----------*/
 
-/*-----viewport <= 750px ----*/
+
+
+/*-----viewport <= 1080px ----*/
 @media only screen and (max-width: 1080px){
 
   .nav .nav-menu, .nav .nav-items{
@@ -363,4 +378,6 @@ main .site-content .sidebar .clocks > span .clock:hover{
     display: block;
   }
 }
+
+/*-----viewport <= 790px ----*/
 /*--------------x-------------*/
