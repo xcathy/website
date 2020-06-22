@@ -320,6 +320,9 @@ main .site-content .sidebar .clocks > span .clock{
   transition: .2s ease;
 }
 
+main .site-content .sidebar .clocks > span h3{
+  display: none;
+}
 
 main .site-content .sidebar .clock-description ul{
   width: 100%;
@@ -366,7 +369,7 @@ main .site-content .sidebar .clock-description ul li{
   }
   
   main .site-content{
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
   }
 
   main .site-content .post-content > .post-title .post-info {
@@ -383,15 +386,23 @@ main .site-content .sidebar .clock-description ul li{
   }
 
   main .site-content .sidebar .clocks{
-    margin-top: 10%;
+    margin-top: 13%;
   }
   main .site-content .sidebar .clocks > span .clock{
-    margin-left: 10%;
+    padding-left: 5%;
     width: 80%;
     height: auto;
   }
   main .site-content .sidebar .clock-description ul li{
     display: none;
+  }
+
+  main .site-content .sidebar .clocks span > h3{
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 10%;
+    text-align: center;
   }
   
 }
