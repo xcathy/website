@@ -365,6 +365,10 @@ main .site-content .sidebar .clock-description ul li{
     padding-top: 7rem;
   }
   
+  main .site-content{
+    grid-template-columns: 60% 40%;
+  }
+
   main .site-content .post-content > .post-title .post-info {
     justify-content: left;
     padding-top: .6rem;
@@ -377,6 +381,19 @@ main .site-content .sidebar .clock-description ul li{
   main .site-content .post-content > .post-title .post-description{
     display: block;
   }
+
+  main .site-content .sidebar .clocks{
+    margin-top: 10%;
+  }
+  main .site-content .sidebar .clocks > span .clock{
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+  }
+  main .site-content .sidebar .clock-description ul li{
+    display: none;
+  }
+  
 }
 
 /*-----viewport <= 790px ----*/
