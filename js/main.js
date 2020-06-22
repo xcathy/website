@@ -168,7 +168,7 @@ function drawTime(ctx, location, radius){
     drawHand(ctx, second, radius*0.7, radius*0.02, "black");
 }
 
-  function drawHand(ctx, pos, length, width, color) {
+function drawHand(ctx, pos, length, width, color) {
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineCap = "round";
@@ -180,4 +180,13 @@ function drawTime(ctx, location, radius){
     ctx.stroke();
     ctx.rotate(-pos);
     
-  }
+}
+
+  /*--------clocks end----------*/
+
+  /*----------calendar----------*/
+  var calendar = document.getElementById("cal");
+  var calctx = calendar.getContext("2d");
+  var calheight = calctx.height * 0.8;
+   
+  /*----------calendar end---------*/
