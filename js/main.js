@@ -188,5 +188,24 @@ function drawHand(ctx, pos, length, width, color) {
   var calendar = document.getElementById("cal");
   var calctx = calendar.getContext("2d");
   var calheight = calctx.height * 0.8;
-   
+  calctx.beginPath();
+  calctx.rect(30, 30, 340, 340);
+  calctx.fillStyle = "white";
+  calctx.fill();
+
+
+  calctx.beginPath();
+  calctx.moveTo(70, 110);
+  calctx.lineTo(330, 110);
+  calctx.stroke();
+    /*-----draw month----- */
+  function drawMonth(calctx){
+
+  }
+  /*-------draw day-------*/
+  function drawDay(calctx){
+
+  }
+
+
   /*----------calendar end---------*/
