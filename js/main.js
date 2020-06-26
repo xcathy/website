@@ -10,6 +10,9 @@ $(document).ready(function(){
 /*-------BC Clock UTC -8 --------*/
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+ctx.shadowColor = "#D3D3D3";
+ctx.shadowBlur = 4;
+
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
@@ -25,6 +28,9 @@ function drawClock() {
 /*------SH Clock UTC +8 --------- */
 var SHcanvas = document.getElementById("SHcanvas");
 var SHctx = SHcanvas.getContext("2d");
+SHctx.shadowColor = "#D3D3D3";
+SHctx.shadowBlur = 4;
+
 var SHradius = SHcanvas.height / 2;
 SHctx.translate(SHradius, SHradius);
 SHradius = SHradius * 0.90
@@ -48,60 +54,22 @@ function drawFace(ctx, theme, radius) {
     ctx.fillStyle = 'white';
     ctx.fill();
 
+    
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
     if (theme == "pink"){
-        /* clock face color pink theme*/
-        grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
-        grad.addColorStop(0, 'white');
-        grad.addColorStop(0.5, 'white');
-        grad.addColorStop(0.7, '#ffe2e7');
-        grad.addColorStop(0.9, '#ec366e');
-        grad.addColorStop(1, 'white');
-
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = radius*0.1;
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        /*shadow effect on clock center pink theme */
-        grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
-        grad.addColorStop(0, '#ffe2e7');
-        grad.addColorStop(0.25, '#ffb7c5');
-        grad.addColorStop(0.5, 'white');
-        grad.addColorStop(0.75, '#f4539c');
-        grad.addColorStop(1, '#ffe2e7');
-        ctx.strokeStyle = grad;
+        /* clock center color = pink */
+        ctx.strokeStyle = "#ffe2e7";
         ctx.lineWidth = radius*0.08;
     }
     else{
         /* default theme blue theme*/
-        /* clock face color blue theme */
-        grad = ctx.createRadialGradient(0, 0 ,radius * 0.9, 0, 0, radius * 1);
-        grad.addColorStop(0, 'white');
-        grad.addColorStop(0.5, 'white');
-        grad.addColorStop(0.7, '#b1f2ff');
-        grad.addColorStop(0.9, '#2e616f');
-        grad.addColorStop(1, 'white');
-    
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = radius*0.1;
-        ctx.stroke();
-    
-        ctx.beginPath();
-        ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        /*shadow effecy on clock center blue theme*/
-        grad = ctx.createRadialGradient(0, 0 ,radius * 0.01, 0, 0, radius * 0.08);
-        grad.addColorStop(0, '#daf9ff');
-        grad.addColorStop(0.25, '#b1f2ff');
-        grad.addColorStop(0.5, 'white');
-        grad.addColorStop(0.75, '#3e6787');
-        grad.addColorStop(1, '#daf9ff');
-
-        ctx.strokeStyle = grad;
+        /* clock center color = blue */
+        ctx.strokeStyle = "#daf9ff";
         ctx.lineWidth = radius*0.08;
     }
 
@@ -187,24 +155,44 @@ function drawHand(ctx, pos, length, width, color) {
   /*----------calendar----------*/
   var calendar = document.getElementById("cal");
   var calctx = calendar.getContext("2d");
-  var calheight = calctx.height * 0.8;
+  calctx.imageSmoothingEnabled = false;
+  calctx.shadowColor = "#6a888c";
+  calctx.shadowBlur = 4;
+
   calctx.beginPath();
   calctx.rect(30, 30, 340, 340);
   calctx.fillStyle = "white";
   calctx.fill();
 
-
   calctx.beginPath();
-  calctx.moveTo(70, 110);
-  calctx.lineTo(330, 110);
-  calctx.stroke();
+  calctx.rect(40, 40, 320, 70);
+  calctx.fillStyle = "#ffe2e7";
+  calctx.fill();
+
+
+ 
+
+  var today = new Date();
+  var dd = String(today.getDate());
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var mm = months[today.getMonth()];
+
+  drawMonth(calctx);
+  drawDay(calctx);
+
     /*-----draw month----- */
   function drawMonth(calctx){
-
+    calctx.font = "bold 45px Arial";
+    calctx.translate(140, 90);
+    calctx.fillStyle = "black";
+    calctx.fillText(mm.toUpperCase(), 0, 0);
   }
   /*-------draw day-------*/
   function drawDay(calctx){
-
+    calctx.font = "160px Arial";
+    calctx.translate(-30, 200);
+    calctx.fillStyle = "#003853";
+    calctx.fillText(dd, 0, 0);
   }
 
 

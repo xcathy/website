@@ -338,8 +338,7 @@ main .site-content .sidebar .clock-description ul li{
 /*---------calendar----------*/
 main .site-content .sidebar .cal{
   width: 70%;
-  background-color:var(--plain_blue);
-  box-shadow: 0px 0px 4px var(--light_gray);
+  background-color:transparent;
   display: flex;
   justify-content: center;
   margin: auto;
