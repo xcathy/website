@@ -169,9 +169,6 @@ function drawHand(ctx, pos, length, width, color) {
   calctx.fillStyle = "#ffe2e7";
   calctx.fill();
 
-
- 
-
   var today = new Date();
   var dd = String(today.getDate());
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
