@@ -103,7 +103,11 @@ ctx.translate(radius, radius);
 setInterval(drawClock, 1000);
 
 function drawClock() {
+  ctx.shadowColor = 'black';
+  ctx.shadowBlur = 20;
   drawTime(ctx, '#262626', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
+  ctx.shadowColor = 0;
+  ctx.shadowBlur = 0;
 }
 /*------local Clock end------- */
 
@@ -118,54 +122,58 @@ setInterval(drawSHClock, 1000);
 
 
 function drawSHClock(){
+  SHctx.shadowColor = 'black';
+  SHctx.shadowBlur = 20;
   drawTime(SHctx, '#262626', 'white', 'white', 'white', 8, radius);
+  SHctx.shadowColor = 0;
+  SHctx.shadowBlur = 0;
 }
 
 /*------SH Clock end------- */
 
+/*--------clocks end----------*/
 
+/*----------calendar----------*/
+/*-----draw month----- */
+function drawMonth(calctx, month, width, height){
+  calctx.font = "45px Arial";
+  calctx.textAlign = 'center';
+  calctx.fillStyle = 'white';
 
-  /*--------clocks end----------*/
+  calctx.fillText(month.toUpperCase(), width/2, 0.16*height);
+}
 
-  /*----------calendar----------*/
-  var calendar = document.getElementById("cal");
-  var calctx = calendar.getContext("2d");
-  calctx.imageSmoothingEnabled = false;
-  calctx.shadowColor = "#6a888c";
-  calctx.shadowBlur = 4;
+/*-------draw day-------*/
+function drawDay(calctx, day, width, height){
+  calctx.font = "160px Arial";
+  calctx.fillStyle = '#262626';
+  calctx.textAlign = 'center';
+  calctx.fillText(day,  width/2, 0.73*height);
+}
 
-  calctx.beginPath();
-  calctx.rect(30, 30, 340, 340);
-  calctx.fillStyle = "white";
-  calctx.fill();
+var calendar = document.getElementById("cal");
+var calctx = calendar.getContext("2d");
+var width = calendar.width;
+var height = calendar.height;
 
-  calctx.beginPath();
-  calctx.rect(40, 40, 320, 70);
-  calctx.fillStyle = "#ffe2e7";
-  calctx.fill();
+calctx.imageSmoothingEnabled = false;
 
-  var today = new Date();
-  var dd = String(today.getDate());
-  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  var mm = months[today.getMonth()];
+calctx.beginPath();
+calctx.rect(0, 0, width, height);
+calctx.fillStyle = 'lightgrey';
+calctx.fill();
 
-  drawMonth(calctx);
-  drawDay(calctx);
+calctx.beginPath();
+calctx.rect(0, 0, width, height * 0.25);
+calctx.fillStyle = '#1a1a1a';
+calctx.fill();
 
-    /*-----draw month----- */
-  function drawMonth(calctx){
-    calctx.font = "bold 45px Arial";
-    calctx.translate(140, 90);
-    calctx.fillStyle = "black";
-    calctx.fillText(mm.toUpperCase(), 0, 0);
-  }
-  /*-------draw day-------*/
-  function drawDay(calctx){
-    calctx.font = "160px Arial";
-    calctx.translate(-30, 200);
-    calctx.fillStyle = "#003853";
-    calctx.fillText(dd, 0, 0);
-  }
+var today = new Date();
+var dd = String(today.getDate());
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var mm = months[today.getMonth()];
 
+drawMonth(calctx, mm, width, height);
+drawDay(calctx, dd, width, height);
 
-  /*----------calendar end---------*/
+/*----------calendar end---------*/
