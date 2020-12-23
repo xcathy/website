@@ -160,6 +160,7 @@ img{
   max-width: 1080px;
   height: auto;
 }
+
 /*----images end----*/
 /*-----global classes end----*/
 
@@ -267,23 +268,16 @@ main .site-content{
   display: grid;
   grid-template-columns: 50% 50%;
 }
-main .site-content-undivided{
-  display: grid;
-}
 
 main .post-content{
   width: 100%;
   margin: 3rem 0;
 }
 
-main .site-content .post-content > .post-image, .post-title{
-  padding: 1rem 2rem;
-  position: relative;
-}
-
 main .site-content > .post-image > div{
   overflow: hidden;
 }
+
 
 main .site-content .post-content > .post-image .img{
   box-shadow: inset 0px 0px 10px black;
@@ -297,6 +291,12 @@ main .site-content .post-content > .post-image .img:hover{
   transform: scale(0.95);
 }
 
+main .site-content .post-content > .post-image, .post-title{
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+
 main .site-content .post-content > .post-title .post-info {
   justify-content: left;
   display: flex;
@@ -306,6 +306,53 @@ main .site-content .post-content > .post-title .post-info {
 main .site-content .post-content > .post-title p {
   display: block;
 }
+
+
+
+/*--undivided posts---*/
+main .site-content-undivided{
+  display: grid;
+}
+
+main .post-content-undivided{
+  width: 100%;
+  align-items: center;
+}
+
+main .site-content-undivided .post-content-undivided > .post-image-undivided .img-undivided{
+  box-shadow: inset 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
+  max-width: 60%;
+  height: auto;
+  transition: .4s ease;
+}
+
+main .site-content-undivided .post-content-undivided > .post-image-undivided .img-undivided:hover{
+  transform: scale(0.95);
+}
+
+main .site-content-undivided .post-content-undivided > .post-image-undivided, .post-title-undivided{
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+main .site-content-undivided .post-content-undivided > .post-title-undivided .post-info-undivided {
+  justify-content: center;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+main .site-content-undivided .post-content-undivided > .post-title-undivided p {
+  text-align: left;
+  display: block;
+  margin-left: 3rem;
+}
+
+/*---undivided posts ends----*/
 
 /*-----hr-------*/
 
