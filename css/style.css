@@ -1,5 +1,5 @@
 @import url(./font.css);
-
+/*-----global settings-----*/
 html,body{
   margin: 0%;
   box-sizing: border-box;
@@ -9,61 +9,97 @@ html,body{
 
 :root{
   /*theme font-family*/
-  --Roboto:'Roboto', cursive;
-  --Titillium_Web:'Titillium', cursive;
-  --Roboto_Thin: 'Roboto_Thin', cursive;
-  --Anton: 'Anton', cursive;
-  --Dosis: 'Dosis', cursive;
-  --Dosis_Light: 'Dosis_Light', cursive;
-  --PT_Sans: 'PT_Sans', cursive;
-  
+  --Brush: 'Brush Script MT', cursive;
+  --Mono: 'Lucida Console', 'Courier New', monospace;
+  --Arial: 'Arial', 'Helvetica', sans-serif;
 }
+
+/*----global settings end---*/
+
 /*--------global classes-------*/
+/*------global fonts------*/
+.text-white{
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  font-family: var(--Mono);
+  color:white;
+}
+
+.text-bigwhite{
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  font-family: var(--Mono);
+  color:white;
+}
+
+.text-black{
+  font-size: 1.5rem;
+  font-family: var(--Mono);
+  color:black;
+}
+
+.text-link{
+  font-size: 1.5rem;
+  padding-bottom: 0.2rem;
+  font-family: var(--Mono);
+  text-shadow: 0px 0px 10px #000000;
+  color:steelblue;
+}
+
+.text-nav{
+  font-size: 1.5rem;
+  padding: 2rem 2.5rem;
+  font-family: var(--Mono);
+  text-shadow: 0px 0px 10px #000000;
+  color:steelblue;
+}
+
+.text-title{
+  font-size: 2rem;
+  font-family: var(--Mono);
+  text-shadow: 0px 0px 10px #000000;
+  color:white;
+}
+
+.text-subtitle{
+  font-size: 1rem;
+  font-family: var(--Mono);
+  text-shadow: 0px 0px 10px #000000;
+  color:grey;
+}
+
+.text-logo{
+  text-decoration: underline;
+  font-size: 2rem;
+  font-family: var(--Brush);
+  font-style: italic;
+  text-shadow: 0px 0px 10px #000000;
+  color:white;
+}
+
+/*------global fonts end-------*/
+
+/*----hyper links------*/
 a{
   text-decoration: none;
-  color:steelblue;
   transition: .2s ease;
 }
 
 a:hover{
-  font-size: 120%;
+  color:white;
 }
 
 a:active{
   color: lightsteelblue;
 }
+/*----hyper links end------*/
 
 .flex-row{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-span{
-  font-size: 1rem;
-  padding: .4rem;
-  font-family: var(--PT_Sans);
-  color: white;
-}
-.text-white{
-  font-size: 1rem;
-  padding-inline: .3rem;
-  font-family: var(--Titillium_Web);
-  color:white;
-}
 
-.text-steelblue{
-  font-size: 1rem;
-  padding-inline: .3rem;
-  font-family: var(--Titillium_Web);
-  color:steelblue;
-}
-
-.text-title{
-  font-size: 1.6rem;
-  padding-inline: .3rem;
-  font-family: var(--Anton);
-  color:white;
-}
 .pagination {
   justify-content: center;
   font-size: 1.4rem;
@@ -74,12 +110,7 @@ span{
   padding: .6rem .9rem;
   border-radius: 2rem;
   margin: .3rem;
-  font-family: var(--Roboto);
   transition: .2s ease;
-}
-
-.pagination a:hover{
-  font-size: 120%;
 }
 
 .pagination a:active{
@@ -88,17 +119,22 @@ span{
 
 .pagination .page{
   box-shadow: 0px 1px 2px black;
-  background-color: white;
-  border-radius: 5rem;
+  background-color: steelblue;
+  border-radius: 10rem;
 }
 
+/*-----lists----*/
 ul{
   list-style-type: none;
 }
+/*-----lists end----*/
+
+/*----icons----*/
 i{
   transition: 0.6s ease;
 }
-
+/*----icons end----*/
+/*----buttons----*/
 .btn{
   padding: 1rem 2rem;
   border: transparent;
@@ -109,42 +145,65 @@ i{
   transition: .2s ease;
 }
 
-
 .btn:active{
   background-color: lightsteelblue;
 }
-p{
-  font-family: var(--Dosis);
-  font-size: 1.1rem;
-  color: white;
-}
+/*----buttons end----*/
+
 
 hr{
   background-color: white;
 }
 
+/*----images----*/
 img{
   max-width: 1080px;
   height: auto;
 }
+/*----images end----*/
+/*-----global classes end----*/
 
-
-/*--------x-------*/
 /*---navbar--*/
 .nav{
   background: #1a1a1a;
-  padding: 0 2rem;
-  height: 0rem;
-  min-height: 4.8rem;
+
   overflow: hidden;
   transition: height 1s ease;
 
 }
-
 .nav .nav-menu{
   justify-content: space-between;
 }
 
+.nav .nav-items{
+  display: flex;
+  margin: 2rem;
+}
+
+.nav .nav-menu .nav-brand a{
+  padding: 1.5rem 2rem;
+  display: block;
+}
+
+.nav .nav-items .nav-link a{
+  border: 0px solid transparent;
+  padding: 2rem 2rem;
+  position: relative;
+  transition: 0.6s ease;
+}
+
+.nav .social i{
+  padding: 2rem 0rem;
+  margin-right: 2rem;
+  font-size: 1.6rem;
+}
+
+
+.nav .social i:hover{
+  color: white;
+}
+
+/*---collapsed contents---*/
 .nav .toggle-collapse{
   position: absolute;
   top: 2%;
@@ -155,7 +214,6 @@ img{
 
 .nav .toggle-collapse i{
   font-size: 1.6rem;
-  color: var(--gray);
 }
 
 .nav .toggle-collapse .toggle-icons{
@@ -167,45 +225,8 @@ img{
 .collapse{
   height: 43rem;
 }
-.nav .nav-items{
-  display: flex;
-  margin: 0;
-}
-
-.nav .nav-items .nav-link{
-  border: 2px solid transparent;
-  padding: 1.6rem 2rem;
-  font-family: var(--Roboto);
-  font-size: 1.1rem;
-  position: relative;
-  transition: 0.6s ease;
-}
-/*---x--*/
-.nav .nav-items .nav-link:hover{
-  background-color:white;
-}
-
-
-.nav .nav-brand a{
-  font-family: var(--Roboto);
-  font-size: 1.6rem;
-  padding: 1.6rem 1.1rem;
-  display: block;
-}
-
-.nav .social{
-  padding: 1.6rem 0;
-}
-
-.nav .social i{
-  font-size: 1.6rem;
-  padding: 0.2rem;
-}
-
-.nav .social i:hover{
-  color: white;
-}
-
+/*---collapsed contents---*/
+/*-----nav bar ends----*/
 /*---------MAIN---------*/
 /*-------site title------*/
 
@@ -221,13 +242,6 @@ main .site-title{
 main .site-title .site-background{
   padding-top: 10rem;
   text-align: center;
-  color: ghostwhite;
-}
-
-main .site-title h1{
-  font-family: var(--Roboto);
-  font-size: 3rem;
-  
 }
 
 
@@ -240,7 +254,7 @@ main .container{
 /*--------site content-------*/
 main .site-content{
   display: grid;
-  grid-template-columns: 49% 51%;
+  grid-template-columns: 50% 50%;
 }
 
 main .post-content{
@@ -266,12 +280,7 @@ main .site-content .post-content > .post-image .img{
 }
 
 main .site-content .post-content > .post-image .img:hover{
-  transform: scale(0.9);
-}
-
-main .post-content .post-title a{
-  font-family: var(--Anton);
-  font-size: 1.6rem;
+  transform: scale(0.95);
 }
 
 main .site-content .post-content > .post-title .post-info {
@@ -287,7 +296,7 @@ main .site-content .post-content > .post-title p {
 /*-----hr-------*/
 
 main .posts > hr{
-  width: 70%;
+  width: 90%;
 }
 
 /*--------side bar-------*/
@@ -296,9 +305,8 @@ main .posts > hr{
 main .site-content .sidebar .clocks > span .clock{
   width: 40%;
   height: auto;
-  margin-top: 7%;
+  margin-top: 10%;
   margin-left: 6%;
-  background-color: transparent;
   transition: .2s ease;
   box-shadow: 0px 0px 20px black;
 }
@@ -340,7 +348,7 @@ main .site-content .sidebar .cal{
 }
 
 .gallery img:hover{
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 .row {
   justify-content: center;
@@ -390,7 +398,6 @@ main .site-content .sidebar .cal{
 
 .modal-content .modal-text{
   text-align: center;
-  color: rgb(151, 169, 196);
 }
 
 
@@ -410,7 +417,6 @@ main .site-content .sidebar .cal{
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BLOG</title>
+  <title>XCathy BLOG</title>
   <!--style-->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <!--all-->
@@ -15,7 +15,7 @@
   <nav class="nav">
     <div class="nav-menu flex-row">
       <div class="nav-brand">
-        <a href="#" class="text-steelblue">BLOG</a>
+        <a href="#" class="text-logo">XCathy</a>
       </div>
       <!--tab button-->
       <div class="toggle-collapse">
@@ -27,26 +27,26 @@
       <!--nav items-->
       <div>
         <ul class="nav-items">
-          <li class="nav-link">
-            <a href="#">HOME</a>
+          <li class="nav-link ">
+            <a href="#" class="text-nav">HOME</a>
           </li>
           <li class="nav-link">
-            <a href="#">POSTS</a>
+            <a href="#" class="text-nav">POSTS</a>
           </li>
           <li class="nav-link">
-            <a href="#">ABOUT</a>
+            <a href="#" class="text-nav">ABOUT</a>
           </li>
           <li class="nav-link">
-            <a href="#">CONTACT</a>
+            <a href="#" class="text-nav">CONTACT</a>
           </li>
         </ul>
       </div>
       <div>
         <div class="social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-facebook-f text-nav"></i></a>
+          <a href="#"><i class="fab fa-instagram text-nav"></i></a>
+          <a href="#"><i class="fab fa-twitter text-nav"></i></a>
+          <a href="#"><i class="fab fa-youtube text-nav"></i></a>
         </div>
       </div>
     </div>
@@ -55,9 +55,9 @@
   <!--main site-->
   <main>
     <!--site title-->
-    <section class="site-title">
+    <section class="site-title text-title">
       <div class="site-background">
-        <h1>BLOG</h1>
+        <h1>Cathy's Personal Blog</h1>
       </div>
     </section>
     <!--site title end-->
@@ -72,14 +72,16 @@
               </div>
             </div>
             <div class="post-title">
-              <a href="#">Logs</a>
-              <div class="post-info flex-row">
-                <span><i class="fas fa-user text-white"></i>&nbsp;&nbsp;&nbsp;Admin</span>
-                <span><i class="fas fa-calendar-alt text-white"></i>&nbsp;&nbsp;&nbsp;2020-06-04</span>
-                <span>0 comments</span>
+              <a href="#" class = "text-link">Logs</a>
+              <div class="post-info flex-row text-white">
+                <span class = "text-white"><i class="fas fa-user"></i></span>
+                <span class = "text-white">Admin</span>
+                <span class = "text-white"><i class="fas fa-calendar-alt text-white"></i></span>
+                <span class = "text-white">2020-06-04</span>
+                <span class = "text-white">0 comments</span>
               </div>
-              <p class="post-description">Nice logs.</p>
-              <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+              <p class="post-description text-white">Nice logs.</p>
+              <button class="btn post-btn text-black">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
             </div> 
           </div>
           <hr>
@@ -90,22 +92,22 @@
               </div>
             </div>
             <div class="post-title">
-              <a href="#">Clear Sky</a>
-              <div class="post-info flex-row">
-                <span><i class="fas fa-user text-white"></i></span>
-                <span>Admin</span>
-                <span><i class="fas fa-calendar-alt text-white"></i></span>
-                <span>2020-05-01</span>
-                <span>0 comments</span>
+              <a href="#" class = "text-link">Clear Sky</a>
+              <div class="post-info flex-row text-white">
+                <span class = "text-white"><i class="fas fa-user"></i></span>
+                <span class = "text-white">Admin</span>
+                <span class = "text-white"><i class="fas fa-calendar-alt text-white"></i></span>
+                <span class = "text-white">2020-05-01</span>
+                <span class = "text-white">0 comments</span>
               </div>
-              <p class="post-description">Clear sky.</p>
-              <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+              <p class="post-descriptio text-white">Clear sky.</p>
+              <button class="btn post-btn text-black">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
           <div class="pagination flex-row">
-            <a href="#"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="page">1</a>
-            <a href="#"><i class="fas fa-chevron-right"></i></a>
+            <a href="#"><i class="fas fa-chevron-left text-white"></i></a>
+            <a href="#" class="page text-black">1</a>
+            <a href="#"><i class="fas fa-chevron-right text-white"></i></a>
           </div>
         </div>
         <aside class="sidebar">
@@ -114,19 +116,19 @@
             <!--bc clock-->
             <span>
               <canvas id="canvas" width="400" height="400" class = "clock"></canvas>
-              <h3 class="text-title">
+              <h3 class="text-bigwhite">
                 Local
               </h3>
             </span>
             <!--sh clock-->
             <span>
               <canvas id="SHcanvas" width="400" height="400" class = "clock"></canvas>
-              <h3 class="text-title">
+              <h3 class="text-bigwhite">
                 SH
               </h3>
             </span>
           </div>
-          <div class="clock-description flex-row text-title">
+          <div class="clock-description flex-row text-bigwhite">
             <ul>
               <li>
                 Local Time
