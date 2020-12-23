@@ -7,29 +7,109 @@ $(document).ready(function(){
     });
 });
 /*------side clocks--------*/
-/*-------BC Clock UTC -8 --------*/
+/*--------- functions to build a clock ---------*/
+function drawFace(ctx, ctclr, bgclr, radius) {
+    //the color of the clock face = bgclr
+    ctx.beginPath();
+    ctx.fillStyle = bgclr;
+    ctx.fillRect(-radius, -radius, 2*radius, 2*radius);
+    ctx.stroke();
+    //the clock center's color = ctclr
+
+    ctx.beginPath();
+    ctx.fillStyle = ctclr;
+    ctx.fillRect(-radius*0.08, -radius*0.08, 2*radius*0.08, 2*radius*0.08);
+    ctx.stroke();
+}
+
+function drawNumbers(ctx, nbclr, radius) {
+    var ang;
+    var num;
+    ctx.font = radius * 0.18 + "px arial";
+
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    
+    //the color of the numbers = nbclr
+    for(num = 1; num < 13; num++){
+        ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.8);
+        ctx.rotate(-ang);
+        ctx.fillStyle = nbclr;
+
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.8);
+        ctx.rotate(-ang);
+    }
+
+}
+
+function drawTime(ctx, bgclr, ctclr, nbclr, hdclr, off, radius){
+    //draw the face and numbers again and again to clear the canvas
+    drawFace(ctx, ctclr, bgclr, radius);
+    drawNumbers(ctx, nbclr, radius);
+
+    var now = new Date();
+
+    var local = now.getTime();
+    var localOffset = now.getTimezoneOffset(); //default in minutes
+    localOffset = localOffset * 60000; //make it into milliseconds
+
+    var utc = local + localOffset;
+    var offset = off; 
+    
+    var tz = utc + (3600000 * offset); //timezone = utc +off
+    var tzTime = new Date(tz);
+
+    var hour = tzTime.getHours();
+    var minute = tzTime.getMinutes();
+    var second = tzTime.getSeconds();
+    
+    //hour
+    hour = hour%12;
+    hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.4, radius*0.06, hdclr);
+    //minute
+    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.6, radius*0.04, hdclr);
+    // second
+    second = (second*Math.PI/30);
+    drawHand(ctx, second, radius*0.7, radius*0.02, hdclr);
+}
+
+function drawHand(ctx, pos, length, width, hdclr) {
+    //clock hands color = hdclr
+    ctx.beginPath();
+    ctx.strokeStyle = hdclr;
+
+    ctx.lineWidth = width;
+
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+
+/*-------local Clock offset = 0 --------*/
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-ctx.shadowColor = "#D3D3D3";
-ctx.shadowBlur = 4;
 
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
-radius = radius * 0.90
+
 setInterval(drawClock, 1000);
 
 function drawClock() {
-    drawFace(ctx, "blue", radius);
-    drawNumbers(ctx, radius);
-    drawTime(ctx, "BC", radius);
+  drawTime(ctx, '#262626', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
 }
+/*------local Clock end------- */
 
-/*------BC Clock end------- */
-/*------SH Clock UTC +8 --------- */
+/*------SH Clock UTC +8, offset = 8 --------- */
 var SHcanvas = document.getElementById("SHcanvas");
 var SHctx = SHcanvas.getContext("2d");
-SHctx.shadowColor = "#D3D3D3";
-SHctx.shadowBlur = 4;
 
 var SHradius = SHcanvas.height / 2;
 SHctx.translate(SHradius, SHradius);
@@ -38,117 +118,12 @@ setInterval(drawSHClock, 1000);
 
 
 function drawSHClock(){
-    drawFace(SHctx, "pink", SHradius);
-    drawNumbers(SHctx, SHradius);
-    drawTime(SHctx, "SH", radius);
+  drawTime(SHctx, '#262626', 'white', 'white', 'white', 8, radius);
 }
 
 /*------SH Clock end------- */
 
 
-function drawFace(ctx, theme, radius) {
-    var grad;
-
-    ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-
-    
-
-    ctx.beginPath();
-    ctx.arc(0, 0, radius * 0.07, 0, 2 * Math.PI);
-    ctx.fillStyle = 'white';
-    ctx.fill();
-
-    if (theme == "pink"){
-        /* clock center color = pink */
-        ctx.strokeStyle = "#ffe2e7";
-        ctx.lineWidth = radius*0.08;
-    }
-    else{
-        /* default theme blue theme*/
-        /* clock center color = blue */
-        ctx.strokeStyle = "#daf9ff";
-        ctx.lineWidth = radius*0.08;
-    }
-
-    ctx.stroke();
-    
-}
-
-function drawNumbers(ctx, radius) {
-    var ang;
-    var num;
-    ctx.font = "bold " + radius * 0.18 + "px arial";
-
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "center";
-    
-    
-    for(num = 1; num < 13; num++){
-        ang = num * Math.PI / 6;
-        ctx.rotate(ang);
-        ctx.translate(0, -radius * 0.75);
-        ctx.rotate(-ang);
-        ctx.fillStyle = "black";
-        ctx.fillText(num.toString(), 0, 0);
-        ctx.rotate(ang);
-        ctx.translate(0, radius * 0.75);
-        ctx.rotate(-ang);
-    }
-
-}
-
-function drawTime(ctx, location, radius){
-    var now = new Date();
-
-    if (location == "SH"){
-        var local = now.getTime();
-        var localOffset = now.getTimezoneOffset(); //default in minutes
-        localOffset = localOffset * 60000; //make it into milliseconds
-        var utc = local + localOffset;
-        var offset = 8; //Shanghai timezone = utc +8
-        var SH = utc + (3600000 * offset);
-        var SHTime = new Date(SH);
-
-        var hour = SHTime.getHours();
-        var minute = SHTime.getMinutes();
-        var second = SHTime.getSeconds();
-    }
-    else{
-        /* default timezone = local timezone */
-        /* which is BC now */
-        var hour = now.getHours();
-        var minute = now.getMinutes();
-        var second = now.getSeconds();
-    }
-    
-    //hour
-    hour = hour%12;
-    hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.4, radius*0.06, "black");
-    //minute
-    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.6, radius*0.04, "black");
-    // second
-    second = (second*Math.PI/30);
-    drawHand(ctx, second, radius*0.7, radius*0.02, "black");
-}
-
-function drawHand(ctx, pos, length, width, color) {
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineCap = "round";
-    ctx.lineWidth = width;
-
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-    
-}
 
   /*--------clocks end----------*/
 

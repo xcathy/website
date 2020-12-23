@@ -4,6 +4,7 @@ html,body{
   margin: 0%;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: #1a1a1a;
 }
 
 :root{
@@ -15,39 +16,12 @@ html,body{
   --Dosis: 'Dosis', cursive;
   --Dosis_Light: 'Dosis_Light', cursive;
   --PT_Sans: 'PT_Sans', cursive;
-
-  /*theme colors*/
-
-  --light_sakura:#ffe2e7;
-  --sakura: #ffb7c5;
-  --barbie_pink: #f4539c;
-  --ripe_pink: #ec366e;
-
-  --light_purple:#b5bed5;
-  --dim_purple: #776572;
-  
-  --light_lime:#a4ccad;
-  --lime:#04966c;
-  --light_lemon:#fad67e;
-  --lemon:#f9b024;
-
-  --link: #3366BB;
-  --lighter_blue: #daf9ff;
-  --light_blue: #b1f2ff;
-  --plain_blue:#00a6c0;
-  --dim_blue:#3e6787;
-  --dark_blue:#2e616f;
-  --deep_blue:#34495e;
-
-  --light_gray:#6a888c;
-  --plain_gray:#404040;
-  --gray: #2a2725;
   
 }
 /*--------global classes-------*/
 a{
   text-decoration: none;
-  color:var(--deep_blue);
+  color:steelblue;
   transition: .2s ease;
 }
 
@@ -56,7 +30,7 @@ a:hover{
 }
 
 a:active{
-  color: var(--ripe_pink);
+  color: lightsteelblue;
 }
 
 .flex-row{
@@ -68,19 +42,27 @@ span{
   font-size: 1rem;
   padding: .4rem;
   font-family: var(--PT_Sans);
-  color: var(--deep_blue);
+  color: white;
 }
-.text-grey{
+.text-white{
   font-size: 1rem;
   padding-inline: .3rem;
   font-family: var(--Titillium_Web);
-  color:var(--plain_gray);
+  color:white;
 }
+
+.text-steelblue{
+  font-size: 1rem;
+  padding-inline: .3rem;
+  font-family: var(--Titillium_Web);
+  color:steelblue;
+}
+
 .text-title{
   font-size: 1.6rem;
   padding-inline: .3rem;
   font-family: var(--Anton);
-  color:var(--plain_gray);
+  color:white;
 }
 .pagination {
   justify-content: center;
@@ -101,12 +83,12 @@ span{
 }
 
 .pagination a:active{
-  background-color: var(--sakura);
+  background-color: lightsteelblue;
 }
 
 .pagination .page{
-  box-shadow: 0px 1px 2px var(--light_gray);
-  background-color: var(--light_blue);
+  box-shadow: 0px 1px 2px black;
+  background-color: white;
   border-radius: 5rem;
 }
 
@@ -120,24 +102,25 @@ i{
 .btn{
   padding: 1rem 2rem;
   border: transparent;
-  background-color: var(--light_purple);
-  color: var(--gray);
+  border-radius: 0px 30px 0px 30px;
+  background-color: steelblue;
+  color: black;
   font-size: .9rem;
   transition: .2s ease;
 }
 
 
 .btn:active{
-  background-color: var(--sakura);
+  background-color: lightsteelblue;
 }
 p{
   font-family: var(--Dosis);
   font-size: 1.1rem;
-  color: var(--light_gray);
+  color: white;
 }
 
 hr{
-  background-color: var(--light_gray);
+  background-color: white;
 }
 
 img{
@@ -149,7 +132,7 @@ img{
 /*--------x-------*/
 /*---navbar--*/
 .nav{
-  background: #fff;
+  background: #1a1a1a;
   padding: 0 2rem;
   height: 0rem;
   min-height: 4.8rem;
@@ -199,7 +182,7 @@ img{
 }
 /*---x--*/
 .nav .nav-items .nav-link:hover{
-  background-color:var(--light_sakura);
+  background-color:white;
 }
 
 
@@ -220,29 +203,28 @@ img{
 }
 
 .nav .social i:hover{
-  color: var(--sakura);
+  color: white;
 }
 
 /*---------MAIN---------*/
 /*-------site title------*/
 
 main .site-title{
-  background: url('../assets/tree_blur.jpg');
+  background: url('../assets/sky2.png');
   background-size: cover;
   height: 80vh;
   display: flex;
   justify-content: center;
-  box-shadow: inset 0px 0px 8px var(--light_gray);
+  box-shadow: inset 0px 0px 8px black;
 }
 
 main .site-title .site-background{
-  padding-top: 13rem;
+  padding-top: 10rem;
   text-align: center;
-  color: white;
+  color: ghostwhite;
 }
 
 main .site-title h1{
-  
   font-family: var(--Roboto);
   font-size: 3rem;
   
@@ -276,8 +258,8 @@ main .site-content > .post-image > div{
 }
 
 main .site-content .post-content > .post-image .img{
-  box-shadow: inset 0px 0px 10px var(--light_gray);
-  box-shadow: 0px 0px 10px var(--light_gray);
+  box-shadow: inset 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
   max-width: 100%;
   height: auto;
   transition: .4s ease;
@@ -318,6 +300,7 @@ main .site-content .sidebar .clocks > span .clock{
   margin-left: 6%;
   background-color: transparent;
   transition: .2s ease;
+  box-shadow: 0px 0px 20px black;
 }
 
 main .site-content .sidebar .clocks > span h3{
@@ -351,7 +334,7 @@ main .site-content .sidebar .cal{
 }
 
 .gallery img{
-  box-shadow: 0 1px 4px var(--light_gray);
+  box-shadow: 0 2px 10px black;
   transition: .4s ease;
 }
 
@@ -392,7 +375,7 @@ main .site-content .sidebar .cal{
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: black; /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
@@ -434,7 +417,7 @@ main .site-content .sidebar .cal{
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
