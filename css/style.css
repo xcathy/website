@@ -309,7 +309,7 @@ main .site-content .post-content > .post-title p {
 
 
 
-/*--undivided posts---*/
+/*--undivided portfolio---*/
 main .site-content-undivided{
   display: grid;
 }
@@ -352,11 +352,11 @@ main .site-content-undivided .post-content-undivided > .post-title-undivided p {
   margin-left: 3rem;
 }
 
-/*---undivided posts ends----*/
+/*---undivided portfolio ends----*/
 
 /*-----hr-------*/
 
-main .posts > hr{
+main .portfolio > hr{
   width: 90%;
 }
 
