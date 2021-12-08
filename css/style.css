@@ -232,7 +232,7 @@ img{
 /*-------site title------*/
 
 main .site-title{
-  background: url('../assets/star.jpg');
+  background: url('./assets/star.jpg');
   background-size: cover;
   height: 80vh;
   display: flex;
