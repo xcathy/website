@@ -231,13 +231,13 @@ img{
 /*---------MAIN---------*/
 /*-------site title------*/
 
-main .site-title{
-  background: url('./assets/star.jpg');
-  background-size: cover;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  box-shadow: inset 0px 0px 8px black;
+main .site-title {
+    background: url('./assets/tree.jpg');
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0px 0px 8px black;
 }
 
 main .site-subtitle{
