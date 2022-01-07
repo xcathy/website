@@ -232,7 +232,7 @@ img{
 /*-------site title------*/
 
 main .site-title {
-    background: url('./assets/tree.jpg');
+    background: url('./assets/tree_blur.jpg');
     background-size: cover;
     height: 80vh;
     display: flex;
