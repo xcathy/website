@@ -59,3 +59,28 @@
     font-family: Dosis_ExLight;
     src:url('../Dosis/static/Dosis-ExtraLight.ttf');
 }
+
+/*Luxurious_Roman*/
+@font-face {
+    font-family: Luxurious_Roman;
+    src: url('../Luxurious_Roman/LuxuriousRoman-Regular.ttf');
+}
+
+/*Island_Moments*/
+@font-face {
+    font-family: Island_Moments;
+    src: url('../Island_Moments/IslandMoments-Regular.ttf');
+}
+
+/*IM_Fell_English_SC*/
+@font-face {
+    font-family: IM_Fell_English_SC;
+    src: url('../IM_Fell_English_SC/IMFellEnglishSC-Regular.ttf');
+}
+
+
+/*Yuji_Syuku*/
+@font-face {
+    font-family: Yuji_Syuku;
+    src: url('../Yuji_Syuku/YujiSyuku-Regular.ttf');
+}

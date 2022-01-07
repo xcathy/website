@@ -1,77 +1,84 @@
 @import url(./font.css);
+/*color palette reference: https://www.color-hex.com/color-palette/104078*/
 /*-----global settings-----*/
-html,body{
-  margin: 0%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #1a1a1a;
+html, body {
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #f2dcb1; /*old: #1a1a1a #f2dcb1 #cf9c68 */
 }
 
-:root{
-  /*theme font-family*/
-  --Brush: 'Brush Script MT', cursive;
-  --Mono: 'Lucida Console', 'Courier New', monospace;
-  --Arial: 'Arial', 'Helvetica', sans-serif;
+:root {
+    /*theme font-family*/
+    --Brush: 'Brush Script MT', cursive;
+    --Fell_English: 'Lucida Console', 'Courier New', monospace;
+    --Arial: 'Arial', 'Helvetica', sans-serif;
+    --Fell_English: 'Luxurious_Roman';
+    --Island: 'Island_Moments';
+    --Fell_English: 'IM_Fell_English_SC';
+    --Yuji_Syuku: 'Yuji_Syuku';
 }
 
 /*----global settings end---*/
 
 /*--------global classes-------*/
 /*------global fonts------*/
-.text-white{
-  font-size: 1rem;
-  margin-right: 0.5rem;
-  font-family: var(--Mono);
-  color:white;
+/*default fonts*/
+.text-default {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    font-family: var(--Yuji_Syuku);
+    color: #212121;
 }
 
-.text-bigwhite{
-  font-size: 1.5rem;
-  margin-right: 0.5rem;
-  font-family: var(--Mono);
-  color:white;
+.text-default-big {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    font-family: var(--Yuji_Syuku);
+    color: #212121;
 }
 
-.text-black{
-  font-size: 1.5rem;
-  font-family: var(--Mono);
-  color:black;
+.text-black {
+    font-size: 1.5rem;
+    font-family: var(--Yuji_Syuku);
+    color: black;
 }
 
-.text-link{
-  font-size: 1.5rem;
-  padding-bottom: 0.2rem;
-  font-family: var(--Mono);
-  text-shadow: 0px 0px 10px #000000;
-  color:steelblue;
+.text-link {
+    font-size: 1.5rem;
+    padding-bottom: 0.2rem;
+    font-family: var(--Yuji_Syuku);
+    /*text-shadow: 0px 0px 10px #000000;*/
+    color: #64412a;
 }
 
 .text-nav{
   font-size: 1.5rem;
   padding: 2rem 2.5rem;
-  font-family: var(--Mono);
+  font-family: var(--Fell_English);
   text-shadow: 0px 0px 10px #000000;
-  color:steelblue;
+  color: white;
+}
+/*the title of the website*/
+.text-title {
+    font-size: 3rem;
+    font-family: var(--Island);
+    /*text-shadow: 0px 0px 5px #000000;*/
+    color: #212121;
 }
 
-.text-title{
-  font-size: 2rem;
-  font-family: var(--Mono);
-  text-shadow: 0px 0px 10px #000000;
-  color:white;
+.text-subtitle {
+    font-size: 1rem;
+    font-family: var(--Fell_English);
+    /*text-shadow: 0px 0px 10px #000000;*/
+    color: #212121;
 }
 
-.text-subtitle{
-  font-size: 1rem;
-  font-family: var(--Mono);
-  text-shadow: 0px 0px 10px #000000;
-  color:grey;
-}
-
+/*the logo of the website*/
 .text-logo{
   text-decoration: underline;
   font-size: 2rem;
-  font-family: var(--Brush);
+  font-family: var(--Island);
   font-style: italic;
   text-shadow: 0px 0px 10px #000000;
   color:white;
@@ -79,19 +86,17 @@ html,body{
 
 /*------global fonts end-------*/
 
-/*----hyper links------*/
+/*hyper link default color*/
 a{
   text-decoration: none;
   transition: .2s ease;
 }
 
-a:hover{
-  color:white;
+/*hyper link hover color*/
+a:hover {
+    color: #cf9c68;
 }
 
-a:active{
-  color: lightsteelblue;
-}
 /*----hyper links end------*/
 
 .flex-row{
@@ -99,13 +104,14 @@ a:active{
   flex-direction: row;
   flex-wrap: wrap;
 }
-
+/*pagination layout position*/
 .pagination {
   justify-content: center;
   font-size: 1.4rem;
   margin: 4rem 0;
 }
 
+/*pagination button*/
 .pagination a{
   padding: .6rem .9rem;
   border-radius: 2rem;
@@ -113,15 +119,23 @@ a:active{
   transition: .2s ease;
 }
 
-.pagination a:active{
-  background-color: lightsteelblue;
+/*pagination color*/
+.pagination .page {
+    /*box-shadow: 0px 1px 2px black;*/
+    background-color: #64412a;
+    border-radius: 10rem;
 }
 
-.pagination .page{
-  box-shadow: 0px 1px 2px black;
-  background-color: steelblue;
-  border-radius: 10rem;
+/*pagination hover*/
+.pagination a:hover {
+    background-color: #cf9c68;
 }
+
+
+/*
+.pagination a:active{
+  background-color: lightsteelblue;
+}*/
 
 /*-----lists----*/
 ul{
@@ -134,20 +148,26 @@ i{
   transition: 0.6s ease;
 }
 /*----icons end----*/
-/*----buttons----*/
-.btn{
-  padding: 1rem 2rem;
-  border: transparent;
-  border-radius: 0px 30px 0px 30px;
-  background-color: steelblue;
-  color: black;
-  font-size: .9rem;
-  transition: .2s ease;
+/*button default*/
+.btn {
+    padding: 1rem 2rem;
+    border: transparent;
+    border-radius: 0px 30px 0px 30px;
+    background-color: #64412a;
+    color: white;
+    font-size: 1rem;
+    transition: .2s ease;
 }
 
+/*button hover*/
+.btn:hover {
+    background-color: #cf9c68;
+}
+
+/*
 .btn:active{
   background-color: lightsteelblue;
-}
+}*/
 /*----buttons end----*/
 
 
@@ -165,12 +185,10 @@ img{
 /*-----global classes end----*/
 
 /*---navbar--*/
-.nav{
-  background: #1a1a1a;
-
-  overflow: hidden;
-  transition: height 1s ease;
-
+.nav {
+    background: #64412a; /*#64412a*/
+    overflow: hidden;
+    transition: height 1s ease;
 }
 .nav .nav-menu{
   justify-content: space-between;
@@ -280,8 +298,9 @@ main .site-content > .post-image > div{
 
 
 main .site-content .post-content > .post-image .img{
-  box-shadow: inset 0px 0px 10px black;
-  box-shadow: 0px 0px 10px black;
+  /*box-shadow: inset 0px 0px 10px black;*/
+  box-shadow: 0px 0px 5px gray;
+  border: 15px solid white;
   max-width: 100%;
   height: auto;
   transition: .4s ease;
@@ -372,7 +391,7 @@ main .site-content .sidebar .clocks > span .clock{
   box-shadow: 0px 0px 20px black;
 }
 
-main .site-content .sidebar .clocks > span h3{
+main .site-content .sidebar .clocks > span p{
   display: none;
 }
 
@@ -550,7 +569,7 @@ main .site-content .sidebar .cal{
     display: none;
   }
 
-  main .site-content .sidebar .clocks span > h3{
+  main .site-content .sidebar .clocks span > p{
     display: block;
     margin-top: 0;
     margin-bottom: 0;
