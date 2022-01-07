@@ -249,23 +249,27 @@ img{
 /*---------MAIN---------*/
 /*-------site title------*/
 
+/*title background image*/
 main .site-title {
-    background: url('./assets/tree_blur.jpg');
+    /*background-image: url('./assets/tree_blur.jpg');*/
+    background-color: white;
     background-size: cover;
     height: 80vh;
     display: flex;
     justify-content: center;
-    box-shadow: inset 0px 0px 8px black;
+    /*box-shadow: inset 0px 0px 8px black;*/
+    box-shadow: inset 0px 0px 5px gray;
 }
 
-main .site-subtitle{
-  background: white;
-  background-size: cover;
-  height: 20vh;
-  display: flex;
-  justify-content: left;
-  padding: 2rem;
-  box-shadow: 0px 4px 4px black;
+main .site-subtitle {
+    background: white;
+    background-size: cover;
+    height: 20vh;
+    display: flex;
+    justify-content: left;
+    padding: 2rem;
+    /*box-shadow: 0px 4px 4px black;*/
+    box-shadow: 0px 0px 4px gray;
 }
 
 
