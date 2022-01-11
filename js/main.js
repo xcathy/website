@@ -70,13 +70,13 @@ function drawTime(ctx, bgclr, ctclr, nbclr, hdclr, off, radius){
     //hour
     hour = hour%12;
     hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.4, radius*0.06, hdclr);
+    drawHand(ctx, hour, radius*0.4, radius*0.04, hdclr);
     //minute
     minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.6, radius*0.04, hdclr);
+    drawHand(ctx, minute, radius*0.6, radius*0.02, hdclr);
     // second
     second = (second*Math.PI/30);
-    drawHand(ctx, second, radius*0.7, radius*0.02, hdclr);
+    drawHand(ctx, second, radius*0.7, radius*0.01, hdclr);
 }
 
 function drawHand(ctx, pos, length, width, hdclr) {
@@ -103,11 +103,9 @@ ctx.translate(radius, radius);
 setInterval(drawClock, 1000);
 
 function drawClock() {
-  ctx.shadowColor = 'black';
-  ctx.shadowBlur = 20;
-  drawTime(ctx, '#262626', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
-  ctx.shadowColor = 0;
-  ctx.shadowBlur = 0;
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 10;
+    drawTime(ctx, '#64412a', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
 }
 /*------local Clock end------- */
 
@@ -122,11 +120,9 @@ setInterval(drawSHClock, 1000);
 
 
 function drawSHClock(){
-  SHctx.shadowColor = 'black';
-  SHctx.shadowBlur = 20;
-  drawTime(SHctx, '#262626', 'white', 'white', 'white', 8, radius);
-  SHctx.shadowColor = 0;
-  SHctx.shadowBlur = 0;
+    SHctx.shadowColor = 'black';
+    SHctx.shadowBlur = 10;
+    drawTime(SHctx, '#64412a', 'white', 'white', 'white', 8, radius);
 }
 
 /*------SH Clock end------- */
@@ -136,19 +132,19 @@ function drawSHClock(){
 /*----------calendar----------*/
 /*-----draw month----- */
 function drawMonth(calctx, month, width, height){
-  calctx.font = "45px Arial";
-  calctx.textAlign = 'center';
-  calctx.fillStyle = 'white';
+    calctx.font = "45px Arial";
+    calctx.textAlign = 'center';
+    calctx.fillStyle = 'white';
 
-  calctx.fillText(month.toUpperCase(), width/2, 0.16*height);
+    calctx.fillText(month.toUpperCase(), width/2, 0.16*height);
 }
 
 /*-------draw day-------*/
 function drawDay(calctx, day, width, height){
-  calctx.font = "160px Arial";
-  calctx.fillStyle = '#262626';
-  calctx.textAlign = 'center';
-  calctx.fillText(day,  width/2, 0.73*height);
+    calctx.font = "160px Arial";
+    calctx.fillStyle = '#212121';
+    calctx.textAlign = 'center';
+    calctx.fillText(day,  width/2, 0.73*height);
 }
 
 var calendar = document.getElementById("cal");
@@ -160,12 +156,12 @@ calctx.imageSmoothingEnabled = false;
 
 calctx.beginPath();
 calctx.rect(0, 0, width, height);
-calctx.fillStyle = 'lightgrey';
+calctx.fillStyle = 'white';
 calctx.fill();
 
 calctx.beginPath();
 calctx.rect(0, 0, width, height * 0.25);
-calctx.fillStyle = '#1a1a1a';
+calctx.fillStyle = '#64412a';
 calctx.fill();
 
 var today = new Date();
