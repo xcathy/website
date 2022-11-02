@@ -105,7 +105,7 @@ setInterval(drawClock, 1000);
 function drawClock() {
     ctx.shadowColor = 'black';
     ctx.shadowBlur = 10;
-    drawTime(ctx, '#64412a', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
+    drawTime(ctx, '#3f3f3f', 'white', 'white', 'white', 0, radius); // drawTime(ctx, bgclr, ctclr, nbclr, hdclr, offset, radius)
 }
 /*------local Clock end------- */
 
@@ -122,7 +122,7 @@ setInterval(drawSHClock, 1000);
 function drawSHClock(){
     SHctx.shadowColor = 'black';
     SHctx.shadowBlur = 10;
-    drawTime(SHctx, '#64412a', 'white', 'white', 'white', 8, radius);
+    drawTime(SHctx, '#3f3f3f', 'white', 'white', 'white', 8, radius);
 }
 
 /*------SH Clock end------- */
@@ -142,7 +142,7 @@ function drawMonth(calctx, month, width, height){
 /*-------draw day-------*/
 function drawDay(calctx, day, width, height){
     calctx.font = "160px Arial";
-    calctx.fillStyle = '#212121';
+    calctx.fillStyle = 'white';
     calctx.textAlign = 'center';
     calctx.fillText(day,  width/2, 0.73*height);
 }
@@ -156,12 +156,12 @@ calctx.imageSmoothingEnabled = false;
 
 calctx.beginPath();
 calctx.rect(0, 0, width, height);
-calctx.fillStyle = 'white';
+calctx.fillStyle = '#3f3f3f';
 calctx.fill();
 
 calctx.beginPath();
 calctx.rect(0, 0, width, height * 0.25);
-calctx.fillStyle = '#64412a';
+calctx.fillStyle = '#335aa3';
 calctx.fill();
 
 var today = new Date();
