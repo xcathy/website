@@ -1,5 +1,19 @@
 @import url(./font.css);
 /*-----global settings-----*/
+/*------cursor icons-------*/
+html{
+  cursor: url('https://xcathy.github.io/website/assets/cursor/CatCatPaw_Default.png'), default;
+}
+
+.text-title-link, .text-nav, .text-logo, .toggle-icons, .text-link, .btn, .pagination, .page, .pagination_left, .pagination_right{
+  cursor: url('https://xcathy.github.io/website/assets/cursor/FishBone.png'), pointer;
+}
+
+.MDLimg{
+  cursor: url('https://xcathy.github.io/website/assets/cursor/FishBone.png'), pointer;
+}
+/*------cursor icons end-------*/
+
 html, body {
   margin: 0%;
   box-sizing: border-box;
@@ -7,9 +21,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  cursor: url('https://xcathy.github.io/website/assets/cursor/CatCatPaw_Default.png'), default;
-  /*cursor: url('https://xcathy.github.io/website/assets/gif/CatCatGif.gif'), pointer;*/
-}
+ }
 
 :root {
     /*theme font-family*/

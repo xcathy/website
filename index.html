@@ -77,7 +77,7 @@
                       const position = window.scrollY;
                       showModal('MDL_logs', position);
                     " 
-                    class="img" alt="logs">
+                    class="img MDLimg" alt="logs">
                 <!---modal button for logs end--->
               </div>
             </div>
@@ -119,7 +119,7 @@
                 <!--modal button for sky-->
                 <img src="./assets/blogs/images/sky.jpg" 
                     onclick="const position = window.pageYOffset;showModal('MDL_sky', position);"
-                    class="img" alt="sky">
+                    class="img MDLimg" alt="sky">
                 <!--modal button for sky end-->
             </div>
             
@@ -137,9 +137,9 @@
             </div>
           </div>
           <div class="pagination flex-row">
-            <a href="#"><i class="fas fa-chevron-left text-default"></i></a>
+            <a href="#"><i class="fas fa-chevron-left text-default pagination_left"></i></a>
             <a href="#" class="page text-black">1</a>
-            <a href="#"><i class="fas fa-chevron-right text-default"></i></a>
+            <a href="#"><i class="fas fa-chevron-right text-default pagination_right"></i></a>
           </div>
         </div>
 
@@ -200,18 +200,21 @@
                       const position = window.scrollY;
                       showModal('MDL_stars', position);
                     " 
+                    class = "MDLimg"
                   >
                   <img src="./assets/portfolio/images/title1.jpg"
                     onclick="
                       const position = window.scrollY;
                       showModal('MDL_quote', position);
                     " 
+                    class = "MDLimg"
                   >
                   <img src="./assets/blogs/images/tree.jpg"
                     onclick="
                       const position = window.scrollY;
                       showModal('MDL_tree', position);
                     "
+                    class = "MDLimg"
                   >
                 </div>
                 <div class="column">
@@ -220,12 +223,14 @@
                       const position = window.scrollY;
                       showModal('MDL_offering', position);
                     "
+                    class = "MDLimg"
                   >
                   <img src="./assets/portfolio/images/samsara.jpg"
                     onclick="
                       const position = window.scrollY;
                       showModal('MDL_time', position);
                     "
+                    class = "MDLimg"
                   >
                 </div>
             </div>
