@@ -94,16 +94,15 @@
             </div> 
           </div>
 
-
           <!-- Modal Effect for logs-->
-          <div id="MDL_logs" class="modal">
+          <div id="MDL_logs" class="modal" onclick="hideModal('MDL_logs')">
             <!-- Modal content -->
-            <div class="modal-content" onmouseover="log(window.scrollY);">
+            <div class="modal-content">
               <!--hides modal when x is clicked-->
               <span class="close text-title-link" 
                     onclick="hideModal('MDL_logs');">&times;</span>
               <span>
-                <img src="./assets/blogs/images/logs.jpg" class="MDLimg" alt="logs">
+                <img src="./assets/blogs/images/logs.jpg" alt="logs">
               </span>
               <p>Nice Logs</p>
             </div>
@@ -144,14 +143,14 @@
         </div>
 
         <!-- Modal Effect for sky-->
-        <div id="MDL_sky" class="modal">
+        <div id="MDL_sky" class="modal" onclick="hideModal('MDL_sky')">
           <!-- Modal content -->
           <div class="modal-content">
             <!--hides modal when x is clicked-->
             <span class="close text-title-link" 
                   onclick="hideModal('MDL_sky');">&times;</span>
             <span>
-              <img src="./assets/blogs/images/sky.jpg" class="MDLimg" alt="sky">
+              <img src="./assets/blogs/images/sky.jpg" alt="sky">
             </span>
             <p>Sky</p>
           </div>
@@ -191,33 +190,122 @@
             <canvas id="cal" width="400" height="400" class="cal"> </canvas>
             
           </div>
-          <!--image displayer-->
+          <!--image gallery-->
           <div class="gallery">
             <div class="row">
                 <div class="column">
-                  <img id="myImg" alt="stars" src="./assets/portfolio/images/stars.jpg">
-                  <img src="./assets/portfolio/images/title1.jpg">
-                  <img src="./assets/blogs/images/tree.jpg">
+                  <img id="myImg" alt="stars" src="./assets/portfolio/images/stars.jpg" 
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_stars', position);
+                    " 
+                  >
+                  <img src="./assets/portfolio/images/title1.jpg"
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_quote', position);
+                    " 
+                  >
+                  <img src="./assets/blogs/images/tree.jpg"
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_tree', position);
+                    "
+                  >
                 </div>
                 <div class="column">
-                  <img src="./assets/portfolio/videos/offering.gif">
-                  <img src="./assets/portfolio/images/samsara.jpg">
+                  <img src="./assets/portfolio/videos/offering.gif"
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_offering', position);
+                    "
+                  >
+                  <img src="./assets/portfolio/images/samsara.jpg"
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_time', position);
+                    "
+                  >
                 </div>
             </div>
           </div>
-          <!--next up: add modal effect -->
-          <!-- The Modal -->
-          <div id="myModal" class="modal">
 
-            <!-- The Close Button -->
-            <span class="close">&times;</span>
-
-            <!-- Modal Content (The Image) -->
-            <img class="modal-content" id="img01" src="./assets/portfolio/images/stars.jpg">
-
-            <!-- Modal Caption (Image Text) -->
-            <div id="caption">Stars</div>
+          <!-- Modal Effect for stars-->
+          <div id="MDL_stars" class="modal" onclick="hideModal('MDL_stars')">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_stars');">&times;</span>
+              <span>
+                <img src="./assets/portfolio/images/stars.jpg" alt="stars">
+              </span>
+              <p>Stars</p>
+            </div>
           </div>
+          <!-- Modal Effect for stars end-->
+
+          <!-- Modal Effect for quote-->
+          <div id="MDL_quote" class="modal" onclick="hideModal('MDL_quote')">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_quote');">&times;</span>
+              <span>
+                <img src="./assets/portfolio/images/title1.jpg" alt="quote">
+              </span>
+              <p>Quote</p>
+            </div>
+          </div>
+          <!-- Modal Effect for quote end-->
+
+          <!-- Modal Effect for tree-->
+          <div id="MDL_tree" class="modal" onclick="hideModal('MDL_tree')">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_tree');">&times;</span>
+              <span>
+                <img src="./assets/blogs/images/tree.jpg" alt="tree">
+              </span>
+              <p>Tree</p>
+            </div>
+          </div>
+          <!-- Modal Effect for tree end-->
+
+          <!-- Modal Effect for offering-->
+          <div id="MDL_offering" class="modal" onclick="hideModal('MDL_offering')">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_offering');">&times;</span>
+              <span>
+                <img src="./assets/portfolio/videos/offering.gif" alt="offering">
+              </span>
+              <p>offering</p>
+            </div>
+          </div>
+          <!-- Modal Effect for offering end-->
+
+          <!-- Modal Effect for time-->
+          <div id="MDL_time" class="modal" onclick="hideModal('MDL_time')">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_time');">&times;</span>
+              <span>
+                <img src="./assets/portfolio/images/samsara.jpg" alt="time">
+              </span>
+              <p>Time</p>
+            </div>
+          </div>
+          <!-- Modal Effect for offering end-->
+
+          <!--image gallery end-->
         </aside>
       </div>
     </section>
