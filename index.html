@@ -69,7 +69,15 @@
           <div class="post-content">
             <div class="post-image">
               <div>
-                <img src="./assets/blogs/images/logs.jpg" class="img" alt="logs">
+                <!---modal button for logs--->
+                <!--disable background scrolling -->
+                <img src="./assets/blogs/images/logs.jpg" 
+                    onclick="
+                      const position = window.scrollY;
+                      showModal('MDL_logs', position);
+                    " 
+                    class="img" alt="logs">
+                <!---modal button for logs end--->
               </div>
             </div>
             <div class="post-title">
@@ -85,13 +93,36 @@
               <button class="btn post-btn text-black">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
             </div> 
           </div>
+
+
+          <!-- Modal Effect for logs-->
+          <div id="MDL_logs" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" onmouseover="log(window.scrollY);">
+              <!--hides modal when x is clicked-->
+              <span class="close text-title-link" 
+                    onclick="hideModal('MDL_logs');">&times;</span>
+              <span>
+                <img src="./assets/blogs/images/logs.jpg" class="MDLimg" alt="logs">
+              </span>
+              <p>Nice Logs</p>
+            </div>
+          </div>
+          <!-- Modal Effect for logs end-->
+
+          <!--horizontal separate line-->
           <hr>
+          <!--horizontal separate line end-->
+
           <div class="post-content">
             <div class="post-image">
-              <div>
-                <img src="./assets/blogs/images/sky.jpg" class="img" alt="sky">
-              </div>
+                <!--modal button for sky-->
+                <img src="./assets/blogs/images/sky.jpg" 
+                    onclick="const position = window.pageYOffset;showModal('MDL_sky', position);"
+                    class="img" alt="sky">
+                <!--modal button for sky end-->
             </div>
+            
             <div class="post-title">
               <a href="#" class = "text-title-link">Clear Sky</a>
               <div class="post-info flex-row text-default">
@@ -111,6 +142,22 @@
             <a href="#"><i class="fas fa-chevron-right text-default"></i></a>
           </div>
         </div>
+
+        <!-- Modal Effect for sky-->
+        <div id="MDL_sky" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <!--hides modal when x is clicked-->
+            <span class="close text-title-link" 
+                  onclick="hideModal('MDL_sky');">&times;</span>
+            <span>
+              <img src="./assets/blogs/images/sky.jpg" class="MDLimg" alt="sky">
+            </span>
+            <p>Sky</p>
+          </div>
+        </div>
+        <!-- Modal Effect for sky end-->
+
         <aside class="sidebar">
           <!--side clocks-->
           <div class="clocks">
@@ -179,12 +226,10 @@
   </main>
   <!--main site end-->
 
-  
-
-
   <!--Jquery library-->
   <script src="./js/jquery3.5.1.min.js"></script>
   <!--js-->
   <script src="./js/main.js"></script>
+  
 </body>
 </html>

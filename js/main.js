@@ -173,3 +173,28 @@ drawMonth(calctx, mm, width, height);
 drawDay(calctx, dd, width, height);
 
 /*----------calendar end---------*/
+
+/*----------modal------------*/
+
+//show modal effect with the image tag and scroll Y position
+function showModal(img, pos){
+    document.getElementById(img).style.display='block';
+    document.body.style.postion = 'fixed';
+    document.body.style.overflow = 'hidden';
+    document.body.style.top = '-'+ pos +'px';
+}
+
+//hide modal effect
+function hideModal (img){
+    document.getElementById(img).style.display='none';
+    document.body.style.overflow = 'scroll';
+    document.body.style.top = '';
+    document.body.style.position = '';
+}
+/*----------modal end-----------*/
+
+/*--log info--*/
+function log(something){
+    console.log(something);
+}
+/*------------*/
