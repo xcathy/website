@@ -1,10 +1,13 @@
 $(document).ready(function(){
     $nav = $('.nav');
+    $textnav = $('.text-nav');
     $toggleCollapse = $('.toggle-collapse');
     /*-click event on toggle menu*/
-    $toggleCollapse.click(function(){
+    $toggleCollapse.click(function(event){
         $nav.toggleClass('collapse');
+        $textnav.toggleClass('collapse');
     });
+
 });
 /*------side clocks--------*/
 /*--------- functions to build a clock ---------*/

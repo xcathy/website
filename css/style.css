@@ -5,7 +5,7 @@ html{
   cursor: url('https://xcathy.github.io/website/assets/cursor/CatCatPaw_Default.png'), default;
 }
 
-.text-title-link, .text-nav, .text-logo, .toggle-icons, .text-link, .btn, .pagination, .page, .pagination_left, .pagination_right{
+.text-title-link, .text-nav, .text-logo, .text-link, .btn, .pagination, .page, .pagination_left, .pagination_right{
   cursor: url('https://xcathy.github.io/website/assets/cursor/FishBone.png'), pointer;
 }
 
@@ -90,7 +90,6 @@ html, body {
 
 .text-nav{
   font-size: 1.5rem;
-  padding: 2rem 2.5rem;
   font-family: var(--Fell_English);
   text-shadow: 0px 0px 10px #000000;
   color: white;
@@ -228,7 +227,7 @@ img{
 
 /*---navbar--*/
 .nav {
-    background: #000000; /*#64412a*/
+    background: #000000;
     overflow: hidden;
     transition: height 1s ease;
 }
@@ -264,29 +263,10 @@ img{
     color: #9db7ff;
 }
 
-/*---collapsed contents---*/
-.nav .toggle-collapse{
-  position: absolute;
-  top: 2%;
-  width: 90%;
-  cursor: pointer;
+.toggle-collapse{
   display: none;
 }
 
-.nav .toggle-collapse i{
-  font-size: 1.6rem;
-}
-
-.nav .toggle-collapse .toggle-icons{
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.8rem 0;
-}
-
-.collapse{
-  height: 43rem;
-}
-/*---collapsed contents---*/
 /*-----nav bar ends----*/
 /*---------MAIN---------*/
 /*-------site title------*/
@@ -557,34 +537,77 @@ main .site-content .sidebar .cal {
 /*-----------X----------*/
 
 
+/* Responsive layout - makes a one column-layout*/
+@media screen and (max-width: 1000px) {
+  /*---collapsed contents---*/
 
-/*-----viewport <= 1080px ----*/
-@media only screen and (max-width: 1080px){
+  /*display: initial;*/
+  .nav .toggle-collapse{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.8rem 0;
+  }
+
+  .nav{
+    height: 6rem;
+  }
+
+  .toggle-collapse{
+    position: absolute;
+    top: 2%;
+    width: 90%;
+    height: 10rem;
+  }
+
+  .toggle-icons{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.8rem 0;
+    font-size: 1.6rem;
+    color: white;
+  }
+
 
   .nav .nav-menu, .nav .nav-items{
     flex-direction: column;
   }
+
+  .text-nav {
+    visibility: hidden;
+    font-size: 4rem;
+    justify-content:space-around;
+  }
+
   .nav .nav-items{
     text-align: center;
+    display: flex;
+    margin: 0rem;
   }
+
   .nav .social{
-    padding-left: 4rem;
+    padding-left: 5rem;
   }
 
   .nav .social i{
-    font-size: 3rem;
+    font-size: 5rem;
     padding: 1rem;
   }
-  .nav .toggle-collapse{
-    display: initial;
-  }
 
+  .collapse{
+    height: 40rem;
+    visibility: visible;
+  }
+  /*---collapsed contents---*/
+
+  /*------main contents------*/
   main .site-title .site-background{
-    padding-top: 7rem;
+    padding-top: 10rem;
+    font-size: 3rem;
   }
   
   main .site-content{
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 100%;
   }
 
   main .site-content .post-content > .post-title .post-info {
@@ -619,24 +642,7 @@ main .site-content .sidebar .cal {
     padding-left: 10%;
     text-align: center;
   }
-  
+  /*-------main contents end-----*/
 }
 
-/* Responsive layout - makes a one column-layoutd*/
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-/*-----viewport <= 790px ----*/
 /*--------------x-------------*/
