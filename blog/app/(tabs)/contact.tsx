@@ -6,7 +6,6 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { A } from '@expo/html-elements';
 
 export default function TabTwoScreen() {
   return (
@@ -16,8 +15,12 @@ export default function TabTwoScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Contact</ThemedText>
       </ThemedView>
-      <ThemedText><A href="https://www.linkedin.com/in/cathyxie97" target="_blank">Linkedin</A></ThemedText>
-      <ThemedText><A href="https://github.com/xcathy" target="_blank">Github</A></ThemedText>
+      <ExternalLink href="https://www.linkedin.com/in/cathyxie97">
+        <ThemedText type="link">Linkedin</ThemedText>
+      </ExternalLink>
+      <ExternalLink href="https://github.com/xcathy">
+        <ThemedText type="link">Github</ThemedText>
+      </ExternalLink>
       
     </ParallaxScrollView>
   );
