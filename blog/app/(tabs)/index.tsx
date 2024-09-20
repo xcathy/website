@@ -2,6 +2,7 @@ import { Image, StyleSheet, Platform } from 'react-native';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Images } from '@/constants/Images';
 
 export default function HomeScreen() {
   return (
@@ -9,7 +10,7 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#FFFFFF', dark: '#000000' }}
       headerImage={
         <Image
-          source={require('@/assets/images/garden.png')}
+          source={Images.garden}
           style={styles.banner}
         />
       }>
