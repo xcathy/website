@@ -14,14 +14,70 @@ export default function TabTwoScreen() {
       <ScrollView style={styles.scrollView}>
         <Image
           style={styles.image}
-          source={Images.garden}
+          source={Images.CanadaPlace}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
         />
         <Image
           style={styles.image}
-          source={Images.garden}
+          source={Images.seal}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.frog1}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.frog2}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower2}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.fish2}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.fish3}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.fish4}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.jellyfish1}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.jellyfish3}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
