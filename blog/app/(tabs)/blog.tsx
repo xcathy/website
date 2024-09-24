@@ -14,6 +14,34 @@ export default function TabTwoScreen() {
       <ScrollView style={styles.scrollView}>
         <Image
           style={styles.image}
+          source={Images.flower9}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower8}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower7}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower6}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
           source={Images.CanadaPlace}
           placeholder={{ blurhash }}
           contentFit="contain"
@@ -42,7 +70,7 @@ export default function TabTwoScreen() {
         />
         <Image
           style={styles.image}
-          source={Images.flower2}
+          source={Images.fish1}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
@@ -63,13 +91,6 @@ export default function TabTwoScreen() {
         />
         <Image
           style={styles.image}
-          source={Images.fish4}
-          placeholder={{ blurhash }}
-          contentFit="contain"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
           source={Images.jellyfish1}
           placeholder={{ blurhash }}
           contentFit="contain"
@@ -77,11 +98,47 @@ export default function TabTwoScreen() {
         />
         <Image
           style={styles.image}
-          source={Images.jellyfish3}
+          source={Images.jellyfish2}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
         />
+        <Image
+          style={styles.image}
+          source={Images.flower2}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower3}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower4}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower5}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower10}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+
       </ScrollView>
     </SafeAreaView>
 
