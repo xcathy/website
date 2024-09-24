@@ -35,14 +35,14 @@ export default function TabTwoScreen() {
         />
         <Image
           style={styles.image}
-          source={Images.flower6}
+          source={Images.fountain}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
         />
         <Image
           style={styles.image}
-          source={Images.CanadaPlace}
+          source={Images.flower6}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
@@ -134,6 +134,48 @@ export default function TabTwoScreen() {
         <Image
           style={styles.image}
           source={Images.flower10}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower11}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower12}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower13}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower14}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower15}
+          placeholder={{ blurhash }}
+          contentFit="contain"
+          transition={1000}
+        />
+        <Image
+          style={styles.image}
+          source={Images.flower16}
           placeholder={{ blurhash }}
           contentFit="contain"
           transition={1000}
