@@ -1,40 +1,74 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
-
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Image } from 'expo-image';
+import { Images } from '@/constants/Images';
+import { Colors } from '@/constants/Colors';
+import { Dimensions } from 'react-native';
+import { ExternalLink } from '@/components/ExternalLink';
 
 export default function TabTwoScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="paper-plane" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Contact</ThemedText>
-      </ThemedView>
-      <ExternalLink href="https://www.linkedin.com/in/cathyxie97">
-        <ThemedText type="link">Linkedin</ThemedText>
-      </ExternalLink>
-      <ExternalLink href="https://github.com/xcathy">
-        <ThemedText type="link">Github</ThemedText>
-      </ExternalLink>
-      
-    </ParallaxScrollView>
+    <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.banner}
+        source={Images.flower36}
+        placeholder={Colors.blurhash}
+        contentFit="cover"
+        transition={1000}
+      />
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={ false }
+      >
+        <ThemedView style={styles.titleContainer}>
+          <ThemedText type="title">Contact</ThemedText>
+        </ThemedView>
+
+        <ThemedView style={styles.contentContainer}>
+          <ExternalLink href="https://www.linkedin.com/in/cathyxie97">
+            <ThemedText type="link">Linkedin</ThemedText>
+          </ExternalLink>
+          <ExternalLink href="https://github.com/xcathy">
+            <ThemedText type="link">Github</ThemedText>
+          </ExternalLink>
+        </ThemedView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  scrollView: {
+    marginVertical: 0,
+    marginHorizontal: 0,
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#BDD5E7',
+  },
+  banner: {
+    width: Dimensions.get('window').width,
+    height: 0.4 * Dimensions.get('window').height,
+    opacity: 1,
+    shadowColor: '#001a33',
+    shadowRadius: 15,
+    shadowOpacity: 0.6,
+    alignItems: 'center',
   },
   titleContainer: {
     flexDirection: 'row',
-    gap: 8,
+    alignItems: 'center',
+    color: '#FFFFFF',
+    backgroundColor: '#BDD5E7',
+    margin: 40,
+  },
+  contentContainer: {
+    color: '#FFFFFF',
+    backgroundColor: '#BDD5E7',
+    marginHorizontal: 40,
   },
 });

@@ -2,182 +2,183 @@ import { StyleSheet} from 'react-native';
 import { Image } from 'expo-image';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Images } from '@/constants/Images';
+import { Colors } from '@/constants/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
 export default function TabTwoScreen() {
-  const blurhash =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={ false }
+      >
         <Image
           style={styles.image}
           source={Images.flower9}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower8}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower7}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.fountain}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower6}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.seal}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.frog1}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.frog2}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.fish1}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.fish2}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.fish3}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.jellyfish1}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.jellyfish2}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower2}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower3}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower4}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower5}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower10}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower11}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower12}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower13}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower14}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower15}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
         <Image
           style={styles.image}
           source={Images.flower16}
-          placeholder={{ blurhash }}
-          contentFit="contain"
+          placeholder={Colors.blurhash}
+          contentFit="cover"
           transition={1000}
         />
 
@@ -188,15 +189,9 @@ export default function TabTwoScreen() {
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+  scrollView: {
+    marginVertical: 0,
+    marginHorizontal: 0,
   },
   container: {
     flex: 1,
@@ -206,13 +201,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: 0.9 * Dimensions.get('window').width,
+    height: 0.8 * Dimensions.get('window').height,
     margin: 30,
-    backgroundColor: '#BDD5E7',
-  },
-  scrollView: {
-    marginVertical: 0,
-    marginHorizontal: 0,
+    borderRadius: 10,
+    shadowColor: '#001a33',
+    shadowRadius: 15,
+    shadowOpacity: 0.6,
   },
 });

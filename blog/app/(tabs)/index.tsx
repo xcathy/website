@@ -1,43 +1,70 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { StyleSheet, Dimensions } from 'react-native';
+import { Image } from 'expo-image';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Images } from '@/constants/Images';
+import { Colors } from '@/constants/Colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#FFFFFF', dark: '#000000' }}
-      headerImage={
-        <Image
-          source={Images.garden}
-          style={styles.banner}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome to my blog</ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">2024 update incoming...</ThemedText>
-      </ThemedView>
+    <SafeAreaView style={styles.container}>
+      <Image
+        style={styles.banner}
+        source={Images.jellyfish1}
+        placeholder={ Colors.blurhash }
+        contentFit="cover"
+        transition={1000}
+      />
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={ false }
+      >
+          
+        <ThemedView style={styles.titleContainer}>
+          <ThemedText type="title">Welcome to my blog!</ThemedText>
+        </ThemedView>
 
-    </ParallaxScrollView>
+        <ThemedView style={styles.contentContainer}>
+        </ThemedView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    marginVertical: 0,
+    marginHorizontal: 0,
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#BDD5E7',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  banner: {
+    width: Dimensions.get('window').width,
+    height: 0.4 * Dimensions.get('window').height,
+    shadowColor: '#001a33',
+    shadowRadius: 15,
+    shadowOpacity: 0.6,
+    alignItems: 'center',
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    color: '#FFFFFF',
+    backgroundColor: '#BDD5E7',
+    margin: 30,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  banner: {
-    width: '100%',
+  contentContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    position: 'absolute',
+    color: '#FFFFFF',
+    backgroundColor: '#BDD5E7',
+    marginHorizontal: 30,
   },
 });
