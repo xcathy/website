@@ -27,8 +27,20 @@ export default function TabTwoScreen() {
         </ThemedView>
 
         <ThemedView style={styles.contentContainer}>
-          <ThemedText>A portfolio, blog, and demo website</ThemedText>
-          <ThemedText>Made by Cathy, 2024</ThemedText>
+          <ThemedText
+            type="default"
+            lightColor="#222021"
+            darkColor="white"
+          >
+            A portfolio, blog, and demo website
+          </ThemedText>
+          <ThemedText
+            type="default"
+            lightColor="#222021"
+            darkColor="white"
+          >
+            Made by Cathy, 2024
+          </ThemedText>
         </ThemedView>
       </ScrollView>
     </SafeAreaView>
@@ -62,8 +74,8 @@ const styles = StyleSheet.create({
     margin: 40,
   },
   contentContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
     color: '#FFFFFF',
     backgroundColor: '#BDD5E7',
     marginHorizontal: 40,
