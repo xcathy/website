@@ -5,7 +5,6 @@
 // general
 const CanadaPlace = require('../assets/images/TravelPhotos/Vancouver/CanadaPlace.png');
 const seal = require('../assets/images/TravelPhotos/Vancouver/seal.png');
-const boar = require('../assets/images/TravelPhotos/Vancouver/boar.png');
 
 // garden
 const garden = require('../assets/images/TravelPhotos/Vancouver/garden.png');
@@ -85,7 +84,6 @@ export const Images = {
     CanadaPlace,
     fountain,
     fountain1,
-    boar,
     seal,
     jellyfish1,
     jellyfish2,
