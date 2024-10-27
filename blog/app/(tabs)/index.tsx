@@ -16,7 +16,7 @@ export default function HomeScreen() {
       >
         <Image
           style={styles.banner}
-          source={Images.jellyfish1}
+          source={Images.seal}
           placeholder={ Colors.blurhash }
           contentFit="cover"
           transition={1000}
