@@ -4,6 +4,3 @@
 - photo album added
 - portfolio page removed
 - general updates
-
-## Planned:
-- game page
