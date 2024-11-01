@@ -60,9 +60,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="contact"
+        name="contacts"
         options={{
-          title: 'Contact',
+          title: 'Contacts',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'paper-plane' : 'paper-plane-outline'} color={color} />
           ),

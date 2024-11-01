@@ -24,7 +24,7 @@ export default function TabTwoScreen() {
         showsVerticalScrollIndicator={ false }
       >
         <ThemedView style={styles.titleContainer}>
-          <ThemedText type="title">Contact</ThemedText>
+          <ThemedText type="title">Contacts</ThemedText>
         </ThemedView>
 
         <ThemedView style={styles.contentContainer}>
