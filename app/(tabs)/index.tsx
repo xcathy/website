@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, PointerEvent } from 'react-native';
 import { Image } from 'expo-image';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -6,61 +6,80 @@ import { Images } from '@/constants/Images';
 import { Colors } from '@/constants/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useCallback, useState} from 'react';
+import { imageMoveHover } from '@/hooks/imageMoveHover';
 
 export default function HomeScreen() {
+
+  const [ x, setX ] = useState<number>(0.0);
+  const [ y, setY ] = useState<number>(0.0);
+  const bannerImage = document.getElementById("banner");
+  const bannerBox = bannerImage?.getBoundingClientRect();
+
+  const hoverImg = useCallback((e: PointerEvent) => {
+    const coordinates = imageMoveHover(e, x, y, bannerBox);
+    setX(coordinates.x);
+    setY(coordinates.y);
+  }, [ x, y ]);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView
-        style={styles.scrollView}
-        showsVerticalScrollIndicator={ false }
-      >
-        <Image
-          style={styles.banner}
-          source={Images.seal}
-          placeholder={ Colors.blurhash }
-          contentFit="cover"
-          transition={1000}
-        />
-      </ScrollView>
-      <ThemedView style={styles.titleContainer} >
-        <ThemedText
-          type="title"
-          lightColor="white"
-          darkColor="white"
+    
+      <SafeAreaView style={styles().container}>
+        <ScrollView
+          style={styles().scrollView}
+          showsVerticalScrollIndicator={ false }
         >
-          Welcome to my blog!
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.contentContainer}>
-        <ThemedText
-          type="default"
-          lightColor="#EEEEEE"
-          darkColor="white"
-        >
-          New updates incoming...
-        </ThemedText>
-      </ThemedView>
-      
-    </SafeAreaView>
+          <Image
+            id="banner"
+            style={styles({x, y}).banner}
+            source={Images.seal}
+            placeholder={ Colors.blurhash }
+            transition={1000}
+            onPointerMove={ (e) => hoverImg(e) }
+          />
+        </ScrollView>
+        <ThemedView style={styles().titleContainer} >
+          <ThemedText
+            type="title"
+            lightColor="white"
+            darkColor="white"
+          >
+            Welcome to my blog!
+          </ThemedText>
+        </ThemedView>
+        <ThemedView style={styles().contentContainer}>
+          <ThemedText
+            type="default"
+            lightColor="#EEEEEE"
+            darkColor="white"
+          >
+            New updates incoming...
+          </ThemedText>
+        </ThemedView>
+        
+      </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  scrollView: {
-    marginVertical: 0,
-    marginHorizontal: 0,
-  },
+const styles : any = (props: any) => StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#BDD5E7',
     alignItems: 'center',
-    justifyContent: 'center',
   },
-  banner: {
+  scrollView: {
+    marginVertical: 0,
+    marginHorizontal: 0,
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
-    alignItems: 'center',
+  },
+  banner: {
+    width: Dimensions.get('window').width * 1.1,
+    height: Dimensions.get('window').height * 1.1,
+    position: 'absolute',
+    top: props?.x,
+    left: props?.y,
   },
   titleContainer: {
     flexDirection: 'row',
