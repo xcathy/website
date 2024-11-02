@@ -30,8 +30,8 @@
       "expo-router"
     ],
     "experiments": {
-      "typedRoutes": false,
-      "baseUrl": "/website"
+      "typedRoutes": true,
+      "baseUrl": "/*"
     }
   }
 }
