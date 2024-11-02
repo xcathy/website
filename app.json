@@ -30,8 +30,9 @@
       "expo-router"
     ],
     "experiments": {
+      "reactServerActions": true,
       "typedRoutes": true,
-      "baseUrl": "/*"
+      "baseUrl": "/website"
     }
   }
 }
