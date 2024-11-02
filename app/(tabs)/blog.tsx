@@ -1,10 +1,9 @@
 import { StyleSheet} from 'react-native';
-import { Image } from 'expo-image';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Images } from '@/constants/Images';
-import { Colors } from '@/constants/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Dimensions } from 'react-native';
+import { BlogPost } from '@/components/BlogPost';
 
 export default function TabTwoScreen() {
   return (
@@ -13,175 +12,126 @@ export default function TabTwoScreen() {
         style={styles.scrollView}
         showsVerticalScrollIndicator={ false }
       >
-        <Image
-          style={styles.image}
-          source={Images.flower9}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower8}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower7}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.fountain}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower6}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.seal}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.frog1}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.frog2}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.fish1}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.fish2}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.fish3}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.jellyfish1}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.jellyfish2}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower2}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower3}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower4}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower5}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower10}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower11}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower12}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower13}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower14}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower15}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-        <Image
-          style={styles.image}
-          source={Images.flower16}
-          placeholder={Colors.blurhash}
-          contentFit="cover"
-          transition={1000}
-        />
-
+        {
+          BlogPost(
+            Images.flower9,
+            styles.image,
+            "Butchard's Garden Visit",
+            undefined,
+            "Flower pictures from the trip to Butchard's Garden, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.flower5,
+            styles.image,
+            "Butchard's Garden Visit",
+            undefined,
+            "Flower pictures from the trip to Butchard's Garden, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.flower7,
+            styles.image,
+            "Butchard's Garden Visit",
+            undefined,
+            "Flower pictures from the trip to Butchard's Garden, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.fountain,
+            styles.image,
+            "Fountain",
+            undefined,
+            "The picture of a fountain from the trip to Butchard's Garden, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.flower6,
+            styles.image,
+            "Butchard's Garden Visit",
+            undefined,
+            "Flower pictures from the trip to Butchard's Garden, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.seal,
+            styles.image,
+            "Seal :)",
+            undefined,
+            "Seal from Vancouver Aquarium, I love the smile!\n^U^\n\t\t\t\t\t\t\t\t2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.frog1,
+            styles.image,
+            "Frogs from Vancouver Aquarium",
+            undefined,
+            "Frog pictures from the trip to Vancouver Aquarium, 2024"
+          )
+        }
+        {
+          BlogPost(
+            Images.frog2,
+            styles.image,
+            "Frogs from Vancouver Aquarium",
+            undefined,
+            "Frog pictures from the trip to Vancouver Aquarium, 2024"
+          )
+        }
+        {
+          BlogPost(Images.fish1, styles.image)
+        }
+        {
+          BlogPost(Images.fish2, styles.image)
+        }
+        {
+          BlogPost(Images.fish3, styles.image)
+        }
+        {
+          BlogPost(Images.jellyfish1, styles.image)
+        }
+        {
+          BlogPost(Images.jellyfish2, styles.image)
+        }
+        {
+          BlogPost(Images.flower2, styles.image)
+        }
+        {
+          BlogPost(Images.flower3, styles.image)
+        }
+        {
+          BlogPost(Images.flower4, styles.image)
+        }
+        {
+          BlogPost(Images.flower5, styles.image)
+        }
+        {
+          BlogPost(Images.flower10, styles.image)
+        }
+        {
+          BlogPost(Images.flower11, styles.image)
+        }
+        {
+          BlogPost(Images.flower12, styles.image)
+        }
+        {
+          BlogPost(Images.flower13, styles.image)
+        }
+        {
+          BlogPost(Images.flower14, styles.image)
+        }
+        {
+          BlogPost(Images.flower15, styles.image)
+        }
+        {
+          BlogPost(Images.flower16, styles.image)
+        }
       </ScrollView>
     </SafeAreaView>
 
@@ -208,5 +158,7 @@ const styles = StyleSheet.create({
     shadowColor: '#001a33',
     shadowRadius: 15,
     shadowOpacity: 0.6,
+    justifyContent: 'center',
+    cursor: "pointer",
   },
 });

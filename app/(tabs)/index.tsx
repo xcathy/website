@@ -3,7 +3,6 @@ import { Image } from 'expo-image';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Images } from '@/constants/Images';
-import { Colors } from '@/constants/Colors';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useCallback, useState} from 'react';
@@ -11,6 +10,7 @@ import { imageMoveHover } from '@/hooks/imageMoveHover';
 
 export default function HomeScreen() {
 
+  const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
   const [ x, setX ] = useState<number>(0.0);
   const [ y, setY ] = useState<number>(0.0);
   const bannerImage = document.getElementById("banner");
@@ -33,7 +33,7 @@ export default function HomeScreen() {
             id="banner"
             style={styles({x, y}).banner}
             source={Images.seal}
-            placeholder={ Colors.blurhash }
+            placeholder={ blurhash }
             transition={1000}
             onPointerMove={ (e) => hoverImg(e) }
           />

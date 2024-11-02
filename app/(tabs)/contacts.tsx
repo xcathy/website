@@ -5,17 +5,16 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Image } from 'expo-image';
 import { Images } from '@/constants/Images';
-import { Colors } from '@/constants/Colors';
 import { Dimensions } from 'react-native';
-import { Link } from '@react-navigation/native';
 
 export default function TabTwoScreen() {
+  const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
   return (
     <SafeAreaView style={styles.container}>
       <Image
         style={styles.banner}
         source={Images.flower36}
-        placeholder={Colors.blurhash}
+        placeholder={blurhash}
         contentFit="cover"
         transition={1000}
       />
