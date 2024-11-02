@@ -33,7 +33,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="/blog"
+        name="blog"
         options={{
           title: 'Blog',
           tabBarIcon: ({ color, focused }) => (
@@ -42,7 +42,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="/portfolio"
+        name="portfolio"
         options={{
           title: 'Portfolio',
           tabBarIcon: ({ color, focused }) => (
@@ -51,7 +51,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="/about"
+        name="about"
         options={{
           title: 'About',
           tabBarIcon: ({ color, focused }) => (
@@ -60,7 +60,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="/contacts"
+        name="contacts"
         options={{
           title: 'Contacts',
           tabBarIcon: ({ color, focused }) => (

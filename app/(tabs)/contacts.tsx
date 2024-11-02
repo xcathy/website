@@ -7,7 +7,7 @@ import { Image } from 'expo-image';
 import { Images } from '@/constants/Images';
 import { Colors } from '@/constants/Colors';
 import { Dimensions } from 'react-native';
-import { ExternalLink } from '@/components/ExternalLink';
+import { Link } from '@react-navigation/native';
 
 export default function TabTwoScreen() {
   return (
@@ -28,12 +28,12 @@ export default function TabTwoScreen() {
         </ThemedView>
 
         <ThemedView style={styles.contentContainer}>
-          <ExternalLink href="https://www.linkedin.com/in/cathyxie97">
+          <Link to = "/www.linkedin.com/in/cathyxie97">
             <ThemedText type="link">Linkedin</ThemedText>
-          </ExternalLink>
-          <ExternalLink href="https://github.com/xcathy">
+          </Link>
+          <Link to="/github.com/xcathy">
             <ThemedText type="link">Github</ThemedText>
-          </ExternalLink>
+          </Link>
         </ThemedView>
       </ScrollView>
     </SafeAreaView>
