@@ -75,8 +75,8 @@ const styles : any = (props: any) => StyleSheet.create({
     height: Dimensions.get('window').height,
   },
   banner: {
-    width: Dimensions.get('window').width * 1.1,
-    height: Dimensions.get('window').height * 1.1,
+    width: Dimensions.get('window').width * 1.3,
+    height: Dimensions.get('window').height * 1.3,
     position: 'absolute',
     top: props?.x,
     left: props?.y,

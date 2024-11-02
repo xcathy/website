@@ -1,9 +1,9 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { faHouse, faCamera, faGlobe, faQuestion, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,16 +19,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            TabBarIcon( faHouse, color )
           ),
         }}
       />
@@ -37,16 +28,7 @@ export default function TabLayout() {
         options={{
           title: 'Blog',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'book' : 'book-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="portfolio"
-        options={{
-          title: 'Portfolio',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'brush' : 'brush-outline'} color={color} />
+            TabBarIcon( faCamera, color )
           ),
         }}
       />
@@ -55,7 +37,7 @@ export default function TabLayout() {
         options={{
           title: 'About',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'document' : 'document-outline'} color={color} />
+            TabBarIcon( faQuestion, color )
           ),
         }}
       />
@@ -64,7 +46,7 @@ export default function TabLayout() {
         options={{
           title: 'Contacts',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'paper-plane' : 'paper-plane-outline'} color={color} />
+            TabBarIcon( faPaperPlane, color )
           ),
         }}
       />
