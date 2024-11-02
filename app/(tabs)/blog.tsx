@@ -85,52 +85,148 @@ export default function TabTwoScreen() {
           )
         }
         {
-          BlogPost(Images.fish1, styles.image)
+          BlogPost(
+            Images.fish1,
+            styles.image,
+            "Fish from Vancouver Aquarium",
+            undefined,
+            "Fish pictures from the trip to Vancouver Aquarium, 2024"
+          )
         }
         {
-          BlogPost(Images.fish2, styles.image)
+          BlogPost(
+            Images.fish2,
+            styles.image,
+            "Fish from Vancouver Aquarium",
+            undefined,
+            "Fish pictures from the trip to Vancouver Aquarium, 2024"
+          )
         }
         {
-          BlogPost(Images.fish3, styles.image)
+          BlogPost(
+            Images.fish3,
+            styles.image,
+            "Fish from Vancouver Aquarium",
+            undefined,
+            "Fish pictures from the trip to Vancouver Aquarium, 2024"
+          )
         }
         {
-          BlogPost(Images.jellyfish1, styles.image)
+          BlogPost(
+            Images.jellyfish1,
+            styles.image,
+            "Jellyfish",
+            undefined,
+            "The jellyfish from Vancouver Aquarium.\nThey look like tiny stars floating in space.\n\t\t\t\t\t\t\t2024"
+          )
         }
         {
-          BlogPost(Images.jellyfish2, styles.image)
+          BlogPost(
+            Images.jellyfish2,
+            styles.image,
+            "Jellyfish",
+            undefined,
+            "The jellyfish from Vancouver Aquarium,\nswimming carelessly in circles.\n\t\t\t\t\t\t2024"
+          )
         }
         {
-          BlogPost(Images.flower2, styles.image)
+          BlogPost(
+            Images.flower2,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower3, styles.image)
+          BlogPost(
+            Images.flower3,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower4, styles.image)
+          BlogPost(
+            Images.flower4,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower5, styles.image)
+          BlogPost(
+            Images.flower5,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower10, styles.image)
+          BlogPost(
+            Images.flower10,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower11, styles.image)
+          BlogPost(
+            Images.flower11,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower12, styles.image)
+          BlogPost(
+            Images.flower12,
+            styles.image,
+            "Waterfall",
+            undefined,
+            "This is a waterfall display in Butchard's Garden. 2024"
+          )
         }
         {
-          BlogPost(Images.flower13, styles.image)
+          BlogPost(
+            Images.flower13,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower14, styles.image)
+          BlogPost(
+            Images.flower14,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower15, styles.image)
+          BlogPost(
+            Images.flower15,
+            styles.image,
+            "Flowers",
+            undefined,
+            "Flower pictures from Butchard's Garden, 2024"
+          )
         }
         {
-          BlogPost(Images.flower16, styles.image)
+          BlogPost(
+            Images.flower16,
+            styles.image,
+            "Plant Dog",
+            undefined,
+            "The plant dog from a display window in Butchard's Garden.\nI left my signature on the signature book near it :D\n\t\t\t\t\t\t\t\t\t\t2024"
+          )
         }
       </ScrollView>
     </SafeAreaView>
