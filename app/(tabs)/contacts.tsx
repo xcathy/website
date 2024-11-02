@@ -28,12 +28,8 @@ export default function TabTwoScreen() {
         </ThemedView>
 
         <ThemedView style={styles.contentContainer}>
-          <Link to = "/www.linkedin.com/in/cathyxie97">
-            <ThemedText type="link">Linkedin</ThemedText>
-          </Link>
-          <Link to="/github.com/xcathy">
-            <ThemedText type="link">Github</ThemedText>
-          </Link>
+          <ThemedText type="link" url="https://www.linkedin.com/in/cathyxie97">Linkedin</ThemedText>
+          <ThemedText type="link" url="https://github.com/xcathy">Github</ThemedText>
         </ThemedView>
       </ScrollView>
     </SafeAreaView>
