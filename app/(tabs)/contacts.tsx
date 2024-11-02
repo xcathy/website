@@ -31,7 +31,6 @@ export default function TabTwoScreen() {
           <ExternalLink href="https://www.linkedin.com/in/cathyxie97">
             <ThemedText type="link">Linkedin</ThemedText>
           </ExternalLink>
-            <a href="https://www.linkedin.com/in/cathyxie97" target="_blank">Linkedin</a>
           <ExternalLink href="https://github.com/xcathy">
             <ThemedText type="link">Github</ThemedText>
           </ExternalLink>
