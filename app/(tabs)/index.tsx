@@ -26,7 +26,10 @@ export default function HomeScreen() {
 
   return (
     
-      <SafeAreaView style={styles().container}>
+      <SafeAreaView
+        style={styles().container}
+        onPointerUp={() => window.open( "./blog", "_self")}
+      >
         <ScrollView
           style={styles().scrollView}
           showsVerticalScrollIndicator={ false }
@@ -42,20 +45,20 @@ export default function HomeScreen() {
         </ScrollView>
         <ThemedView style={styles().titleContainer} >
           <ThemedText
-            type="title"
-            lightColor="white"
-            darkColor="white"
+            type="bigtitle"
+            lightColor="#F2F2F2"
+            darkColor="#F2F2F2"
           >
             Welcome to my blog!
           </ThemedText>
         </ThemedView>
         <ThemedView style={styles().contentContainer}>
           <ThemedText
-            type="default"
-            lightColor="#EEEEEE"
-            darkColor="white"
+            type="bigsubtitle"
+            lightColor="#F2F2F2"
+            darkColor="#F2F2F2"
           >
-            New updates incoming...
+            Click anywhere to proceed to blog :D
           </ThemedText>
         </ThemedView>
         
@@ -84,7 +87,6 @@ const styles : any = (props: any) => StyleSheet.create({
     top: props?.y,
   },
   titleContainer: {
-    flexDirection: 'row',
     position: 'absolute',
     alignSelf: 'center',
     marginVertical: 0.4 * Dimensions.get('window').height,
@@ -93,10 +95,9 @@ const styles : any = (props: any) => StyleSheet.create({
     textShadowRadius: 15,
   },
   contentContainer: {
-    flexDirection: 'row',
     position: 'absolute',
     alignSelf: 'center',
-    marginTop: 0.3 * Dimensions.get('window').height,
+    marginTop: 0.5 * Dimensions.get('window').height,
     backgroundColor: 'none',
     textShadowColor: '#001a3380',
     textShadowRadius: 15,
