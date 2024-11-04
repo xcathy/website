@@ -15,19 +15,14 @@ export default function HomeScreen() {
 
   const W = bannerImage?.clientWidth || 0.0;
   const H = bannerImage?.clientHeight || 0.0;
-  const [ a, setA ] = useState<number>(-10.0);
-  const [ b, setB ] = useState<number>(-10.0);
-  const [ c, setC ] = useState<number>(a + W);
-  const [ d, setD ] = useState<number>(b + H);
+
+  const [ box, setBbox] = useState<ElemntBox>({ a: -10.0, b: -10.0, c: -10.0 + W, d: -10.0 + H });
   
   const hoverImg = useCallback((e: PointerEvent) => {
-    const coordinates = imageMoveHover(e, a, b, c, d, W, H);
+    const newBox = imageMoveHover(e, box, W, H);
 
-    setA(coordinates.a);
-    setB(coordinates.b);
-    setC(coordinates.c);
-    setD(coordinates.d);
-  }, [ a, b, c, d ]);
+    setBbox(newBox);
+  }, [ box ]);
 
   return (
     
@@ -38,7 +33,7 @@ export default function HomeScreen() {
         >
           <Image
             id="banner"
-            style={styles({a, b}).banner}
+            style={styles({x: box.a, y: box.b}).banner}
             source={Images.seal}
             placeholder={ blurhash }
             transition={1000}
@@ -85,8 +80,8 @@ const styles : any = (props: any) => StyleSheet.create({
     width: Dimensions.get('window').width * 1.2,
     height: Dimensions.get('window').height * 1.2,
     position: 'absolute',
-    left: props?.a,
-    top: props?.b,
+    left: props?.x,
+    top: props?.y,
   },
   titleContainer: {
     flexDirection: 'row',
