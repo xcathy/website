@@ -18,6 +18,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
+          href: '/',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faHouse, color )
           ),
@@ -27,6 +28,7 @@ export default function TabLayout() {
         name="blog"
         options={{
           title: 'Blog',
+          href: '/blog',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faCamera, color )
           ),
@@ -36,6 +38,7 @@ export default function TabLayout() {
         name="about"
         options={{
           title: 'About',
+          href: '/about',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faQuestion, color )
           ),
@@ -45,6 +48,7 @@ export default function TabLayout() {
         name="contacts"
         options={{
           title: 'Contacts',
+          href: '/contacts',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faPaperPlane, color )
           ),
