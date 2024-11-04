@@ -11,16 +11,23 @@ import { imageMoveHover } from '@/hooks/imageMoveHover';
 export default function HomeScreen() {
 
   const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-  const [ x, setX ] = useState<number>(0.0);
-  const [ y, setY ] = useState<number>(0.0);
   const bannerImage = document.getElementById("banner");
-  const bannerBox = bannerImage?.getBoundingClientRect();
 
+  const W = bannerImage?.clientWidth || 0.0;
+  const H = bannerImage?.clientHeight || 0.0;
+  const [ a, setA ] = useState<number>(-10.0);
+  const [ b, setB ] = useState<number>(-10.0);
+  const [ c, setC ] = useState<number>(a + W);
+  const [ d, setD ] = useState<number>(b + H);
+  
   const hoverImg = useCallback((e: PointerEvent) => {
-    const coordinates = imageMoveHover(e, x, y, bannerBox);
-    setX(coordinates.x);
-    setY(coordinates.y);
-  }, [ x, y ]);
+    const coordinates = imageMoveHover(e, a, b, c, d, W, H);
+
+    setA(coordinates.a);
+    setB(coordinates.b);
+    setC(coordinates.c);
+    setD(coordinates.d);
+  }, [ a, b, c, d ]);
 
   return (
     
@@ -31,7 +38,7 @@ export default function HomeScreen() {
         >
           <Image
             id="banner"
-            style={styles({x, y}).banner}
+            style={styles({a, b}).banner}
             source={Images.seal}
             placeholder={ blurhash }
             transition={1000}
@@ -75,11 +82,11 @@ const styles : any = (props: any) => StyleSheet.create({
     height: Dimensions.get('window').height,
   },
   banner: {
-    width: Dimensions.get('window').width * 1.3,
-    height: Dimensions.get('window').height * 1.3,
+    width: Dimensions.get('window').width * 1.2,
+    height: Dimensions.get('window').height * 1.2,
     position: 'absolute',
-    top: props?.x,
-    left: props?.y,
+    left: props?.a,
+    top: props?.b,
   },
   titleContainer: {
     flexDirection: 'row',

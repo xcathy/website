@@ -1,20 +1,22 @@
 import { roundToDigits } from "./roundToDigits";
 
-export function imageMoveHover (e: PointerEvent, x: number, y: number, boundingBox: DOMRect) {
-    const coordinates = { x: 0.0, y: 0.0 };
-    const mouseX = roundToDigits(e.screenX, 2);
-    const mouseY = roundToDigits(e.screenY, 2);
+export function imageMoveHover (e: PointerEvent, a: number, b: number, c: number, d: number, W: number, H: number) {
+    const coordinates = { a: 0.0, b: 0.0, c: 0.0, d: 0.0 };
 
-    const distanceBottom = window.innerHeight - boundingBox?.bottom;
-    const distanceRight = window.innerWidth - boundingBox?.right;
+    let nextA = a - e.movementX;
+    let nextB = b - e.movementY;
+    let nextC = nextA + W;
+    let nextD = nextB + H;
 
-    if (mouseX !== -x) {
-        coordinates.x = roundToDigits(mouseX / distanceRight, 2);
-    }
+    if ( nextA >= 0.0 ) nextA = a;
+    if ( nextB >= 0.0 ) nextB = b;
+    if ( nextC <= window.innerWidth ) nextA = a;
+    if ( nextD <= window.innerHeight ) nextB = b;
 
-    if (mouseY !== -y) {
-      coordinates.y = roundToDigits(mouseY / distanceBottom, 2);
-    }
+    coordinates.a = roundToDigits( nextA, 2 );
+    coordinates.b = roundToDigits( nextB, 2 );
+    coordinates.c = roundToDigits( nextC, 2 );
+    coordinates.d = roundToDigits( nextD, 2 );
 
     return coordinates;
 }
