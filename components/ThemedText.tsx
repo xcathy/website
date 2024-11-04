@@ -20,21 +20,26 @@ export function ThemedText({
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
 
   return (
-    <Text
-      style={[
-        { color },
-        type === 'default' ? styles.default : undefined,
-        type === 'title' ? styles.title : undefined,
-        type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-        type === 'subtitle' ? styles.subtitle : undefined,
-        type === 'link' ? styles.link : undefined,
-        type === 'bigtitle' ? styles.bigTitle : undefined,
-        type === 'bigsubtitle' ? styles.bigSubtitle : undefined,
-        style,
-      ]}
-      onPress={ url ? () => Linking.openURL(url) : () => {} }
-      {...rest}
-    />
+    type === 'link' ? 
+      <Text
+        style={[ styles.link, style ]}
+        onPress={ url ? () => Linking.openURL(url) : () => {} }
+        {...rest}
+      />
+      :
+      <Text
+        style={[
+          { color },
+          type === 'default' ? styles.default : undefined,
+          type === 'title' ? styles.title : undefined,
+          type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
+          type === 'subtitle' ? styles.subtitle : undefined,
+          type === 'bigtitle' ? styles.bigTitle : undefined,
+          type === 'bigsubtitle' ? styles.bigSubtitle : undefined,
+          style,
+        ]} 
+        {...rest}
+      />
   );
 }
 
