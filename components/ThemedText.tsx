@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     fontSize: 60,
     fontWeight: 'bold',
     lineHeight: 32,
-    textShadowColor: '#001a33',
-    textShadowRadius: 7,
+    textShadowColor: '#193047',
+    textShadowRadius: 6,
   },
   bigSubtitle: {
     fontSize: 16,
     lineHeight: 24,
-    textShadowColor: '#001a33',
-    textShadowRadius: 4,
+    textShadowColor: '#193047',
+    textShadowRadius: 6,
   }
 });

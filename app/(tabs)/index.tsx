@@ -55,10 +55,10 @@ export default function HomeScreen() {
         <ThemedView style={styles().contentContainer}>
           <ThemedText
             type="bigsubtitle"
-            lightColor="#F2F2F2"
-            darkColor="#F2F2F2"
+            lightColor="#DADEDF"
+            darkColor="#DADEDF"
           >
-            Click anywhere to proceed to blog :D
+            Click anywhere to proceed to blog posts :D
           </ThemedText>
         </ThemedView>
         
@@ -97,7 +97,7 @@ const styles : any = (props: any) => StyleSheet.create({
   contentContainer: {
     position: 'absolute',
     alignSelf: 'center',
-    marginTop: 0.5 * Dimensions.get('window').height,
+    marginTop: 0.8 * Dimensions.get('window').height,
     backgroundColor: 'none',
     textShadowColor: '#001a3380',
     textShadowRadius: 15,

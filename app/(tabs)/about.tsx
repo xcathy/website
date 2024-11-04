@@ -23,21 +23,27 @@ export default function TabTwoScreen() {
         showsVerticalScrollIndicator={ false }
       >
         <ThemedView style={styles.titleContainer}>
-          <ThemedText type="title">About</ThemedText>
+          <ThemedText
+            type="title"
+            lightColor="#222A32"
+            darkColor="#222A32"
+          >
+            About
+          </ThemedText>
         </ThemedView>
 
         <ThemedView style={styles.contentContainer}>
           <ThemedText
             type="default"
-            lightColor="#222021"
-            darkColor="white"
+            lightColor="#3A4249"
+            darkColor="#3A4249"
           >
             A portfolio, blog, and demo website
           </ThemedText>
           <ThemedText
             type="default"
-            lightColor="#222021"
-            darkColor="white"
+            lightColor="#3A4249"
+            darkColor="#3A4249"
           >
             Made by Cathy, 2024
           </ThemedText>

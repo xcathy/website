@@ -24,7 +24,7 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
         <div key={ id } data-grid={ layout }>
             <Animated.View
                 style={[style, flipStyle]}
-                onPointerDown={ flip }
+                onPointerUp={ flip }
             >
                 { !flipped &&
                     <ThemedView
