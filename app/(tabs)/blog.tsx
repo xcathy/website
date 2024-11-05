@@ -4,11 +4,15 @@ import { Images } from '@/constants/Images';
 import { Dimensions } from 'react-native';
 import { BlogPost } from '@/components/BlogPost';
 import GridLayout from 'react-grid-layout';
+import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
+import { Cat } from '@/components/Cat';
 
 export default function TabTwoScreen() {
   const screenW = Dimensions.get('window').width;
   const screenH = Dimensions.get('window').height;
   const isWideScreen = (Dimensions.get('window').width > 800);
+
   return (
     <SafeAreaView
         style={styles({ screenW, screenH }).container}
@@ -348,11 +352,34 @@ export default function TabTwoScreen() {
               "The plant dog from a display window in Butchard's Garden.\nI left my signature on the signature book near it :D\n\t\t\t\t\t\t\t\t\t\t2024"
             )
           }
+
+          {
+            <div
+              key="footer"
+              data-grid={
+                isWideScreen ?
+                { x: 0, y: 43.3, w: 1, h: 1, static: true}
+                :
+                { x: 0, y: 23, w: 1, h: 1, static: true }
+              }
+            >
+              <ThemedView 
+                style={styles().footer}
+              >
+                <ThemedText
+                  type="default"
+                  lightColor="#9896AA"
+                  darkColor="#9896AA"
+                >
+                  you have reached the end :O
+                </ThemedText>
+              </ThemedView>
+            </div>
+          }
         </GridLayout>
       </ScrollView>
+      { Cat() }
     </SafeAreaView>
-    //TODO: add end of blog post indicator here
-    //TODO: add header to indicate clickable posts
   );
 }
 
@@ -360,11 +387,12 @@ const styles : any = (props: any) => StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#BDD5E7',
+    backgroundColor: 'transparent',
   },
   scrollView: {
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
+    backgroundColor: '#BDD5E7',
   },
   image: {
     width: ((Dimensions.get('window').width > 800) ? props?.width : 0.8 ) * Dimensions.get('window').width,
@@ -375,5 +403,12 @@ const styles : any = (props: any) => StyleSheet.create({
     shadowOpacity: 0.6,
     justifyContent: 'center',
     cursor: "pointer",
+  },
+  footer: {
+    width: 0.81 * Dimensions.get('window').width,
+    height: 0.1 * Dimensions.get('window').height,
+    marginTop: 0.1 * Dimensions.get('window').height,
+    alignItems: "center",
+    backgroundColor: 'transparent',
   },
 });
