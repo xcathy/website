@@ -7,6 +7,7 @@ export type ThemedTextProps = TextProps & {
   darkColor?: string;
   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link' | 'bigtitle' | 'bigsubtitle';
   url?: string;
+  screenType?: 'web' | 'phone',
 };
 
 export function ThemedText({
@@ -15,6 +16,7 @@ export function ThemedText({
   darkColor,
   type = 'default',
   url,
+  screenType,
   ...rest
 }: ThemedTextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
@@ -22,7 +24,7 @@ export function ThemedText({
   return (
     type === 'link' ? 
       <Text
-        style={[ styles.link, style ]}
+        style={[ styles().link, style ]}
         onPress={ url ? () => Linking.openURL(url) : () => {} }
         {...rest}
       />
@@ -30,12 +32,12 @@ export function ThemedText({
       <Text
         style={[
           { color },
-          type === 'default' ? styles.default : undefined,
-          type === 'title' ? styles.title : undefined,
-          type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
-          type === 'subtitle' ? styles.subtitle : undefined,
-          type === 'bigtitle' ? styles.bigTitle : undefined,
-          type === 'bigsubtitle' ? styles.bigSubtitle : undefined,
+          type === 'default' ? styles(screenType).default : undefined,
+          type === 'title' ? styles(screenType).title : undefined,
+          type === 'defaultSemiBold' ? styles(screenType).defaultSemiBold : undefined,
+          type === 'subtitle' ? styles(screenType).subtitle : undefined,
+          type === 'bigtitle' ? styles(screenType).bigTitle : undefined,
+          type === 'bigsubtitle' ? styles(screenType).bigSubtitle : undefined,
           style,
         ]} 
         {...rest}
@@ -43,7 +45,7 @@ export function ThemedText({
   );
 }
 
-const styles = StyleSheet.create({
+const styles : any = (props: any) => StyleSheet.create({
   default: {
     fontSize: 16,
     lineHeight: 24,
@@ -56,11 +58,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
+    textAlign: 'center',
     lineHeight: 32,
   },
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   link: {
     lineHeight: 30,
@@ -68,14 +72,16 @@ const styles = StyleSheet.create({
     color: '#0a7ea4',
   },
   bigTitle: {
-    fontSize: 60,
+    fontSize: props?.screenType === 'web' ? 60 : 40,
     fontWeight: 'bold',
     lineHeight: 32,
     textShadowColor: '#193047',
     textShadowRadius: 6,
+    textAlign: 'center',
+    flexDirection: 'column',
   },
   bigSubtitle: {
-    fontSize: 16,
+    fontSize: props?.screenType === 'web' ? 16 : 10,
     lineHeight: 24,
     textShadowColor: '#193047',
     textShadowRadius: 6,

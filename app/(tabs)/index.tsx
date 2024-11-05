@@ -15,6 +15,7 @@ export default function HomeScreen() {
 
   const W = bannerImage?.clientWidth || 0.0;
   const H = bannerImage?.clientHeight || 0.0;
+  const webView = (Dimensions.get('window').width > 800);
 
   const [ box, setBbox] = useState<ElemntBox>({ a: -10.0, b: -10.0, c: -10.0 + W, d: -10.0 + H });
   
@@ -48,6 +49,7 @@ export default function HomeScreen() {
             type="bigtitle"
             lightColor="#F2F2F2"
             darkColor="#F2F2F2"
+            screenType={ webView ? "web" : "phone" }
           >
             Welcome to my blog!
           </ThemedText>
@@ -57,6 +59,7 @@ export default function HomeScreen() {
             type="bigsubtitle"
             lightColor="#DADEDF"
             darkColor="#DADEDF"
+            screenType={ webView ? "web" : "phone" }
           >
             Click anywhere to proceed to blog posts :D
           </ThemedText>

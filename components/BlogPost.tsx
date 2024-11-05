@@ -1,5 +1,5 @@
 import { Image, ImageStyle } from "expo-image";
-import { StyleProp } from "react-native";
+import { Dimensions, StyleProp } from "react-native";
 import Animated, { interpolate, useSharedValue, withTiming, useAnimatedStyle } from 'react-native-reanimated';
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
@@ -9,6 +9,7 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const [ flipped, flip ] = useReducer((prev) => !prev, false);
     const duration = 500;
+    const webView = (Dimensions.get('window').width > 800);
 
     const flipStyle = useAnimatedStyle(() => {
         const spinValue = interpolate(Number(flipped), [0, 1], [0, 180]);
@@ -57,9 +58,33 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
                             transform: "rotateY(180deg)",
                         }}
                     >
-                        <ThemedText type="title" lightColor="#37352f" darkColor="#37352f">{ title }</ThemedText>
-                        <ThemedText type="subtitle" lightColor="#787774" darkColor="#787774">{ subtitle }</ThemedText>
-                        <ThemedText type="default" lightColor="#787774" darkColor="#787774">{ content }</ThemedText>
+                        <ThemedText
+                            type="title"
+                            lightColor="#37352f"
+                            darkColor="#37352f"
+                            style={{ marginHorizontal: 20, marginVertical: 10 }}
+                            screenType={ webView ? "web" : "phone" }
+                        >
+                            { title }
+                        </ThemedText>
+                        <ThemedText
+                            type="subtitle"
+                            lightColor="#787774"
+                            darkColor="#787774"
+                            style={{ marginHorizontal: 20, marginVertical: 10 }}
+                            screenType={ webView ? "web" : "phone" }
+                        >
+                            { subtitle }
+                        </ThemedText>
+                        <ThemedText
+                            type="default"
+                            lightColor="#787774"
+                            darkColor="#787774"
+                            style={{ marginHorizontal: 20, marginVertical: 10 }}
+                            screenType={ webView ? "web" : "phone" }
+                        >
+                            { content }
+                        </ThemedText>
                     </ThemedView>
                 }
             </Animated.View>
