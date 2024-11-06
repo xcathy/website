@@ -42,8 +42,8 @@ const styles : any = (props: any) => StyleSheet.create({
         alignItems: 'center',
     },
     clock: {
-        height: 40,
-        width: 120,
+        height: 60,
+        width: 180,
         position: 'absolute',
         backgroundColor: 'transparent',
         shadowColor: '#001a33',
