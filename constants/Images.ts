@@ -78,9 +78,12 @@ const flower50 = require('../assets/images/TravelPhotos/flowers/flower50.png');
 const flower51 = require('../assets/images/TravelPhotos/flowers/flower51.png');
 const flower52 = require('../assets/images/TravelPhotos/flowers/flower52.png');
 
+// Sprites for desk
 const deskBackground = require('../assets/images/Sprites/Desk/background.png');
+const clock = require('../assets/images/Sprites/Desk/clock.png');
 
 export const Images = {
+    clock,
     deskBackground,
     CanadaPlace,
     fountain,

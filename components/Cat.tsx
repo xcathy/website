@@ -1,5 +1,5 @@
 import { Image, ImageStyle } from "expo-image";
-import { Animated, Dimensions, StyleProp, StyleSheet, Text, TouchableHighlight, View } from "react-native";
+import { Animated, Dimensions, StyleProp, StyleSheet, Text, View } from "react-native";
 import { Sprites } from '@/constants/Sprites';
 import { useEffect, useReducer, useState } from "react";
 import Tooltip from "react-native-walkthrough-tooltip";
