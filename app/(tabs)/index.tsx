@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions, PointerEvent } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { Image } from 'expo-image';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -6,7 +6,7 @@ import { Images } from '@/constants/Images';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useCallback, useState} from 'react';
-import { imageMoveHover } from '@/hooks/imageMoveHover';
+import { imageHover } from '@/hooks/imageManipulate';
 
 export default function HomeScreen() {
 
@@ -17,12 +17,15 @@ export default function HomeScreen() {
   const H = bannerImage?.clientHeight || 0.0;
   const webView = (Dimensions.get('window').width > 800);
 
-  const [ box, setBbox] = useState<ElemntBox>({ a: -10.0, b: -10.0, c: -10.0 + W, d: -10.0 + H });
+  const [ box, setBbox ] = useState<ElemntBox>({ a: -10.0, b: -10.0, c: -10.0 + W, d: -10.0 + H, W: W, H: H });
   
   const hoverImg = useCallback((e: PointerEvent) => {
-    const newBox = imageMoveHover(e, box, W, H);
+    if (box.W === 0.0 || box.H === 0.0) {
+      setBbox({ a: box.a, b: box.b, c: box.c, d: box.d, W: W, H: H });
+    } else {
+      setBbox(imageHover(e, box));
+    }
 
-    setBbox(newBox);
   }, [ box ]);
 
   return (
@@ -41,7 +44,7 @@ export default function HomeScreen() {
             source={Images.seal}
             placeholder={ blurhash }
             transition={1000}
-            onPointerMove={ (e) => hoverImg(e) }
+            onPointerMove={ (e) => { hoverImg(e) } }
           />
         </ScrollView>
         <ThemedView style={styles().titleContainer} >
