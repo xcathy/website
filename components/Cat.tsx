@@ -48,7 +48,7 @@ export function Cat(style?: StyleProp<ImageStyle>) : React.JSX.Element {
                 }
                 placement="top"
                 onClose={() => setShowTips(false)}
-                tooltipStyle={{ shadowColor: 'transparent' }}
+                tooltipStyle={{ shadowColor: 'transparent', height: 'auto', width: 'auto' }}
             >
                 <View style={{ justifyContent: 'flex-start', alignItems: 'center', cursor: 'pointer' }}>
                     <Image
