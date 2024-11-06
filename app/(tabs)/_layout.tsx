@@ -3,7 +3,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { faHouse, faCamera, faGlobe, faQuestion, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faCamera, faLeaf, faQuestion, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -31,6 +31,16 @@ export default function TabLayout() {
           href: '/blog',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faCamera, color )
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="sunroom"
+        options={{
+          title: 'Sunroom',
+          href: '/sunroom',
+          tabBarIcon: ({ color, focused }) => (
+            TabBarIcon( faLeaf, color )
           ),
         }}
       />

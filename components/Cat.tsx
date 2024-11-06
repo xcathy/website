@@ -4,7 +4,7 @@ import { Sprites } from '@/constants/Sprites';
 import { useEffect, useReducer, useState } from "react";
 import Tooltip from "react-native-walkthrough-tooltip";
 
-export function Cat(style?: StyleProp<ImageStyle>) : React.JSX.Element {
+export function Cat(dialogue?: string, defaultShow?: boolean, style?: StyleProp<ImageStyle>) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const spriteDimension = {w: 45, h: 45};
     const pathLength = Dimensions.get('window').width - spriteDimension.w;
@@ -12,7 +12,7 @@ export function Cat(style?: StyleProp<ImageStyle>) : React.JSX.Element {
     const [ direction, toggleDirection ] = useReducer((prev) => -prev, -1);
     const [ back, setBack ] = useState<number>(0);
     const [ forward, setForward ] = useState<number>(0);
-    const [ showTips, setShowTips ] = useState<boolean>(true);
+    const [ showTips, setShowTips ] = useState<boolean>(defaultShow || false);
 
     useEffect(() => {
         if (!showTips) {
@@ -44,7 +44,7 @@ export function Cat(style?: StyleProp<ImageStyle>) : React.JSX.Element {
             <Tooltip
                 isVisible={showTips}
                 content={
-                    <Text>{ `Hello!\nYou can press the photos to flip to see the blog posts!\nThanks for visiting my page! :3\n(click anywhere to close this tooltip)` } </Text>
+                    <Text>{ dialogue } </Text>
                 }
                 placement="top"
                 onClose={() => setShowTips(false)}
