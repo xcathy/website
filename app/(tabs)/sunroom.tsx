@@ -16,7 +16,7 @@ export default function TabTwoScreen() {
     const clockH = clock?.clientHeight || 0.0;
 
     const isWideScreen = (Dimensions.get('window').width > 800);
-    const [ clockBox, setCBox ] = useState<ElemntBox>({ a: 300, b: 600, c: 600 + clockW, d: 300 + clockH, W: clockW, H: clockH });
+    const [ clockBox, setCBox ] = useState<ElemntBox>({ a: 0.8 * screenW, b: 0.53 * screenH, c: 0.8 * screenW + clockW, d: 0.53 * screenH + clockH, W: clockW, H: clockH });
   
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
@@ -33,8 +33,10 @@ export default function TabTwoScreen() {
             {
                 ClockItem(
                     "clock",
-                    (e) => moveItem("clock", e, clockBox),
-                    styles({left: clockBox.a, top: clockBox.b, width: 'auto', height: 'auto'}).clock,
+                    (e) => {
+                        moveItem("clock", e, clockBox);
+                    },
+                    styles({ x: clockBox.a, y: clockBox.b }).clockContainer,
                 )
             }
             <ImageBackground
@@ -57,5 +59,12 @@ const styles : any = (props: any) => StyleSheet.create({
         height: Dimensions.get('window').height,
         justifyContent: 'center',
         zIndex: -10,
+    },
+    clockContainer: {
+        left: props?.x || 0,
+        top: props?.y || 0,
+        position: 'absolute',
+        height: 60,
+        width: 180,
     },
 });
