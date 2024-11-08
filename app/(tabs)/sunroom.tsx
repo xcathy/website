@@ -39,11 +39,15 @@ export default function TabTwoScreen() {
                     styles({ x: clockBox.a, y: clockBox.b }).clockContainer,
                 )
             }
-            <ImageBackground
-                source={Images.deskBackground}
-                contentFit="cover"
-                style={styles().background}
-            />
+            <div
+                draggable={ false }
+            >
+                <ImageBackground
+                    source={Images.deskBackground}
+                    contentFit="cover"
+                    style={styles().background}
+                />
+            </div>
         </SafeAreaView>
     );
 }

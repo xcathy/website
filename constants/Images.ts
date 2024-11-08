@@ -82,7 +82,12 @@ const flower52 = require('../assets/images/TravelPhotos/flowers/flower52.png');
 const deskBackground = require('../assets/images/Sprites/Desk/background.png');
 const clock = require('../assets/images/Sprites/Desk/clock.png');
 
+// Smallest clear image gif
+// Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
+const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
 export const Images = {
+    clearImg,
     clock,
     deskBackground,
     CanadaPlace,
