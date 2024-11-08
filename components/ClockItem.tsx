@@ -13,14 +13,12 @@ export function ClockItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     const clock =
         <div
             id={ id }
-            onDragStart={ (e) => e.dataTransfer.setDragImage(
-                img, 0, 0
-            ) }
+            onDragStart={ (e) => e.dataTransfer.setDragImage(img, 0, 0) }
             onDragCapture={ handleDrag }
             style={ style }
         >
             <ImageBackground
-                source={Images.clock}
+                source={Images.clock || blurhash}
                 contentFit="cover"
                 style={styles().clock}
             >
@@ -53,6 +51,7 @@ const styles : any = (props: any) => StyleSheet.create({
         shadowOffset: { width: 0, height: 5 },
         justifyContent: 'center',
         alignItems: 'center',
+        userSelect: 'none',
     },
     time: {
         fontSize: 16,

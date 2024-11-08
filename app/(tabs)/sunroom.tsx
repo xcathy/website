@@ -33,9 +33,7 @@ export default function TabTwoScreen() {
             {
                 ClockItem(
                     "clock",
-                    (e) => {
-                        moveItem("clock", e, clockBox);
-                    },
+                    (e) => moveItem("clock", e, clockBox),
                     styles({ x: clockBox.a, y: clockBox.b }).clockContainer,
                 )
             }
