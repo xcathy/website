@@ -14,7 +14,7 @@ export function ClockItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
         <div
             id={ id }
             onDragStart={ (e) => e.dataTransfer.setDragImage(img, 0, 0) }
-            onDragCapture={ handleDrag }
+            onDrag={ handleDrag }
             style={ style }
         >
             <ImageBackground
@@ -24,8 +24,8 @@ export function ClockItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             >
                 <ThemedText
                     type="default"
-                    lightColor="#DADEDF"
-                    darkColor="#DADEDF"
+                    lightColor="#FFF6ED"
+                    darkColor="#FFF6ED"
                 >
                     <Clock
                         className={styles.time}
