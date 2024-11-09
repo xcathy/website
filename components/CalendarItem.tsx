@@ -62,11 +62,13 @@ const styles : any = (props: any) => StyleSheet.create({
         backgroundColor: 'transparent',
         alignItems: 'center',
         userSelect: 'none',
+        cursor: 'pointer',
     },
     year: {
         fontSize: 10,
         lineHeight: 5,
         textAlign: 'center',
+        userSelect: 'none',
     },
     date: {
         fontSize: 30,
@@ -74,9 +76,11 @@ const styles : any = (props: any) => StyleSheet.create({
         paddingBottom: 8,
         lineHeight: 1,
         textAlign: 'center',
+        userSelect: 'none',
     },
     month: {
         fontSize: 16,
         textAlign: 'center',
+        userSelect: 'none',
     },
 });

@@ -52,9 +52,11 @@ const styles : any = (props: any) => StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         userSelect: 'none',
+        cursor: 'pointer',
     },
     time: {
         fontSize: 16,
         lineHeight: 24,
+        userSelect: 'none',
     },
 });
