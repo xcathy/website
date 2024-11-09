@@ -6,6 +6,7 @@ import { ClockItem } from '@/components/ClockItem';
 import { useCallback, useState } from 'react';
 import { imageMove } from '@/hooks/imageManipulate';
 import { CalendarItem } from '@/components/CalendarItem';
+import { Cloud } from '@/components/Cloud';
 
 export default function TabTwoScreen() {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -61,6 +62,16 @@ export default function TabTwoScreen() {
                     style={styles().background}
                 />
             </div>
+            {
+                Cloud(
+                    "cloud1",
+                    Images.cloud1,
+                    styles().cloud1,
+                    1,
+                    500,
+                )
+                
+            }
         </SafeAreaView>
     );
 }
@@ -69,7 +80,7 @@ const styles : any = (props: any) => StyleSheet.create({
     container: {
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
-        backgroundColor: 'transparent',
+        backgroundColor: '#87CEEB',
     },
     background: {
         width: Dimensions.get('window').width,
@@ -90,5 +101,12 @@ const styles : any = (props: any) => StyleSheet.create({
         position: 'absolute',
         height: 300,
         width: 150,
+    },
+    cloud1: {
+        top: 30,
+        position: 'absolute',
+        height: 170,
+        width: 500,
+        zIndex: -12,
     },
 });
