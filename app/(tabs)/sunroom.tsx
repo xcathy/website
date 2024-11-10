@@ -1,6 +1,6 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
-import { ImageBackground } from 'expo-image';
+import { Image, ImageBackground } from 'expo-image';
 import { Images } from '@/constants/Images';
 import { ClockItem } from '@/components/ClockItem';
 import { useCallback, useState } from 'react';
@@ -53,6 +53,11 @@ export default function TabTwoScreen() {
                 )
                 
             }
+            <Image
+                source={ Images.catSleep }
+                style={ styles().catSleep }
+            />
+            
             <div
                 draggable={ false }
             >
@@ -145,6 +150,14 @@ const styles : any = (props: any) => StyleSheet.create({
         position: 'absolute',
         height: 300,
         width: 150,
+    },
+    catSleep: {
+        left: 20,
+        top: 250,
+        position: 'absolute',
+        height: 400,
+        width: 400,
+        zIndex: 12,
     },
     cloud1_1: {
         left: 10,
