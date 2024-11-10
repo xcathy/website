@@ -86,6 +86,7 @@ const calendarTear = require('../assets/images/Sprites/Desk/calendarTear.gif');
 
 // Clouds
 const cloud1 = require('../assets/images/Sprites/Desk/cloud1.png');
+const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
 
 // Smallest clear image gif
 // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
@@ -93,6 +94,7 @@ const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAA
 
 export const Images = {
     cloud1,
+    cloud2,
     calendar,
     calendarTear,
     clearImg,
