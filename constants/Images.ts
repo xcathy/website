@@ -89,7 +89,7 @@ const cloud1 = require('../assets/images/Sprites/Desk/cloud1.png');
 const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
 
 // Cat sleep
-const catSleep = require('../assets/images/Sprites/Desk/catSleep.gif');
+const catSleep = require('../assets/images/Sprites/Desk/catSleep.webp');
 
 // Smallest clear image gif
 // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
