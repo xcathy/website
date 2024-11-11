@@ -91,11 +91,15 @@ const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
 // Cat sleep
 const catSleep = require('../assets/images/Sprites/Desk/catSleep.webp');
 
+// Radio
+const radio = require('../assets/images/Sprites/Desk/radio.png');
+
 // Smallest clear image gif
 // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
 const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export const Images = {
+    radio,
     catSleep,
     cloud1,
     cloud2,
