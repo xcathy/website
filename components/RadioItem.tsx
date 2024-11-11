@@ -1,11 +1,11 @@
 import { Images } from "@/constants/Images";
-import { ImageBackground } from 'expo-image';
+import { Image, ImageBackground } from 'expo-image';
 import { CSSProperties, DragEventHandler } from 'react';
 import { StyleSheet } from 'react-native';
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-    const img = new Image();
+    const img = document.createElement('img');
     img.src = Images.clearImg;
 
     const radio =
@@ -19,7 +19,28 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 source={Images.radio || blurhash}
                 contentFit="cover"
                 style={styles({ height: style?.height, width: style?.width }).radio}
-            >        
+            >
+                <div
+                    style={{
+                        display: "flex",
+                        paddingLeft: "10px",
+                        paddingTop: "40px",
+                        alignSelf: "baseline",
+                    }}
+                >
+                    <Image
+                        source={ Images.leftButton }
+                        style={ styles().leftButton }
+                    />
+                    <Image
+                        source={ Images.pauseButton }
+                        style={ styles().pauseButton }
+                    />
+                    <Image
+                        source={ Images.rightButton }
+                        style={ styles().rightButton }
+                    />
+                </div>
             </ImageBackground>
         </div>;
 
@@ -28,12 +49,44 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
 const styles : any = (props: any) => StyleSheet.create({
     radio: {
-        height: props.height || 0.0,
-        width: props.width || 0.0,
+        height: props?.height || 0.0,
+        width: props?.width || 0.0,
         position: 'absolute',
         backgroundColor: 'transparent',
         alignItems: 'center',
         userSelect: 'none',
         cursor: 'pointer',
+        zIndex: 12,
     },
+    leftButton: {
+        height: 28,
+        width: 17,
+        position: 'relative',
+        backgroundColor: 'transparent',
+        userSelect: 'none',
+        cursor: 'pointer',
+        zIndex: 13,
+        margin: 10,
+    },
+    pauseButton: {
+        height: 28,
+        width: 19,
+        position: 'relative',
+        backgroundColor: 'transparent',
+        userSelect: 'none',
+        cursor: 'pointer',
+        zIndex: 13,
+        margin: 10,
+    },
+    rightButton: {
+        height: 28,
+        width: 17,
+        position: 'relative',
+        backgroundColor: 'transparent',
+        userSelect: 'none',
+        cursor: 'pointer',
+        zIndex: 13,
+        margin: 10,
+    },
+    
 });

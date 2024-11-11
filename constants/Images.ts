@@ -88,19 +88,34 @@ const calendarTear = require('../assets/images/Sprites/Desk/calendarTear.gif');
 const cloud1 = require('../assets/images/Sprites/Desk/cloud1.png');
 const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
 
+// Cat walk
+const catWalkCycle = require('../assets/images/Sprites/Cat/CatWalkCycle.gif');
 // Cat sleep
 const catSleep = require('../assets/images/Sprites/Desk/catSleep.webp');
 
 // Radio
 const radio = require('../assets/images/Sprites/Desk/radio.png');
+const leftButton = require('../assets/images/Sprites/Desk/leftButton.png');
+const rightButton = require('../assets/images/Sprites/Desk/rightButton.png');
+const pauseButton = require('../assets/images/Sprites/Desk/pauseButton.png');
+const leftButtonClick = require('../assets/images/Sprites/Desk/leftButton.gif');
+const rightButtonClick = require('../assets/images/Sprites/Desk/rightButton.gif');
+const pauseButtonClick = require('../assets/images/Sprites/Desk/pauseButton.gif');
 
 // Smallest clear image gif
 // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
 const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export const Images = {
+    leftButtonClick,
+    rightButtonClick,
+    pauseButtonClick,
+    leftButton,
+    rightButton,
+    pauseButton,
     radio,
     catSleep,
+    catWalkCycle,
     cloud1,
     cloud2,
     calendar,

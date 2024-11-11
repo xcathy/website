@@ -1,8 +1,8 @@
 import { Image, ImageStyle } from "expo-image";
 import { Animated, Dimensions, StyleProp, StyleSheet, Text, View } from "react-native";
-import { Sprites } from '@/constants/Sprites';
 import { useEffect, useReducer, useState } from "react";
 import Tooltip from "react-native-walkthrough-tooltip";
+import { Images } from "@/constants/Images";
 
 export function Cat(dialogue?: string, defaultShow?: boolean, style?: StyleProp<ImageStyle>) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -53,7 +53,7 @@ export function Cat(dialogue?: string, defaultShow?: boolean, style?: StyleProp<
                 <View style={{ justifyContent: 'flex-start', alignItems: 'center', cursor: 'pointer' }}>
                     <Image
                         style={styles().img}
-                        source={Sprites.catWalkCycle}
+                        source={Images.catWalkCycle}
                         placeholder={blurhash}
                         contentFit="fill"
                         transition={1000}
