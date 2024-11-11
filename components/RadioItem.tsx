@@ -1,12 +1,35 @@
 import { Images } from "@/constants/Images";
 import { Image, ImageBackground } from 'expo-image';
-import { CSSProperties, DragEventHandler } from 'react';
+import { CSSProperties, DragEventHandler, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { Audio, AVPlaybackSource } from 'expo-av';
+import { Audios } from "@/constants/Audios";
+import { Sound } from "expo-av/build/Audio";
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+    const [ track, setTrack ] = useState<AVPlaybackSource>(Audios.morning);
+    const [sound, setSound] = useState<Sound>();
     const img = document.createElement('img');
     img.src = Images.clearImg;
+
+    async function playMusic( pause: boolean, previous: boolean, next: boolean ) {
+        setTrack(Audios.morning);
+
+        const { sound } = await Audio.Sound.createAsync(track);
+        setSound(sound);
+    
+        await sound.playAsync();
+    }
+
+    useEffect(() => {
+        return sound
+          ? () => {
+              console.log('Unloading Sound');
+              sound.unloadAsync();
+            }
+          : undefined;
+      }, [sound]);
 
     const radio =
         <div
@@ -31,14 +54,17 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     <Image
                         source={ Images.leftButton }
                         style={ styles().leftButton }
+                        onPointerUp={ () => playMusic(true, false, false) }
                     />
                     <Image
                         source={ Images.pauseButton }
                         style={ styles().pauseButton }
+                        onPointerUp={ () => playMusic(false, true, false) }
                     />
                     <Image
                         source={ Images.rightButton }
                         style={ styles().rightButton }
+                        onPointerUp={ () => playMusic(false, false, true) }
                     />
                 </div>
             </ImageBackground>
