@@ -105,7 +105,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     style={{
                         display: "flex",
                         paddingLeft: "10px",
-                        paddingTop: "40px",
+                        paddingTop: "15px",
                         alignSelf: "baseline",
                     }}
                 >
