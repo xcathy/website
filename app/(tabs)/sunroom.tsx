@@ -8,6 +8,7 @@ import { imageMove } from '@/hooks/imageManipulate';
 import { CalendarItem } from '@/components/CalendarItem';
 import { Cloud } from '@/components/Cloud';
 import { RadioItem } from '@/components/RadioItem';
+import { PlantItem } from '@/components/PlantItem';
 
 export default function TabTwoScreen() {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -16,6 +17,7 @@ export default function TabTwoScreen() {
     const clock = document.getElementById("clock");
     const calendar = document.getElementById("calendar");
     const radio = document.getElementById("radio");
+    const plant = document.getElementById("plant");
 
     const clockW = clock?.clientWidth || 0.0;
     const clockH = clock?.clientHeight || 0.0;
@@ -23,23 +25,28 @@ export default function TabTwoScreen() {
     const calendarH = calendar?.clientHeight || 0.0;
     const radioW = radio?.clientWidth || 0.0;
     const radioH = radio?.clientHeight || 0.0;
+    const plantW = plant?.clientWidth || 0.0;
+    const plantH = plant?.clientHeight || 0.0;
 
     const isWideScreen = (Dimensions.get('window').width > 800);
     const [ clockBox, setCBox ] = useState<ElemntBox>({ a: 0.8 * screenW, b: 0.53 * screenH, c: 0.8 * screenW + clockW, d: 0.53 * screenH + clockH, W: clockW, H: clockH });
     const [ calendarBox, setCLBox ] = useState<ElemntBox>({ a: 0.85 * screenW, b: 0.05 * screenH, c: 0.85 * screenW + calendarW, d: 0.05 * screenH + calendarH, W: calendarW, H: calendarH });
     const [ radioBox, setRDBox ] = useState<ElemntBox>({ a: 0.45 * screenW, b: 0.28 * screenH, c: 0.85 * screenW + radioW, d: 0.05 * screenH + radioH, W: radioW, H: radioH });
+    const [ plantBox, setPTBox ] = useState<ElemntBox>({ a: 0.6 * screenW, b: 0.08 * screenH, c: 0.85 * screenW + plantW, d: 0.05 * screenH + plantH, W: plantW, H: plantH });
 
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
             if ( id === "clock" ) setCBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: clockW, H: clockH });
             if ( id === "calendar" ) setCLBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: calendarW, H: calendarH });
             if ( id === "radio" ) setRDBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: radioW, H: radioH });
+            if ( id === "plant" ) setPTBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: plantW, H: plantH });
         } else {
             if ( id === "clock" ) setCBox(imageMove(e, box));
             if ( id === "calendar" ) setCLBox(imageMove(e, box));
             if ( id === "radio" ) setRDBox(imageMove(e, box));
+            if ( id === "plant" ) setPTBox(imageMove(e, box));
         }
-    }, [ clockBox, calendarBox, radioBox ]);
+    }, [ clockBox, calendarBox, radioBox, plantBox ]);
   
     return (
         <SafeAreaView
@@ -66,6 +73,14 @@ export default function TabTwoScreen() {
                     styles({ x: radioBox.a, y: radioBox.b }).radioContainer,
                 )
             }
+            {
+                PlantItem(
+                    "plant",
+                    (e) => moveItem("plant", e, plantBox),
+                    styles({ x: plantBox.a, y: plantBox.b }).plantContainer,
+                )
+            }
+            
             <div
                 draggable={ false }
             >
@@ -73,11 +88,6 @@ export default function TabTwoScreen() {
                     source={ Images.catSleep }
                     style={ styles().catSleep }
                 />
-            </div>
-            
-            <div
-                draggable={ false }
-            >
                 <ImageBackground
                     source={Images.deskBackground}
                     contentFit="cover"
@@ -175,6 +185,13 @@ const styles : any = (props: any) => StyleSheet.create({
         height: 221,
         width: 221,
     },
+    plantContainer: {
+        left: props?.x || 0,
+        top: props?.y || 0,
+        position: 'absolute',
+        height: 160,
+        width: 100,
+    },
     catSleep: {
         left: 20,
         top: 250,
@@ -182,6 +199,7 @@ const styles : any = (props: any) => StyleSheet.create({
         height: 400,
         width: 400,
         zIndex: 12,
+        userSelect: 'none',
     },
     cloud1_1: {
         left: 10,
