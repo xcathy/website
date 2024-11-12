@@ -78,9 +78,55 @@ const flower50 = require('../assets/images/TravelPhotos/flowers/flower50.png');
 const flower51 = require('../assets/images/TravelPhotos/flowers/flower51.png');
 const flower52 = require('../assets/images/TravelPhotos/flowers/flower52.png');
 
+// Sprites for desk
+const deskBackground = require('../assets/images/Sprites/Desk/background.png');
+const clock = require('../assets/images/Sprites/Desk/clock.png');
+const calendar = require('../assets/images/Sprites/Desk/calendar.png');
+const calendarTear = require('../assets/images/Sprites/Desk/calendarTear.gif');
 
+// Clouds
+const cloud1 = require('../assets/images/Sprites/Desk/cloud1.png');
+const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
+
+// Cat walk
+const catWalkCycle = require('../assets/images/Sprites/Cat/CatWalkCycle.gif');
+// Cat sleep
+const catSleep = require('../assets/images/Sprites/Desk/catSleep.webp');
+
+// Radio
+const radio = require('../assets/images/Sprites/Desk/radio.png');
+const leftButton = require('../assets/images/Sprites/Desk/leftButton.png');
+const rightButton = require('../assets/images/Sprites/Desk/rightButton.png');
+const pauseButton = require('../assets/images/Sprites/Desk/pauseButton.png');
+const leftButtonClick = require('../assets/images/Sprites/Desk/leftButton.gif');
+const rightButtonClick = require('../assets/images/Sprites/Desk/rightButton.gif');
+const pauseButtonClick = require('../assets/images/Sprites/Desk/pauseButton.gif');
+
+// Plant
+const plant = require('../assets/images/Sprites/Desk/plant.png');
+
+// Smallest clear image gif
+// Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
+const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export const Images = {
+    plant,
+    leftButtonClick,
+    rightButtonClick,
+    pauseButtonClick,
+    leftButton,
+    rightButton,
+    pauseButton,
+    radio,
+    catSleep,
+    catWalkCycle,
+    cloud1,
+    cloud2,
+    calendar,
+    calendarTear,
+    clearImg,
+    clock,
+    deskBackground,
     CanadaPlace,
     fountain,
     fountain1,

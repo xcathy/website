@@ -45,7 +45,14 @@ export default function TabTwoScreen() {
             lightColor="#3A4249"
             darkColor="#3A4249"
           >
-            Made by Cathy, 2024
+            Art, photos, music used created by: me
+          </ThemedText>
+          <ThemedText
+            type="default"
+            lightColor="#3A4249"
+            darkColor="#3A4249"
+          >
+            Some apps used: VSCode, Chrome Music Lab, Pixilart, Piskel, Sketchbook etc... 
           </ThemedText>
         </ThemedView>
       </ScrollView>
