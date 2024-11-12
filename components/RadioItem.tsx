@@ -1,6 +1,6 @@
 import { Images } from "@/constants/Images";
-import { Image, ImageBackground } from 'expo-image';
-import { CSSProperties, DragEventHandler, useEffect, useState } from 'react';
+import { Image, ImageBackground, ImageSource } from 'expo-image';
+import { CSSProperties, DragEventHandler, useEffect, useReducer, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Audio, AVPlaybackSource } from 'expo-av';
 import { Audios } from "@/constants/Audios";
@@ -8,28 +8,49 @@ import { Sound } from "expo-av/build/Audio";
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+    const [ LBtn, setLBtn ] = useState<ImageSource>(Images.leftButton);
+    const [ PBtn, setPBtn ] = useState<ImageSource>(Images.pauseButton);
+    const [ RBtn, setRBtn ] = useState<ImageSource>(Images.rightButton);
     const [ track, setTrack ] = useState<AVPlaybackSource>(Audios.morning);
     const [sound, setSound] = useState<Sound>();
     const img = document.createElement('img');
     img.src = Images.clearImg;
 
-    async function playMusic( pause: boolean, previous: boolean, next: boolean ) {
+    async function playMusic( previous: boolean, pause: boolean,  next: boolean ) {
+        if (previous) {
+            setLBtn(Images.leftButtonClick);
+            setTimeout(function(){
+                setLBtn(Images.leftButton);
+            }, 880);
+        }
+        if (pause) {
+            setPBtn(Images.pauseButtonClick);
+            setTimeout(function(){
+                setPBtn(Images.pauseButton);
+            }, 880);
+        }
+        if (next) {
+            setRBtn(Images.rightButtonClick);
+            setTimeout(function(){
+                setRBtn(Images.rightButton);
+            }, 880);
+        }
+
         setTrack(Audios.morning);
 
         const { sound } = await Audio.Sound.createAsync(track);
         setSound(sound);
     
-        await sound.playAsync();
-    }
+        if (next === true) {
+            await sound.playAsync();
+        }
 
-    useEffect(() => {
-        return sound
-          ? () => {
-              console.log('Unloading Sound');
-              sound.unloadAsync();
-            }
-          : undefined;
-      }, [sound]);
+        if (pause === true) {
+            await sound.pauseAsync();
+            sound.unloadAsync();
+        }
+        
+    }
 
     const radio =
         <div
@@ -52,17 +73,19 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     }}
                 >
                     <Image
-                        source={ Images.leftButton }
+                        source={ LBtn }
                         style={ styles().leftButton }
-                        onPointerUp={ () => playMusic(true, false, false) }
+                        onPointerUp={ 
+                            () => playMusic(true, false, false)
+                        }
                     />
                     <Image
-                        source={ Images.pauseButton }
+                        source={ PBtn }
                         style={ styles().pauseButton }
                         onPointerUp={ () => playMusic(false, true, false) }
                     />
                     <Image
-                        source={ Images.rightButton }
+                        source={ RBtn }
                         style={ styles().rightButton }
                         onPointerUp={ () => playMusic(false, false, true) }
                     />
