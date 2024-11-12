@@ -23,7 +23,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     ];
 
     const [ index, setIndex ] = useState<number>(0);
-    const [ status, setStatus ] = useState<string>('paused');
+    const [ status, setStatus ] = useState<string>('init');
     const music = document.getElementById("audio") as HTMLVideoElement;
 
     const img = document.createElement('img');
@@ -41,7 +41,9 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             } else {
                 setIndex(playlist.length - 1);
             }
+            setStatus('playing');
         }
+    
         if (pause) {
             setPBtn(Images.pauseButtonClick);
             setTimeout(function(){
@@ -51,33 +53,26 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             music.pause();
             setStatus('paused');
         }
-        if (status !== 'playing' && next) {
-            setRBtn(Images.rightButtonClick);
-            setTimeout(function(){
-                setRBtn(Images.rightButton);
-            }, 880);
-
-            music.play();
-            setStatus('playing');
-        }
-
-        if (status === 'playing' && next) {
-            setRBtn(Images.rightButtonClick);
-            setTimeout(function(){
-                setRBtn(Images.rightButton);
-            }, 880);
-
-            if ( index < playlist.length - 1 ) {
-                setIndex(index + 1);
-            } else {
-                setIndex(0);
-            }
-        }
     
-        
+        if (next) {
+            setRBtn(Images.rightButtonClick);
+            setTimeout(function(){
+                setRBtn(Images.rightButton);
+            }, 880);
 
+            if (status !== 'playing') {
+                music.play();
+                setStatus('playing');
+            } else {
+                if ( index < playlist.length - 1 ) {
+                    setIndex(index + 1);
+                } else {
+                    setIndex(0);
+                }
+            }   
+        }
         
-    },[ music, index, setIndex ]);
+    },[ music, index, setIndex, status, setStatus ]);
 
     const radio =
         <div
@@ -103,10 +98,10 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     darkColor="#FFF6ED"
                     style={styles().nowPlaying}
                 >
-                    { playlist[index][index]?.title ? 
-                        `Now playing: ${ playlist[index][index]?.title }`
-                        :
+                    { status === "init" ? 
                         "press right arrow to play! :)"
+                        :
+                        `Now playing: ${ playlist[index][index]?.title }`
                     }
                 </ThemedText>
                 <div
