@@ -24,7 +24,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
     const [ index, setIndex ] = useState<number>(0);
     const [ status, setStatus ] = useState<string>('paused');
-    const music = document.getElementById("audio");
+    const music = document.getElementById("audio") as HTMLVideoElement;
 
     const img = document.createElement('img');
     img.src = Images.clearImg;
@@ -47,8 +47,21 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             setTimeout(function(){
                 setPBtn(Images.pauseButton);
             }, 880);
+
+            music.pause();
+            setStatus('paused');
         }
-        if (next) {
+        if (status !== 'playing' && next) {
+            setRBtn(Images.rightButtonClick);
+            setTimeout(function(){
+                setRBtn(Images.rightButton);
+            }, 880);
+
+            music.play();
+            setStatus('playing');
+        }
+
+        if (status === 'playing' && next) {
             setRBtn(Images.rightButtonClick);
             setTimeout(function(){
                 setRBtn(Images.rightButton);
@@ -61,13 +74,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             }
         }
     
-        if (status !== 'playing' && next) {
-            setStatus('playing');
-        }
+        
 
-        if (pause) {
-            setStatus('paused');
-        }
         
     },[ music, index, setIndex ]);
 
@@ -82,7 +90,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 loop
                 autoPlay
                 id="audio"
-                src={ playlist[index] ? playlist[index][index]?.path : playlist[0][0]?.path }
+                src={ playlist[index][index]?.path ? playlist[index][index]?.path : playlist[0][0]?.path }
             />
             
             <ImageBackground
