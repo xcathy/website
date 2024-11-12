@@ -11,8 +11,16 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     const [ LBtn, setLBtn ] = useState<ImageSource>(Images.leftButton);
     const [ PBtn, setPBtn ] = useState<ImageSource>(Images.pauseButton);
     const [ RBtn, setRBtn ] = useState<ImageSource>(Images.rightButton);
-    const [ track, setTrack ] = useState<AVPlaybackSource>(Audios.morning);
-    const [sound, setSound] = useState<Sound>();
+    
+    const playlist : AVPlaybackSource[] = [
+        Audios.morning,
+        Audios.raindrops,
+        Audios.happy,
+    ];
+
+    const [ index, setIndex ] = useState<number>(0);
+    const [ status, setStatus ] = useState<string>('paused');
+
     const img = document.createElement('img');
     img.src = Images.clearImg;
 
@@ -22,6 +30,12 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             setTimeout(function(){
                 setLBtn(Images.leftButton);
             }, 880);
+
+            if ( index > 0 ) {
+                setIndex(index - 1);
+            } else {
+                setIndex(playlist.length - 1);
+            }
         }
         if (pause) {
             setPBtn(Images.pauseButtonClick);
@@ -34,22 +48,26 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             setTimeout(function(){
                 setRBtn(Images.rightButton);
             }, 880);
+
+            if ( index < playlist.length - 1 ) {
+                setIndex(index + 1);
+            } else {
+                setIndex(0);
+            }
         }
 
-        setTrack(Audios.morning);
-
-        const { sound } = await Audio.Sound.createAsync(track);
-
+        const { sound } = await Audio.Sound.createAsync(playlist[index]);
         sound.setIsLoopingAsync(true);
-        setSound(sound);
     
-        if (next === true) {
+        if (status !== 'playing' && next) {
             await sound.playAsync();
+            setStatus('playing');
         }
 
-        if (pause === true) {
+        if (pause) {
             await sound.pauseAsync();
-            sound.unloadAsync();
+            await sound.unloadAsync();
+            setStatus('paused');
         }
         
     }
