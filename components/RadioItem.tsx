@@ -4,7 +4,6 @@ import { CSSProperties, DragEventHandler, useEffect, useReducer, useState } from
 import { StyleSheet } from 'react-native';
 import { Audio, AVPlaybackSource } from 'expo-av';
 import { Audios } from "@/constants/Audios";
-import { Sound } from "expo-av/build/Audio";
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
