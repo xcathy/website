@@ -35,10 +35,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="sunroom"
+        name="desk"
         options={{
-          title: 'Sunroom',
-          href: '/sunroom',
+          title: 'Desk',
+          href: '/desk',
           tabBarIcon: ({ color, focused }) => (
             TabBarIcon( faLeaf, color )
           ),
