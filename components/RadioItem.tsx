@@ -1,9 +1,14 @@
 import { Images } from "@/constants/Images";
 import { Image, ImageBackground, ImageSource } from 'expo-image';
-import { CSSProperties, DragEventHandler, useEffect, useReducer, useState } from 'react';
+import React, { CSSProperties, DragEventHandler, useCallback, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Audio, AVPlaybackSource } from 'expo-av';
 import { Audios } from "@/constants/Audios";
+import { ThemedText } from "./ThemedText";
+
+interface Track {
+    title: string
+    path: string
+}
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -11,19 +16,20 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     const [ PBtn, setPBtn ] = useState<ImageSource>(Images.pauseButton);
     const [ RBtn, setRBtn ] = useState<ImageSource>(Images.rightButton);
     
-    const playlist : AVPlaybackSource[] = [
-        Audios.morning,
-        Audios.raindrops,
-        Audios.happy,
+    const playlist : Record<number, Track>[] = [
+        { 0: { title: "morning", path: Audios.morning }},
+        { 1: { title: "raindrops", path: Audios.raindrops }},
+        { 2: { title: "happy", path: Audios.happy }},
     ];
 
     const [ index, setIndex ] = useState<number>(0);
     const [ status, setStatus ] = useState<string>('paused');
+    const music = document.getElementById("audio");
 
     const img = document.createElement('img');
     img.src = Images.clearImg;
 
-    async function playMusic( previous: boolean, pause: boolean,  next: boolean ) {
+    const playMusic = useCallback(( previous: boolean, pause: boolean,  next: boolean ) => {
         if (previous) {
             setLBtn(Images.leftButtonClick);
             setTimeout(function(){
@@ -54,22 +60,16 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 setIndex(0);
             }
         }
-
-        const { sound } = await Audio.Sound.createAsync(playlist[index]);
-        sound.setIsLoopingAsync(true);
     
         if (status !== 'playing' && next) {
-            await sound.playAsync();
             setStatus('playing');
         }
 
         if (pause) {
-            await sound.pauseAsync();
-            await sound.unloadAsync();
             setStatus('paused');
         }
         
-    }
+    },[ music ]);
 
     const radio =
         <div
@@ -78,11 +78,29 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             onDrag={ handleDrag }
             style={ style }
         >
+            <audio
+                loop
+                autoPlay
+                id="audio"
+                src={ playlist[index] ? playlist[index][1]?.path : playlist[0][1]?.path }
+            />
+            
             <ImageBackground
                 source={Images.radio || blurhash}
                 contentFit="cover"
                 style={styles({ height: style?.height, width: style?.width }).radio}
             >
+                <ThemedText
+                    lightColor="#FFF6ED"
+                    darkColor="#FFF6ED"
+                    style={styles().nowPlaying}
+                >
+                    { playlist[index][1]?.title ? 
+                        `Now playing: ${ playlist[index][1]?.title }`
+                        :
+                        "press right arrow to play! :)"
+                    }
+                </ThemedText>
                 <div
                     style={{
                         display: "flex",
@@ -116,6 +134,10 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 }
 
 const styles : any = (props: any) => StyleSheet.create({
+    nowPlaying: {
+        paddingTop: 2,
+        fontSize: 13,
+    },
     radio: {
         height: props?.height || 0.0,
         width: props?.width || 0.0,
