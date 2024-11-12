@@ -85,7 +85,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 loop
                 autoPlay
                 id="audio"
-                src={ playlist[index][index]?.path ? playlist[index][index]?.path : playlist[0][0]?.path }
+                src={ status === "init" ? "" : playlist[index][index]?.path }
             />
             
             <ImageBackground

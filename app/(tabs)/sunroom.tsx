@@ -66,10 +66,14 @@ export default function TabTwoScreen() {
                     styles({ x: radioBox.a, y: radioBox.b }).radioContainer,
                 )
             }
-            <Image
-                source={ Images.catSleep }
-                style={ styles().catSleep }
-            />
+            <div
+                draggable={ false }
+            >
+                <Image
+                    source={ Images.catSleep }
+                    style={ styles().catSleep }
+                />
+            </div>
             
             <div
                 draggable={ false }
