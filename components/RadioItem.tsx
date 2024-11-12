@@ -69,7 +69,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             setStatus('paused');
         }
         
-    },[ music ]);
+    },[ music, index, setIndex ]);
 
     const radio =
         <div
@@ -82,7 +82,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 loop
                 autoPlay
                 id="audio"
-                src={ playlist[index] ? playlist[index][1]?.path : playlist[0][1]?.path }
+                src={ playlist[index] ? playlist[index][index]?.path : playlist[0][0]?.path }
             />
             
             <ImageBackground
@@ -95,8 +95,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     darkColor="#FFF6ED"
                     style={styles().nowPlaying}
                 >
-                    { playlist[index][1]?.title ? 
-                        `Now playing: ${ playlist[index][1]?.title }`
+                    { playlist[index][index]?.title ? 
+                        `Now playing: ${ playlist[index][index]?.title }`
                         :
                         "press right arrow to play! :)"
                     }
