@@ -27,7 +27,7 @@ export default function TabTwoScreen() {
     const isWideScreen = (Dimensions.get('window').width > 800);
     const [ clockBox, setCBox ] = useState<ElemntBox>({ a: 0.8 * screenW, b: 0.53 * screenH, c: 0.8 * screenW + clockW, d: 0.53 * screenH + clockH, W: clockW, H: clockH });
     const [ calendarBox, setCLBox ] = useState<ElemntBox>({ a: 0.85 * screenW, b: 0.05 * screenH, c: 0.85 * screenW + calendarW, d: 0.05 * screenH + calendarH, W: calendarW, H: calendarH });
-    const [ radioBox, setRDBox ] = useState<ElemntBox>({ a: 0.45 * screenW, b: 0.43 * screenH, c: 0.85 * screenW + radioW, d: 0.05 * screenH + radioH, W: radioW, H: radioH });
+    const [ radioBox, setRDBox ] = useState<ElemntBox>({ a: 0.45 * screenW, b: 0.28 * screenH, c: 0.85 * screenW + radioW, d: 0.05 * screenH + radioH, W: radioW, H: radioH });
 
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
@@ -168,7 +168,7 @@ const styles : any = (props: any) => StyleSheet.create({
         left: props?.x || 0,
         top: props?.y || 0,
         position: 'absolute',
-        height: 130,
+        height: 221,
         width: 221,
     },
     catSleep: {

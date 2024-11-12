@@ -138,7 +138,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
 const styles : any = (props: any) => StyleSheet.create({
     nowPlaying: {
-        paddingTop: 2,
+        paddingTop: 90,
         fontSize: 13,
     },
     radio: {
