@@ -11,7 +11,6 @@ import { RadioItem } from '@/components/RadioItem';
 import { PlantItem } from '@/components/PlantItem';
 
 export default function TabTwoScreen() {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const screenW = Dimensions.get('window').width;
     const screenH = Dimensions.get('window').height;
     const clock = document.getElementById("clock");
