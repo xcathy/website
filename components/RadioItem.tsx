@@ -39,6 +39,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
         setTrack(Audios.morning);
 
         const { sound } = await Audio.Sound.createAsync(track);
+
+        sound.setIsLoopingAsync(true);
         setSound(sound);
     
         if (next === true) {
