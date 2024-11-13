@@ -6,17 +6,13 @@ import { CSSProperties, useEffect, useState } from "react";
 export function Cloud(id: string, image: string, style?: CSSProperties | undefined, pace?: number, speed?: number ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const windowW = Dimensions.get('window').width;
-    const styleLeft : number = style?.left as number;
-    const styleWidth : number = style?.width as number;
-    const defaultLeft = style?.left ? windowW - styleLeft - styleWidth : styleWidth;
-    const [ x, setX ] = useState<number>(defaultLeft || 0.0);
-    const webView = (windowW > 800);
+    const [ x, setX ] = useState<number>(0.0);
 
     useEffect(() => {
         setTimeout(() => {
-            setX(x + (pace ? pace : 0.0));
-            if (x >= windowW) {
-                setX(style?.width ? -style?.width : 0.0);
+            setX(x - (pace ? pace : 0.0));
+            if (x <= - (0.6 * windowW)) {
+                setX(0.0);
             }
         }, (speed ? speed : 1000)); 
     });
@@ -35,7 +31,7 @@ export function Cloud(id: string, image: string, style?: CSSProperties | undefin
                 }}
             >
                 <Image
-                    style={styles({ x: x, height: style?.height, width: style?.width, top: style?.top, zIndex: style?.zIndex }).cloud}
+                    style={styles({ x: x, height: style?.height, width: style?.width, zIndex: style?.zIndex }).cloud}
                     source={image}
                     placeholder={blurhash}
                     contentFit="cover"
@@ -48,11 +44,9 @@ export function Cloud(id: string, image: string, style?: CSSProperties | undefin
 
 const styles : any = (props: any) => StyleSheet.create({
     cloud: {
-        height: props.height || 0.0,
-        width: props.width || 0.0,
-        top: props.top || 0.0,
-        bottom: 0,
-        left: (Dimensions.get('window').width - (props.width || 0.0)) - props?.x || 'auto',
+        height: props?.height || 0.0,
+        width: props?.width || 0.0,
+        left: props?.x || 'auto',
         right: 0,
         position: 'absolute',
         backgroundColor: 'transparent',

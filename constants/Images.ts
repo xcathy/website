@@ -86,8 +86,7 @@ const calendar = require('../assets/images/Sprites/Desk/calendar.png');
 const calendarTear = require('../assets/images/Sprites/Desk/calendarTear.gif');
 
 // Clouds
-const cloud1 = require('../assets/images/Sprites/Desk/cloud1.png');
-const cloud2 = require('../assets/images/Sprites/Desk/cloud2.png');
+const clouds = require('../assets/images/Sprites/Desk/clouds.png');
 
 // Cat walk
 const catWalkCycle = require('../assets/images/Sprites/Cat/CatWalkCycle.gif');
@@ -121,8 +120,7 @@ export const Images = {
     radio,
     catSleep,
     catWalkCycle,
-    cloud1,
-    cloud2,
+    clouds,
     calendar,
     calendarTear,
     clearImg,

@@ -179,54 +179,9 @@ export default function TabTwoScreen() {
             </div>
             {
                 Cloud(
-                    "cloud1_1",
-                    Images.cloud1,
-                    styles().cloud1_1,
-                    1,
-                    500,
-                )
-            }
-            {
-                Cloud(
-                    "cloud1_2",
-                    Images.cloud1,
-                    styles().cloud1_2,
-                    1,
-                    500,
-                )
-            }
-            {
-                Cloud(
-                    "cloud1_3",
-                    Images.cloud1,
-                    styles().cloud1_3,
-                    1,
-                    500,
-                )
-            }
-            {
-                Cloud(
-                    "cloud1_4",
-                    Images.cloud1,
-                    styles().cloud1_4,
-                    1,
-                    500,
-                )
-            }
-            {
-                Cloud(
-                    "cloud2_1",
-                    Images.cloud2,
-                    styles().cloud2_1,
-                    1,
-                    500,
-                )
-            }
-            {
-                Cloud(
-                    "cloud2_2",
-                    Images.cloud2,
-                    styles().cloud2_2,
+                    "clouds",
+                    Images.clouds,
+                    styles().clouds,
                     1,
                     500,
                 )
@@ -264,52 +219,10 @@ const styles : any = (props: any) => StyleSheet.create({
         zIndex: 12,
         userSelect: 'none',
     },
-    cloud1_1: {
-        left: 10,
-        top: 30,
+    clouds: {
         position: 'absolute',
-        height: 170,
-        width: 520,
-        zIndex: -12,
-    },
-    cloud1_2: {
-        left: 420,
-        top: 20,
-        position: 'absolute',
-        height: 170,
-        width: 530,
-        zIndex: -12,
-    },
-    cloud1_3: {
-        left: 800,
-        top: 100,
-        position: 'absolute',
-        height: 170,
-        width: 530,
-        zIndex: -12,
-    },
-    cloud1_4: {
-        left: 120,
-        top: 100,
-        position: 'absolute',
-        height: 170,
-        width: 530,
-        zIndex: -12,
-    },
-    cloud2_1: {
-        left: 270,
-        top: 30,
-        position: 'absolute',
-        height: 200,
-        width: 530,
-        zIndex: -12,
-    },
-    cloud2_2: {
-        left: 100,
-        top: -50,
-        position: 'absolute',
-        height: 170,
-        width: 520,
+        height: Dimensions.get('window').height || 900,
+        width: Dimensions.get('window').width || 1000,
         zIndex: -12,
     },
 });
