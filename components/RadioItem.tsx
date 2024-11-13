@@ -98,7 +98,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 <ThemedText
                     lightColor="#FFF6ED"
                     darkColor="#FFF6ED"
-                    style={styles({ webView: isWideScreen }).nowPlaying}
+                    style={styles({ radioH: style?.height, webView: isWideScreen }).nowPlaying}
                 >
                     { status === "init" ? 
                         "press right arrow to play! :)"
@@ -135,8 +135,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
 const styles : any = (props: any) => StyleSheet.create({
     nowPlaying: {
-        paddingTop: props?.webView ? 83 : 35,
-        fontSize: props?.webView ? 12 : 5,
+        paddingTop: props?.webView ? 0.39 * props?.radioH : 0.35 * props?.radioH,
+        fontSize: props?.webView ? 10 : 5,
     },
     radio: {
         height: props?.height || 0.0,
