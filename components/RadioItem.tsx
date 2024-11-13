@@ -111,19 +111,19 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 >
                     <Image
                         source={ LBtn }
-                        style={ styles({ webView: isWideScreen }).leftButton }
+                        style={ styles({ radioH: style?.height }).leftButton }
                         onPointerUp={ 
                             () => playMusic(true, false, false)
                         }
                     />
                     <Image
                         source={ PBtn }
-                        style={ styles({ webView: isWideScreen }).pauseButton }
+                        style={ styles({ radioH: style?.height }).pauseButton }
                         onPointerUp={ () => playMusic(false, true, false) }
                     />
                     <Image
                         source={ RBtn }
-                        style={ styles({ webView: isWideScreen }).rightButton }
+                        style={ styles({ radioH: style?.height }).rightButton }
                         onPointerUp={ () => playMusic(false, false, true) }
                     />
                 </div>
@@ -150,39 +150,39 @@ const styles : any = (props: any) => StyleSheet.create({
     },
     buttonDisplay: {
         display: "flex",
-        paddingLeft: props?.webView ? 0.001 * props?.radioW : 0.0005 * props?.radioW,
-        paddingTop:  props?.webView ? 0.02 * props?.radioH : 0,
+        paddingLeft: props?.webView ? 0.03 * props?.radioW : 0.01 * props?.radioW,
+        paddingTop:  props?.webView ? 0.05 * props?.radioH : 0,
         alignSelf: "baseline",
     },
     leftButton: {
-        height: props?.webView ? 28 : 15,
-        width: props?.webView ? 17 : 9,
+        height: 0.15 * props?.radioH,
+        width: 0.09 * props?.radioH,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: props?.webView ? 10 : 4,
+        margin: 0.04 * props?.radioH,
     },
     pauseButton: {
-        height: props?.webView ? 28 : 15,
-        width: props?.webView ? 19 : 10,
+        height: 0.15 * props?.radioH,
+        width: 0.11 * props?.radioH,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: props?.webView ? 10 : 4,
+        margin: 0.04 * props?.radioH,
     },
     rightButton: {
-        height: props?.webView ? 28 : 15,
-        width: props?.webView ? 17 : 9,
+        height: 0.15 * props?.radioH,
+        width: 0.09 * props?.radioH,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: props?.webView ? 10 : 4,
+        margin: 0.04 * props?.radioH,
     },
     
 });
