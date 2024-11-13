@@ -37,7 +37,7 @@ export function CalendarItem(id: string, handleDrag?: DragEventHandler<HTMLDivEl
                         />
                         <Clock
                             style={styles().date}
-                            format={'Mo'}
+                            format={'DD'}
                             ticking={false}
                         />
                         <Clock
