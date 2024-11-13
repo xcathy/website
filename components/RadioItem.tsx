@@ -107,7 +107,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     }
                 </ThemedText>
                 <div
-                    style={ styles({ radioH: style?.height, radioW: style?.width, webView: isWideScreen }).buttonDisplay }
+                    style={ styles({ radioH: style?.height, radioW: style?.width }).buttonDisplay }
                 >
                     <Image
                         source={ LBtn }
@@ -150,8 +150,8 @@ const styles : any = (props: any) => StyleSheet.create({
     },
     buttonDisplay: {
         display: "flex",
-        paddingLeft: props?.webView ? 0.03 * props?.radioW : 0.01 * props?.radioW,
-        paddingTop:  props?.webView ? 0.05 * props?.radioH : 0,
+        paddingLeft: 0.03 * props?.radioW,
+        paddingTop: 0.05 * props?.radioH,
         alignSelf: "baseline",
     },
     leftButton: {
