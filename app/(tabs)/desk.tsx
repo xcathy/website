@@ -40,16 +40,16 @@ export default function TabTwoScreen() {
     const webView = (Dimensions.get('window').width > 800);
     const defaultPositions: Record<string, Position> = 
     {
-        "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.5 * screenW, top: 0.55 * screenH },
-        "calendar": webView ? { left: 0.85 * screenW, top: 0.05 * screenH } : { left: 0.6 * screenW, top: 0.37 * screenH },
+        "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.56 * screenW, top: 0.58 * screenH },
+        "calendar": webView ? { left: 0.85 * screenW, top: 0.05 * screenH } : { left: 0.56 * screenW, top: 0.37 * screenH },
         "radio": webView ? { left: 0.45 * screenW, top: 0.4 * screenH } : { left: 0.13 * screenW, top: 0.3 * screenH },
-        "plant": webView ? { left: 0.6 * screenW, top: 0.17 * screenH } : { left: 0.65 * screenW, top: 0.17 * screenH },
+        "plant": webView ? { left: 0.6 * screenW, top: 0.17 * screenH } : { left: 0.65 * screenW, top: 0.18 * screenH },
         "catSleep": webView ? { left: 0.02 * screenW, top: 0.45 * screenH } : { left: 0 * screenW, top: 0.67 * screenH },
     }
     const defaultSize: Record<string, Size> = 
     {
-        "clock": webView ? { height: 0.2  * screenH, width: 0.53 * screenH } : { height: 0.07 * screenH, width: 0.23 * screenH },
-        "calendar": webView ? { height: 0.2  * screenH, width: 0.53 * screenH } : { height: 0.3  * screenH, width: 0.15 * screenH },
+        "clock": webView ? { height: 0.1  * screenH, width: 0.3 * screenH } : { height: 0.05 * screenH, width: 0.15 * screenH },
+        "calendar": webView ? { height: 0.4  * screenH, width: 0.2 * screenH } : { height: 0.3  * screenH, width: 0.15 * screenH },
         "radio": webView ? { height: 0.25 * screenH, width: 0.25 * screenH } : { height: 0.19 * screenH, width: 0.19 * screenH },
         "plant": { height: 0.2 * screenH, width: 0.1 * screenH },
         "catSleep": { height: 0.5 * screenH, width: 0.5 * screenH },
