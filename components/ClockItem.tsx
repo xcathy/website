@@ -20,7 +20,7 @@ export function ClockItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             <ImageBackground
                 source={Images.clock || blurhash}
                 contentFit="cover"
-                style={styles().clock}
+                style={styles({ height: style?.height, width: style?.width }).clock}
             >
                 <ThemedText
                     type="default"
@@ -41,8 +41,8 @@ export function ClockItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
 const styles : any = (props: any) => StyleSheet.create({
     clock: {
-        height: 60,
-        width: 180,
+        height: props?.height || 0.0,
+        width: props?.width || 0.0,
         position: 'absolute',
         backgroundColor: 'transparent',
         shadowColor: '#001a33',

@@ -20,7 +20,7 @@ export function CalendarItem(id: string, handleDrag?: DragEventHandler<HTMLDivEl
             <ImageBackground
                 source={Images.calendar || blurhash}
                 contentFit="cover"
-                style={styles().calendar}
+                style={styles({ height: style?.height, width: style?.width }).calendar}
             >
                 <ThemedText
                     type="default"
@@ -56,8 +56,8 @@ export function CalendarItem(id: string, handleDrag?: DragEventHandler<HTMLDivEl
 
 const styles : any = (props: any) => StyleSheet.create({
     calendar: {
-        height: 300,
-        width: 150,
+        height: props?.height || 0.0,
+        width: props?.width || 0.0,
         position: 'absolute',
         backgroundColor: 'transparent',
         alignItems: 'center',

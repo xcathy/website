@@ -15,6 +15,11 @@ interface Position {
     top: number
 }
 
+interface Size {
+    height: number
+    width: number
+}
+
 export default function TabTwoScreen() {
     const screenW = Dimensions.get('window').width;
     const screenH = Dimensions.get('window').height;
@@ -32,49 +37,57 @@ export default function TabTwoScreen() {
     const plantW = plant?.clientWidth || 0.0;
     const plantH = plant?.clientHeight || 0.0;
 
-    const isWideScreen = (Dimensions.get('window').width > 800);
+    const webView = (Dimensions.get('window').width > 800);
     const defaultPositions: Record<string, Position> = 
-        {
-            "clock": { left: 0.8, top: 0.53 },
-            "calendar": { left: 0.85, top: 0.05 },
-            "radio": isWideScreen ? { left: 0.45, top: 0.32 } : { left: 0.13, top: 0.28 },
-            "plant": isWideScreen ? { left: 0.6, top: 0.08 } : { left: 0.5, top: 0.25 },
-            "catSleep": isWideScreen ? { left: 0.02, top: 0.45 } : { left: 0, top: 0.67 },
-        }
+    {
+        "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.5 * screenW, top: 0.55 * screenH },
+        "calendar": webView ? { left: 0.85 * screenW, top: 0.05 * screenH } : { left: 0.6 * screenW, top: 0.37 * screenH },
+        "radio": webView ? { left: 0.45 * screenW, top: 0.4 * screenH } : { left: 0.13 * screenW, top: 0.3 * screenH },
+        "plant": webView ? { left: 0.6 * screenW, top: 0.17 * screenH } : { left: 0.65 * screenW, top: 0.17 * screenH },
+        "catSleep": webView ? { left: 0.02 * screenW, top: 0.45 * screenH } : { left: 0 * screenW, top: 0.67 * screenH },
+    }
+    const defaultSize: Record<string, Size> = 
+    {
+        "clock": webView ? { height: 0.2  * screenH, width: 0.53 * screenH } : { height: 0.07 * screenH, width: 0.23 * screenH },
+        "calendar": webView ? { height: 0.2  * screenH, width: 0.53 * screenH } : { height: 0.3  * screenH, width: 0.15 * screenH },
+        "radio": webView ? { height: 0.25 * screenH, width: 0.25 * screenH } : { height: 0.19 * screenH, width: 0.19 * screenH },
+        "plant": { height: 0.2 * screenH, width: 0.1 * screenH },
+        "catSleep": { height: 0.5 * screenH, width: 0.5 * screenH },
+    }
 
     const [ clockBox, setCBox ] = useState<ElemntBox>(
         {
-            a: defaultPositions["clock"].left * screenW,
-            b: defaultPositions["clock"].top * screenH,
-            c: defaultPositions["clock"].left * screenW + clockW,
-            d: defaultPositions["clock"].top * screenH + clockH,
+            a: defaultPositions["clock"].left,
+            b: defaultPositions["clock"].top,
+            c: defaultPositions["clock"].left + clockW,
+            d: defaultPositions["clock"].top + clockH,
             W: clockW,
             H: clockH
         });
     const [ calendarBox, setCLBox ] = useState<ElemntBox>(
         {
-            a: defaultPositions["calendar"].left * screenW,
-            b: defaultPositions["calendar"].top * screenH,
-            c: defaultPositions["calendar"].left * screenW + calendarW,
-            d: defaultPositions["calendar"].top * screenH + calendarH,
+            a: defaultPositions["calendar"].left,
+            b: defaultPositions["calendar"].top,
+            c: defaultPositions["calendar"].left + calendarW,
+            d: defaultPositions["calendar"].top + calendarH,
             W: calendarW,
             H: calendarH
         });
     const [ radioBox, setRDBox ] = useState<ElemntBox>(
         { 
-            a: defaultPositions["radio"].left * screenW, 
-            b: defaultPositions["radio"].top * screenH,
-            c: defaultPositions["radio"].left * screenW + radioW,
-            d: defaultPositions["radio"].top * screenH + radioH,
+            a: defaultPositions["radio"].left, 
+            b: defaultPositions["radio"].top,
+            c: defaultPositions["radio"].left + radioW,
+            d: defaultPositions["radio"].top + radioH,
             W: radioW,
             H: radioH
         });
     const [ plantBox, setPTBox ] = useState<ElemntBox>(
         {
-            a: defaultPositions["plant"].left * screenW,
-            b: defaultPositions["plant"].top * screenH,
-            c: defaultPositions["plant"].left * screenW + plantW,
-            d: defaultPositions["plant"].top * screenH + plantH,
+            a: defaultPositions["plant"].left,
+            b: defaultPositions["plant"].top,
+            c: defaultPositions["plant"].left + plantW,
+            d: defaultPositions["plant"].top + plantH,
             W: plantW,
             H: plantH
         });
@@ -101,28 +114,48 @@ export default function TabTwoScreen() {
                 ClockItem(
                     "clock",
                     (e) => moveItem("clock", e, clockBox),
-                    styles({ x: clockBox.a, y: clockBox.b }).clockContainer,
+                    styles({
+                        x: clockBox.a,
+                        y: clockBox.b,
+                        height: defaultSize["clock"].height,
+                        width: defaultSize["clock"].width,
+                    }).draggableContainer,
                 )
             }
             {
                 CalendarItem(
                     "calendar",
                     (e) => moveItem("calendar", e, calendarBox),
-                    styles({ x: calendarBox.a, y: calendarBox.b }).calendarContainer,
+                    styles({
+                        x: calendarBox.a,
+                        y: calendarBox.b,
+                        height: defaultSize["calendar"].height,
+                        width: defaultSize["calendar"].width,
+                    }).draggableContainer,
                 )
             }
             {
                 RadioItem(
                     "radio",
                     (e) => moveItem("radio", e, radioBox),
-                    styles({ x: radioBox.a, y: radioBox.b, webView: isWideScreen }).radioContainer,
+                    styles({
+                        x: radioBox.a,
+                        y: radioBox.b,
+                        height: defaultSize["radio"].height,
+                        width: defaultSize["radio"].width,
+                    }).draggableContainer,
                 )
             }
             {
                 PlantItem(
                     "plant",
                     (e) => moveItem("plant", e, plantBox),
-                    styles({ x: plantBox.a, y: plantBox.b }).plantContainer,
+                    styles({
+                        x: plantBox.a,
+                        y: plantBox.b,
+                        height: defaultSize["plant"].height,
+                        width: defaultSize["plant"].width,
+                    }).draggableContainer,
                 )
             }
             
@@ -131,10 +164,15 @@ export default function TabTwoScreen() {
             >
                 <Image
                     source={ Images.catSleep }
-                    style={ styles({ left: defaultPositions["catSleep"].left, top: defaultPositions["catSleep"].top }).catSleep }
+                    style={ styles({
+                        left: defaultPositions["catSleep"].left,
+                        top: defaultPositions["catSleep"].top,
+                        height: defaultSize["catSleep"].height,
+                        width: defaultSize["catSleep"].width,
+                    }).catSleep }
                 />
                 <ImageBackground
-                    source={isWideScreen ? Images.hBackground : Images.vBackground}
+                    source={webView ? Images.hBackground : Images.vBackground}
                     contentFit="cover"
                     style={styles().background}
                 />
@@ -209,40 +247,20 @@ const styles : any = (props: any) => StyleSheet.create({
         justifyContent: 'center',
         zIndex: -10,
     },
-    clockContainer: {
+    draggableContainer: {
         left: props?.x || 0,
         top: props?.y || 0,
         position: 'absolute',
-        height: 60,
-        width: 180,
-    },
-    calendarContainer: {
-        left: props?.x || 0,
-        top: props?.y || 0,
-        position: 'absolute',
-        height: 300,
-        width: 150,
-    },
-    radioContainer: {
-        left: props?.x || 0,
-        top: props?.y || 0,
-        position: 'absolute',
-        height: props?.webView ? 0.3 * Dimensions.get("window").height : 0.2 * Dimensions.get("window").height,
-        width: props?.webView ? 0.3 * Dimensions.get("window").height : 0.2 * Dimensions.get("window").height,
-    },
-    plantContainer: {
-        left: props?.x || 0,
-        top: props?.y || 0,
-        position: 'absolute',
-        height: 160,
-        width: 100,
+        height: props?.height || 0.0,
+        width: props?.width || 0.0,
+        zIndex: 13,
     },
     catSleep: {
-        left: props?.left * Dimensions.get("window").width || 0.0,
-        top: props?.top * Dimensions.get("window").height || 0.0,
+        left: props?.left || 0.0,
+        top: props?.top || 0.0,
         position: 'absolute',
-        height: 0.5 * Dimensions.get("window").height,
-        width: 0.5 * Dimensions.get("window").height,
+        height: props?.height || 0.0,
+        width: props?.height || 0.0,
         zIndex: 12,
         userSelect: 'none',
     },
