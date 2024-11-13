@@ -10,6 +10,11 @@ import { Cloud } from '@/components/Cloud';
 import { RadioItem } from '@/components/RadioItem';
 import { PlantItem } from '@/components/PlantItem';
 
+interface Position {
+    left: number
+    top: number
+}
+
 export default function TabTwoScreen() {
     const screenW = Dimensions.get('window').width;
     const screenH = Dimensions.get('window').height;
@@ -28,10 +33,50 @@ export default function TabTwoScreen() {
     const plantH = plant?.clientHeight || 0.0;
 
     const isWideScreen = (Dimensions.get('window').width > 800);
-    const [ clockBox, setCBox ] = useState<ElemntBox>({ a: 0.8 * screenW, b: 0.53 * screenH, c: 0.8 * screenW + clockW, d: 0.53 * screenH + clockH, W: clockW, H: clockH });
-    const [ calendarBox, setCLBox ] = useState<ElemntBox>({ a: 0.85 * screenW, b: 0.05 * screenH, c: 0.85 * screenW + calendarW, d: 0.05 * screenH + calendarH, W: calendarW, H: calendarH });
-    const [ radioBox, setRDBox ] = useState<ElemntBox>({ a: 0.45 * screenW, b: 0.28 * screenH, c: 0.85 * screenW + radioW, d: 0.05 * screenH + radioH, W: radioW, H: radioH });
-    const [ plantBox, setPTBox ] = useState<ElemntBox>({ a: 0.6 * screenW, b: 0.08 * screenH, c: 0.85 * screenW + plantW, d: 0.05 * screenH + plantH, W: plantW, H: plantH });
+    const defaultPositions: Record<string, Position> = 
+        {
+            "clock": { left: 0.8, top: 0.53 },
+            "calendar": { left: 0.85, top: 0.05 },
+            "radio": isWideScreen ? { left: 0.45, top: 0.32 } : { left: 0.15, top: 0.28 },
+            "plant": { left: 0.6, top: 0.08 },
+        }
+
+    const [ clockBox, setCBox ] = useState<ElemntBox>(
+        {
+            a: defaultPositions["clock"].left * screenW,
+            b: defaultPositions["clock"].top * screenH,
+            c: defaultPositions["clock"].left * screenW + clockW,
+            d: defaultPositions["clock"].top * screenH + clockH,
+            W: clockW,
+            H: clockH
+        });
+    const [ calendarBox, setCLBox ] = useState<ElemntBox>(
+        {
+            a: defaultPositions["calendar"].left * screenW,
+            b: defaultPositions["calendar"].top * screenH,
+            c: defaultPositions["calendar"].left * screenW + calendarW,
+            d: defaultPositions["calendar"].top * screenH + calendarH,
+            W: calendarW,
+            H: calendarH
+        });
+    const [ radioBox, setRDBox ] = useState<ElemntBox>(
+        { 
+            a: defaultPositions["radio"].left * screenW, 
+            b: defaultPositions["radio"].top * screenH,
+            c: defaultPositions["radio"].left * screenW + radioW,
+            d: defaultPositions["radio"].top * screenH + radioH,
+            W: radioW,
+            H: radioH
+        });
+    const [ plantBox, setPTBox ] = useState<ElemntBox>(
+        {
+            a: defaultPositions["plant"].left * screenW,
+            b: defaultPositions["plant"].top * screenH,
+            c: defaultPositions["plant"].left * screenW + plantW,
+            d: defaultPositions["plant"].top * screenH + plantH,
+            W: plantW,
+            H: plantH
+        });
 
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
@@ -69,7 +114,7 @@ export default function TabTwoScreen() {
                 RadioItem(
                     "radio",
                     (e) => moveItem("radio", e, radioBox),
-                    styles({ x: radioBox.a, y: radioBox.b }).radioContainer,
+                    styles({ x: radioBox.a, y: radioBox.b, webView: isWideScreen }).radioContainer,
                 )
             }
             {
@@ -181,8 +226,8 @@ const styles : any = (props: any) => StyleSheet.create({
         left: props?.x || 0,
         top: props?.y || 0,
         position: 'absolute',
-        height: 221,
-        width: 221,
+        height: props?.webView ? 0.3 * Dimensions.get("window").height : 0.2 * Dimensions.get("window").height,
+        width: props?.webView ? 0.3 * Dimensions.get("window").height : 0.2 * Dimensions.get("window").height,
     },
     plantContainer: {
         left: props?.x || 0,

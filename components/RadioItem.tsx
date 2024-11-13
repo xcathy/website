@@ -1,7 +1,7 @@
 import { Images } from "@/constants/Images";
 import { Image, ImageBackground, ImageSource } from 'expo-image';
 import React, { CSSProperties, DragEventHandler, useCallback, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { Audios } from "@/constants/Audios";
 import { ThemedText } from "./ThemedText";
 
@@ -12,6 +12,8 @@ interface Track {
 
 export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+    const isWideScreen = (Dimensions.get('window').width > 800);
+
     const [ LBtn, setLBtn ] = useState<ImageSource>(Images.leftButton);
     const [ PBtn, setPBtn ] = useState<ImageSource>(Images.pauseButton);
     const [ RBtn, setRBtn ] = useState<ImageSource>(Images.rightButton);
@@ -96,7 +98,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 <ThemedText
                     lightColor="#FFF6ED"
                     darkColor="#FFF6ED"
-                    style={styles().nowPlaying}
+                    style={styles({ webView: isWideScreen }).nowPlaying}
                 >
                     { status === "init" ? 
                         "press right arrow to play! :)"
@@ -105,28 +107,23 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     }
                 </ThemedText>
                 <div
-                    style={{
-                        display: "flex",
-                        paddingLeft: "10px",
-                        paddingTop: "15px",
-                        alignSelf: "baseline",
-                    }}
+                    style={ styles({ webView: isWideScreen }).buttonDisplay }
                 >
                     <Image
                         source={ LBtn }
-                        style={ styles().leftButton }
+                        style={ styles({ webView: isWideScreen }).leftButton }
                         onPointerUp={ 
                             () => playMusic(true, false, false)
                         }
                     />
                     <Image
                         source={ PBtn }
-                        style={ styles().pauseButton }
+                        style={ styles({ webView: isWideScreen }).pauseButton }
                         onPointerUp={ () => playMusic(false, true, false) }
                     />
                     <Image
                         source={ RBtn }
-                        style={ styles().rightButton }
+                        style={ styles({ webView: isWideScreen }).rightButton }
                         onPointerUp={ () => playMusic(false, false, true) }
                     />
                 </div>
@@ -138,8 +135,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
 
 const styles : any = (props: any) => StyleSheet.create({
     nowPlaying: {
-        paddingTop: 90,
-        fontSize: 13,
+        paddingTop: props?.webView ? 83 : 35,
+        fontSize: props?.webView ? 12 : 5,
     },
     radio: {
         height: props?.height || 0.0,
@@ -151,35 +148,41 @@ const styles : any = (props: any) => StyleSheet.create({
         cursor: 'pointer',
         zIndex: 12,
     },
+    buttonDisplay: {
+        display: "flex",
+        paddingLeft: props?.webView ? 8 : 5,
+        paddingTop:  props?.webView ? 10 : 0,
+        alignSelf: "baseline",
+    },
     leftButton: {
-        height: 28,
-        width: 17,
+        height: props?.webView ? 28 : 15,
+        width: props?.webView ? 17 : 9,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: 10,
+        margin: props?.webView ? 10 : 4,
     },
     pauseButton: {
-        height: 28,
-        width: 19,
+        height: props?.webView ? 28 : 15,
+        width: props?.webView ? 19 : 10,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: 10,
+        margin: props?.webView ? 10 : 4,
     },
     rightButton: {
-        height: 28,
-        width: 17,
+        height: props?.webView ? 28 : 15,
+        width: props?.webView ? 17 : 9,
         position: 'relative',
         backgroundColor: 'transparent',
         userSelect: 'none',
         cursor: 'pointer',
         zIndex: 13,
-        margin: 10,
+        margin: props?.webView ? 10 : 4,
     },
     
 });
