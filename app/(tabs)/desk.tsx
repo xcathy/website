@@ -40,7 +40,7 @@ export default function TabTwoScreen() {
     const webView = (Dimensions.get('window').width > 800);
     const defaultPositions: Record<string, Position> = 
     {
-        "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.56 * screenW, top: 0.58 * screenH },
+        "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.56 * screenW, top: 0.56 * screenH },
         "calendar": webView ? { left: 0.85 * screenW, top: 0.05 * screenH } : { left: 0.56 * screenW, top: 0.37 * screenH },
         "radio": webView ? { left: 0.45 * screenW, top: 0.4 * screenH } : { left: 0.13 * screenW, top: 0.3 * screenH },
         "plant": webView ? { left: 0.6 * screenW, top: 0.17 * screenH } : { left: 0.65 * screenW, top: 0.18 * screenH },
