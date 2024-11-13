@@ -37,8 +37,8 @@ export default function TabTwoScreen() {
         {
             "clock": { left: 0.8, top: 0.53 },
             "calendar": { left: 0.85, top: 0.05 },
-            "radio": isWideScreen ? { left: 0.45, top: 0.32 } : { left: 0.15, top: 0.28 },
-            "plant": { left: 0.6, top: 0.08 },
+            "radio": isWideScreen ? { left: 0.45, top: 0.32 } : { left: 0.13, top: 0.28 },
+            "plant": isWideScreen ? { left: 0.6, top: 0.08 } : { left: 0.5, top: 0.25 },
         }
 
     const [ clockBox, setCBox ] = useState<ElemntBox>(
