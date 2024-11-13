@@ -79,7 +79,8 @@ const flower51 = require('../assets/images/TravelPhotos/flowers/flower51.png');
 const flower52 = require('../assets/images/TravelPhotos/flowers/flower52.png');
 
 // Sprites for desk
-const deskBackground = require('../assets/images/Sprites/Desk/background.png');
+const hBackground = require('../assets/images/Sprites/Desk/background_horizontal.png');
+const vBackground = require('../assets/images/Sprites/Desk/background_vertical.png');
 const clock = require('../assets/images/Sprites/Desk/clock.png');
 const calendar = require('../assets/images/Sprites/Desk/calendar.png');
 const calendarTear = require('../assets/images/Sprites/Desk/calendarTear.gif');
@@ -126,7 +127,8 @@ export const Images = {
     calendarTear,
     clearImg,
     clock,
-    deskBackground,
+    vBackground,
+    hBackground,
     CanadaPlace,
     fountain,
     fountain1,

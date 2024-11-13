@@ -85,10 +85,10 @@ export default function TabTwoScreen() {
             >
                 <Image
                     source={ Images.catSleep }
-                    style={ styles().catSleep }
+                    style={ styles({ webView: isWideScreen }).catSleep }
                 />
                 <ImageBackground
-                    source={Images.deskBackground}
+                    source={isWideScreen ? Images.hBackground : Images.vBackground}
                     contentFit="cover"
                     style={styles().background}
                 />
@@ -192,11 +192,11 @@ const styles : any = (props: any) => StyleSheet.create({
         width: 100,
     },
     catSleep: {
-        left: 20,
-        top: 250,
+        left: props?.webView ? 0.02 * Dimensions.get("window").width : 0.1 * Dimensions.get("window").width,
+        top: props?.webView ? 0.45 * Dimensions.get("window").height : 0.67 * Dimensions.get("window").height,
         position: 'absolute',
-        height: 400,
-        width: 400,
+        height: 0.5 * Dimensions.get("window").height,
+        width: 0.5 * Dimensions.get("window").height,
         zIndex: 12,
         userSelect: 'none',
     },
