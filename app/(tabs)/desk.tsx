@@ -39,6 +39,7 @@ export default function TabTwoScreen() {
             "calendar": { left: 0.85, top: 0.05 },
             "radio": isWideScreen ? { left: 0.45, top: 0.32 } : { left: 0.13, top: 0.28 },
             "plant": isWideScreen ? { left: 0.6, top: 0.08 } : { left: 0.5, top: 0.25 },
+            "catSleep": isWideScreen ? { left: 0.02, top: 0.45 } : { left: 0, top: 0.67 },
         }
 
     const [ clockBox, setCBox ] = useState<ElemntBox>(
@@ -130,7 +131,7 @@ export default function TabTwoScreen() {
             >
                 <Image
                     source={ Images.catSleep }
-                    style={ styles({ webView: isWideScreen }).catSleep }
+                    style={ styles({ left: defaultPositions["catSleep"].left, top: defaultPositions["catSleep"].top }).catSleep }
                 />
                 <ImageBackground
                     source={isWideScreen ? Images.hBackground : Images.vBackground}
@@ -237,8 +238,8 @@ const styles : any = (props: any) => StyleSheet.create({
         width: 100,
     },
     catSleep: {
-        left: props?.webView ? 0.02 * Dimensions.get("window").width : 0.1 * Dimensions.get("window").width,
-        top: props?.webView ? 0.45 * Dimensions.get("window").height : 0.67 * Dimensions.get("window").height,
+        left: props?.left * Dimensions.get("window").width || 0.0,
+        top: props?.top * Dimensions.get("window").height || 0.0,
         position: 'absolute',
         height: 0.5 * Dimensions.get("window").height,
         width: 0.5 * Dimensions.get("window").height,
