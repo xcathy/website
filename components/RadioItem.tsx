@@ -31,7 +31,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     const img = document.createElement('img');
     img.src = Images.clearImg;
 
-    const playMusic = useCallback(( previous: boolean, pause: boolean,  next: boolean ) => {
+    const playMusic = useCallback(( previous: boolean, pause: boolean, next: boolean ) => {
         if (previous) {
             setLBtn(Images.leftButtonClick);
             setTimeout(function(){
