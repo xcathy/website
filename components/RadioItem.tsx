@@ -83,7 +83,9 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             onDrag={ handleDrag }
             style={ style }
         >
-            <audio
+            <video
+                width="0"
+                height="0"
                 loop
                 autoPlay
                 id="audio"

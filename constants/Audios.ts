@@ -1,7 +1,7 @@
 // Radio musics
-const morning = '../app/morning.mp3';
-const raindrops = '../app/raindrops.mp3';
-const happy = '../app/happy.mp3';
+const morning = '../assets/audios/music/morning.ogg';
+const raindrops = '../assets/audios/music/raindrops.ogg';
+const happy = '../assets/audios/music/happy.ogg';
 
 export const Audios = {
     raindrops,
