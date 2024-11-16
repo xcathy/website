@@ -39,9 +39,9 @@ export default function TabTwoScreen() {
                 { x: 0, y: 0, w: 1, h: 1, static: true}
                 :
                 { x: 0, y: 0, w: 1, h: 1, static: true },                 //Grid layout information, specifies placement of images
-              "Butchard's Garden Visit",                                  //Title
+              "The Butchart Gardens Visit",                               //Title
               undefined,                                                  //Subtitle
-              "Flower pictures from the trip to Butchard's Garden, 2024", //Post content
+              "Flower pictures from the trip to the Butchart Gardens, 2024", //Post content
             )
           }
           {
@@ -53,9 +53,9 @@ export default function TabTwoScreen() {
                 { x: 3, y: 0, w: 1, h: 1, static: true }
                 :
                 { x: 0, y: 1, w: 1, h: 1, static: true }, 
-              "Butchard's Garden Visit",
+              "The Butchart Gardens Visit",
               undefined,
-              "Flower pictures from the trip to Butchard's Garden, 2024",
+              "Flower pictures from the trip to the Butchart Gardens, 2024",
             )
           }
           {
@@ -67,9 +67,9 @@ export default function TabTwoScreen() {
                 { x: 3, y: 2.2, w: 1, h: 1, static: true}
                 :
                 { x: 0, y: 2, w: 1, h: 1, static: true }, 
-              "Butchard's Garden Visit",
+              "The Butchart Gardens Visit",
               undefined,
-              "Flower pictures from the trip to Butchard's Garden, 2024",
+              "Flower pictures from the trip to the Butchart Gardens, 2024",
             )
           }
           {
@@ -83,7 +83,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 3, w: 1, h: 1, static: true }, 
               "Fountain",
               undefined,
-              "The picture of a fountain from the trip to Butchard's Garden, 2024",
+              "The picture of a fountain from the trip to the Butchart Gardens, 2024",
             )
           }
           {
@@ -95,9 +95,9 @@ export default function TabTwoScreen() {
               { x: 0, y: 5.7, w: 1, h: 1, static: true}
               :
               { x: 0, y: 4, w: 1, h: 1, static: true }, 
-              "Butchard's Garden Visit",
+              "The Butchart Gardens Visit",
               undefined,
-              "Flower pictures from the trip to Butchard's Garden, 2024"
+              "Flower pictures from the trip to the Butchart Gardens, 2024"
             )
           }
           {
@@ -153,7 +153,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 8, w: 1, h: 1, static: true }, 
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -209,7 +209,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 12, w: 1, h: 1, static: true }, 
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -237,7 +237,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 14, w: 1, h: 1, static: true }, 
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -265,7 +265,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 16, w: 1, h: 1, static: true },
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -279,7 +279,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 17, w: 1, h: 1, static: true },
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -293,7 +293,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 18, w: 1, h: 1, static: true },
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -307,7 +307,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 19, w: 1, h: 1, static: true },
               "Waterfall",
               undefined,
-              "This is a waterfall display in Butchard's Garden. 2024"
+              "This is a waterfall display in the Butchart Gardens. 2024"
             )
           }
           {
@@ -321,7 +321,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 20, w: 1, h: 1, static: true },
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -335,7 +335,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 21, w: 1, h: 1, static: true },
               "Flowers",
               undefined,
-              "Flower pictures from Butchard's Garden, 2024"
+              "Flower pictures from the Butchart Gardens, 2024"
             )
           }
           {
@@ -349,7 +349,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 22, w: 1, h: 1, static: true },
               "Plant Dog",
               undefined,
-              "The plant dog from a display window in Butchard's Garden.\nI left my signature on the signature book near it :D\n\t\t\t\t\t\t\t\t\t\t2024"
+              "The plant dog from a display window in the Butchart Gardens.\nI left my signature on the signature book near it :D\n\t\t\t\t\t\t\t\t\t\t2024"
             )
           }
 
