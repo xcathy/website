@@ -24,21 +24,8 @@ interface Size {
 export default function TabTwoScreen() {
     const screenW = Dimensions.get('window').width;
     const screenH = Dimensions.get('window').height;
-    const clock = document.getElementById("clock");
-    const calendar = document.getElementById("calendar");
-    const radio = document.getElementById("radio");
-    const plant = document.getElementById("plant");
-
-    const clockW = clock?.clientWidth || 0.0;
-    const clockH = clock?.clientHeight || 0.0;
-    const calendarW = calendar?.clientWidth || 0.0;
-    const calendarH = calendar?.clientHeight || 0.0;
-    const radioW = radio?.clientWidth || 0.0;
-    const radioH = radio?.clientHeight || 0.0;
-    const plantW = plant?.clientWidth || 0.0;
-    const plantH = plant?.clientHeight || 0.0;
-
     const webView = (Dimensions.get('window').width > 800);
+    
     const defaultPositions: Record<string, Position> = 
     {
         "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.56 * screenW, top: 0.56 * screenH },
@@ -60,45 +47,45 @@ export default function TabTwoScreen() {
         {
             a: defaultPositions["clock"].left,
             b: defaultPositions["clock"].top,
-            c: defaultPositions["clock"].left + clockW,
-            d: defaultPositions["clock"].top + clockH,
-            W: clockW,
-            H: clockH
+            c: defaultPositions["clock"].left + defaultSize["clock"].width,
+            d: defaultPositions["clock"].top + defaultSize["clock"].height,
+            W: defaultSize["clock"].width,
+            H: defaultSize["clock"].height
         });
     const [ calendarBox, setCLBox ] = useState<ElemntBox>(
         {
             a: defaultPositions["calendar"].left,
             b: defaultPositions["calendar"].top,
-            c: defaultPositions["calendar"].left + calendarW,
-            d: defaultPositions["calendar"].top + calendarH,
-            W: calendarW,
-            H: calendarH
+            c: defaultPositions["calendar"].left + defaultSize["calendar"].width,
+            d: defaultPositions["calendar"].top + defaultSize["calendar"].height,
+            W: defaultSize["calendar"].width,
+            H: defaultSize["calendar"].height
         });
     const [ radioBox, setRDBox ] = useState<ElemntBox>(
         { 
             a: defaultPositions["radio"].left, 
             b: defaultPositions["radio"].top,
-            c: defaultPositions["radio"].left + radioW,
-            d: defaultPositions["radio"].top + radioH,
-            W: radioW,
-            H: radioH
+            c: defaultPositions["radio"].left + defaultSize["radio"].width,
+            d: defaultPositions["radio"].top + defaultSize["radio"].height,
+            W: defaultSize["radio"].width,
+            H: defaultSize["radio"].height
         });
     const [ plantBox, setPTBox ] = useState<ElemntBox>(
         {
             a: defaultPositions["plant"].left,
             b: defaultPositions["plant"].top,
-            c: defaultPositions["plant"].left + plantW,
-            d: defaultPositions["plant"].top + plantH,
-            W: plantW,
-            H: plantH
+            c: defaultPositions["plant"].left + defaultSize["plant"].width,
+            d: defaultPositions["plant"].top + defaultSize["plant"].height,
+            W: defaultSize["plant"].width,
+            H: defaultSize["plant"].height
         });
 
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
-            if ( id === "clock" ) setCBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: clockW, H: clockH });
-            if ( id === "calendar" ) setCLBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: calendarW, H: calendarH });
-            if ( id === "radio" ) setRDBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: radioW, H: radioH });
-            if ( id === "plant" ) setPTBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: plantW, H: plantH });
+            if ( id === "clock" ) setCBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["clock"].width, H: defaultSize["clock"].height });
+            if ( id === "calendar" ) setCLBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["calendar"].width, H: defaultSize["calendar"].height });
+            if ( id === "radio" ) setRDBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["radio"].width, H: defaultSize["radio"].height });
+            if ( id === "plant" ) setPTBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["plant"].width, H: defaultSize["plant"].height });
         } else {
             if ( id === "clock" ) setCBox(imageMove(e, box));
             if ( id === "calendar" ) setCLBox(imageMove(e, box));
