@@ -34,14 +34,14 @@ export default function TabTwoScreen() {
             BlogPost(
               "flower9",                                                  //ID, also serve as the key
               Images.flower9,                                             //Image source
-              styles({ width: 0.4, height: 0.8 }).image,                 //Image style, width and height specifies how much it will be multiplied with respect to the window width and height
+              styles({ width: 0.4, height: 0.8 }).image,                  //Image style, width and height specifies how much it will be multiplied with respect to the window width and height
               isWideScreen ? 
                 { x: 0, y: 0, w: 1, h: 1, static: true}
                 :
                 { x: 0, y: 0, w: 1, h: 1, static: true },                 //Grid layout information, specifies placement of images
-              "The Butchart Gardens Visit",                               //Title
+              "Trip to the Butchart Gardens",                             //Title
               undefined,                                                  //Subtitle
-              "Flower pictures from the trip to the Butchart Gardens, 2024", //Post content
+              `Flower picture taken from the trip to the Butchart Gardens.\nIt looks like it belongs to a species of hydrangea.\n\t\t\t\t\t\t\t\t2024`,                                      //Post content
             )
           }
           {

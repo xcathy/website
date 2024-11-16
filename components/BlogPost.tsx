@@ -1,9 +1,9 @@
-import { Image, ImageStyle } from "expo-image";
-import { Dimensions, StyleProp } from "react-native";
+import { Image, ImageStyle } from 'expo-image';
+import { Dimensions, StyleProp, StyleSheet } from 'react-native';
 import Animated, { interpolate, useSharedValue, withTiming, useAnimatedStyle } from 'react-native-reanimated';
-import { ThemedText } from "./ThemedText";
-import { ThemedView } from "./ThemedView";
-import { useReducer } from "react";
+import { ThemedText } from './ThemedText';
+import { ThemedView } from './ThemedView';
+import { useReducer } from 'react';
 
 export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle>, layout?: Object, title?: string, subtitle?: string, content?: string) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -17,7 +17,7 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
     
         return {
             transform: [{ rotateY: rotateValue }],
-            backgroundColor: "#f5f0e8",
+            backgroundColor: '#f5f0e8',
         };
     });
 
@@ -29,59 +29,50 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
             >
                 { !flipped &&
                     <ThemedView
-                        lightColor="transparent"
-                        darkColor="transparent"
-                        style={{
-                            alignSelf: "center",
-                            alignItems: "center",
-                        }}
+                        lightColor='transparent'
+                        darkColor='transparent'
+                        style={styles().container}
                     >
                     
                         <Image
                             style={[style, flipStyle]}
                             source={image}
                             placeholder={blurhash}
-                            contentFit="cover"
+                            contentFit='cover'
                             transition={1000}
                         />
                     </ThemedView>
                 }
                 { flipped &&
                     <ThemedView
-                        lightColor="transparent"
-                        darkColor="transparent"
-                        style={{
-                            alignSelf: "center",
-                            alignItems: "center",
-                            display: "flex",
-                            flexDirection: "column",
-                            transform: "rotateY(180deg)",
-                        }}
+                        lightColor='transparent'
+                        darkColor='transparent'
+                        style={styles().containerFlipped}
                     >
                         <ThemedText
-                            type="title"
-                            lightColor="#37352f"
-                            darkColor="#37352f"
-                            style={{ marginHorizontal: 20, marginVertical: 10 }}
-                            screenType={ webView ? "web" : "phone" }
+                            type='title'
+                            lightColor='#37352f'
+                            darkColor='#37352f'
+                            style={styles().title}
+                            screenType={ webView ? 'web' : 'phone' }
                         >
                             { title }
                         </ThemedText>
                         <ThemedText
-                            type="subtitle"
-                            lightColor="#787774"
-                            darkColor="#787774"
-                            style={{ marginHorizontal: 20, marginVertical: 10 }}
-                            screenType={ webView ? "web" : "phone" }
+                            type='subtitle'
+                            lightColor='#787774'
+                            darkColor='#787774'
+                            style={styles().subtitle}
+                            screenType={ webView ? 'web' : 'phone' }
                         >
                             { subtitle }
                         </ThemedText>
                         <ThemedText
-                            type="default"
-                            lightColor="#787774"
-                            darkColor="#787774"
-                            style={{ marginHorizontal: 20, marginVertical: 10 }}
-                            screenType={ webView ? "web" : "phone" }
+                            type='default'
+                            lightColor='#787774'
+                            darkColor='#787774'
+                            style={styles().content}
+                            screenType={ webView ? 'web' : 'phone' }
                         >
                             { content }
                         </ThemedText>
@@ -91,3 +82,32 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
         </div>;
     return blogPost as React.JSX.Element;
 }
+
+const styles : any = (props: any) => StyleSheet.create({
+    container: {
+        alignSelf: 'center',
+        alignItems: 'center',
+    },
+    containerFlipped: {
+        alignSelf: 'center',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        transform: 'rotateY(180deg)',
+    },
+    title: {
+        marginHorizontal: 20,
+        marginVertical: 10,
+    },
+    subtitle: {
+        marginHorizontal: 20,
+        marginVertical: 10,
+    },
+    content: {
+        marginHorizontal: 20,
+        marginVertical: 10,
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'dotted',
+    },
+  });
+  
