@@ -9,6 +9,7 @@ import { CalendarItem } from '@/components/CalendarItem';
 import { Cloud } from '@/components/Cloud';
 import { RadioItem } from '@/components/RadioItem';
 import { PlantItem } from '@/components/PlantItem';
+import { CatSleep } from '@/components/CatSleep';
 
 interface Position {
     left: number
@@ -158,19 +159,23 @@ export default function TabTwoScreen() {
                     }).draggableContainer,
                 )
             }
-            
-            <div
-                draggable={ false }
-            >
-                <Image
-                    source={ Images.catSleep }
-                    style={ styles({
+
+            {
+                CatSleep(
+                    "You can drag and re-arrange the items on the desk!\nExcept for me, I am unmovable.\n",
+                    true,
+                    styles({
                         left: defaultPositions["catSleep"].left,
                         top: defaultPositions["catSleep"].top,
                         height: defaultSize["catSleep"].height,
                         width: defaultSize["catSleep"].width,
-                    }).catSleep }
-                />
+                    }).catSleep,
+                )
+            }
+            
+            <div
+                draggable={ false }
+            >
                 <ImageBackground
                     source={webView ? Images.hBackground : Images.vBackground}
                     contentFit="cover"
