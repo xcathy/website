@@ -380,7 +380,7 @@ export default function TabTwoScreen() {
       </ScrollView>
       { 
         Cat(
-          `Hello!\nYou can press the photos to flip to see the blog posts!\nThanks for visiting my page! :3\n(click anywhere to close this tooltip)`,
+          `Hello!\nYou can press the photos to flip to see the blog posts!\nThanks for visiting my page! :3\n(click anywhere to close this tooltip)\n`,
           true,
         )
       }
