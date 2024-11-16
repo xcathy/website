@@ -6,12 +6,14 @@ import { CSSProperties, useEffect, useState } from "react";
 export function Cloud(id: string, image: string, style?: CSSProperties | undefined, pace?: number, speed?: number ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const windowW = Dimensions.get('window').width;
+    const webView = (Dimensions.get('window').width > 800);
     const [ x, setX ] = useState<number>(0.0);
+    const loopPoint = webView ? 0.6 * windowW : 0.2 * windowW;
 
     useEffect(() => {
         setTimeout(() => {
             setX(x - (pace ? pace : 0.0));
-            if (x <= - (0.6 * windowW)) {
+            if (x <= -loopPoint) {
                 setX(0.0);
             }
         }, (speed ? speed : 1000)); 
