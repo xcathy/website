@@ -18,11 +18,11 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
     const [ PBtn, setPBtn ] = useState<ImageSource>(Images.pauseButton);
     const [ RBtn, setRBtn ] = useState<ImageSource>(Images.rightButton);
     
-    const playlist : Record<number, Track>[] = [
-        { 0: { title: "morning", path: Audios.morning }},
-        { 1: { title: "raindrops", path: Audios.raindrops }},
-        { 2: { title: "happy", path: Audios.happy }},
-    ];
+    const playlist : Record<number, Track> = {
+        0: { title: "morning", path: Audios.morning },
+        1: { title: "raindrops", path: Audios.raindrops },
+        2: { title: "happy", path: Audios.happy },
+    };
 
     const [ index, setIndex ] = useState<number>(0);
     const [ status, setStatus ] = useState<string>('init');
@@ -41,7 +41,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
             if ( index > 0 ) {
                 setIndex(index - 1);
             } else {
-                setIndex(playlist.length - 1);
+                setIndex(Object.keys(playlist).length - 1);
             }
             setStatus('playing');
         }
@@ -66,7 +66,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 music.play();
                 setStatus('playing');
             } else {
-                if ( index < playlist.length - 1 ) {
+                if ( index < Object.keys(playlist).length - 1 ) {
                     setIndex(index + 1);
                 } else {
                     setIndex(0);
@@ -89,7 +89,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                 loop
                 autoPlay
                 id="audio"
-                src={ status === "init" ? "" : playlist[index][index]?.path }
+                src={ status === "init" ? "" : playlist[index]?.path }
             />
             
             <ImageBackground
@@ -105,7 +105,7 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     { status === "init" ? 
                         "press right arrow to play! :)"
                         :
-                        `Now playing: ${ playlist[index][index]?.title }`
+                        `Now playing: ${ playlist[index]?.title }`
                     }
                 </ThemedText>
                 <div
