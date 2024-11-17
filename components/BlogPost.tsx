@@ -5,7 +5,7 @@ import { ThemedText } from './ThemedText';
 import { ThemedView } from './ThemedView';
 import { useReducer } from 'react';
 
-export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle>, layout?: Object, title?: string, subtitle?: string, content?: string) : React.JSX.Element {
+export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle>, layout?: Object, title?: string, subtitle?: string, content?: string, signature?: string) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const [ flipped, flip ] = useReducer((prev) => !prev, false);
     const duration = 500;
@@ -76,6 +76,15 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
                         >
                             { content }
                         </ThemedText>
+                        <ThemedText
+                            type='default'
+                            lightColor='#787774'
+                            darkColor='#787774'
+                            style={styles().signature}
+                            screenType={ webView ? 'web' : 'phone' }
+                        >
+                            { signature }
+                        </ThemedText>
                     </ThemedView>
                 }
             </Animated.View>
@@ -108,6 +117,11 @@ const styles : any = (props: any) => StyleSheet.create({
         marginVertical: 10,
         textDecorationLine: 'underline',
         textDecorationStyle: 'dotted',
+    },
+    signature: {
+        marginRight: 40,
+        marginVertical: 10,
+        alignSelf: 'flex-end',
     },
   });
   
