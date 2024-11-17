@@ -41,7 +41,7 @@ export default function TabTwoScreen() {
                 { x: 0, y: 0, w: 1, h: 1, static: true },                 //Grid layout information, specifies placement of images
               'Trip to the Butchart Gardens',                             //Title
               undefined,                                                  //Subtitle
-              `Flower picture taken from the trip to the Butchart Gardens.\nIt looks like it belongs to a species of hydrangea.`,  //Post content
+              'Flower picture taken from the trip to the Butchart Gardens.\nIt looks like it belongs to a species of hydrangea.',  //Post content
               'Cathy\n2024',                                              //Signature
             )
           }
@@ -54,9 +54,9 @@ export default function TabTwoScreen() {
                 { x: 3, y: 0, w: 1, h: 1, static: true }
                 :
                 { x: 0, y: 1, w: 1, h: 1, static: true }, 
-              'The Butchart Gardens Visit',
+              'Trip to the Butchart Gardens',
               undefined,
-              'Flower pictures from the trip to the Butchart Gardens.',
+              'Flower picture taken from the trip to the Butchart Gardens.\nIt looks like it belongs to a species of amaranth.',
               'Cathy\n2024',
             )
           }
@@ -69,9 +69,9 @@ export default function TabTwoScreen() {
                 { x: 3, y: 2.2, w: 1, h: 1, static: true}
                 :
                 { x: 0, y: 2, w: 1, h: 1, static: true }, 
-              'The Butchart Gardens Visit',
+              'Trip to the Butchart Gardens',
               undefined,
-              'Flower pictures from the trip to the Butchart Gardens.',
+              'Flower picture taken from the trip to the Butchart Gardens.\nIt looks like it belongs to a species of astilbe.',
               'Cathy\n2024',
             )
           }
@@ -86,7 +86,7 @@ export default function TabTwoScreen() {
               { x: 0, y: 3, w: 1, h: 1, static: true }, 
               'Fountain',
               undefined,
-              'The picture of a fountain from the trip to the Butchart Gardens.',
+              'The picture of a fountain from the trip to the Butchart Gardens.\nThere is a sculpture of a frog standing on the edge of it.',
               'Cathy\n2024',
             )
           }
