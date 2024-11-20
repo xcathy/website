@@ -38,7 +38,7 @@ export default function TabTwoScreen() {
     {
         "clock": webView ? { height: 0.1  * screenH, width: 0.3 * screenH } : { height: 0.05 * screenH, width: 0.15 * screenH },
         "calendar": webView ? { height: 0.4  * screenH, width: 0.2 * screenH } : { height: 0.3  * screenH, width: 0.15 * screenH },
-        "radio": webView ? { height: 0.25 * screenH, width: 0.25 * screenH } : { height: 0.19 * screenH, width: 0.19 * screenH },
+        "radio": webView ? { height: 0.27 * screenH, width: 0.25 * screenH } : { height: 0.21 * screenH, width: 0.19 * screenH },
         "plant": { height: 0.2 * screenH, width: 0.1 * screenH },
         "catSleep": webView ? { height: 0.6 * screenH, width: 0.6 * screenH } : { height: 0.4 * screenH, width: 0.4 * screenH },
     }
