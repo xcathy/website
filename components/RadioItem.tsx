@@ -4,13 +4,14 @@ import React, { CSSProperties, DragEventHandler, useCallback, useState } from 'r
 import { Dimensions, StyleSheet } from 'react-native';
 import { Audios } from "@/constants/Audios";
 import { ThemedText } from "./ThemedText";
+import { DraggableContainer } from "./DraggableContainer";
 
 interface Track {
     title: string
     path: string
 }
 
-export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
+export function RadioItem(id: string, handleDrag: DragEventHandler<HTMLDivElement>, style: CSSProperties ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const isWideScreen = (Dimensions.get('window').width > 800);
 
@@ -76,13 +77,12 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
         
     },[ music, index, setIndex, status, setStatus ]);
 
-    const radio =
-        <div
+    return (
+        <DraggableContainer
             id={ id }
-            onDragStart={ (e) => e.dataTransfer.setDragImage(img, 0, 0) }
-            onDrag={ handleDrag }
+            handleDrag = { handleDrag }
             style={ style }
-        >
+        > 
             <video
                 width="0"
                 height="0"
@@ -130,9 +130,8 @@ export function RadioItem(id: string, handleDrag?: DragEventHandler<HTMLDivEleme
                     />
                 </div>
             </ImageBackground>
-        </div>;
-
-    return radio as React.JSX.Element;
+        </DraggableContainer>
+    ) as React.JSX.Element;
 }
 
 const styles : any = (props: any) => StyleSheet.create({

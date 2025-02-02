@@ -4,20 +4,18 @@ import { CSSProperties, DragEventHandler } from "react";
 import Clock from 'react-live-clock';
 import { ThemedText } from "./ThemedText";
 import { Images } from "@/constants/Images";
+import { DraggableContainer } from "./DraggableContainer";
 
-export function CalendarItem(id: string, handleDrag?: DragEventHandler<HTMLDivElement> | undefined, style?: CSSProperties | undefined ) : React.JSX.Element {
+export function CalendarItem(id: string, handleDrag: DragEventHandler<HTMLDivElement>, style: CSSProperties ) : React.JSX.Element {
     const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const webView = (Dimensions.get('window').width > 800);
-    const img = new Image();
-    img.src = Images.clearImg;
 
-    const calendar =
-        <div
+    return (
+        <DraggableContainer
             id={ id }
-            onDragStart={ (e) => e.dataTransfer.setDragImage(img, 0, 0) }
-            onDrag={ handleDrag }
+            handleDrag = { handleDrag }
             style={ style }
-        >
+        > 
             <ImageBackground
                 source={Images.calendar || blurhash}
                 contentFit="cover"
@@ -50,9 +48,8 @@ export function CalendarItem(id: string, handleDrag?: DragEventHandler<HTMLDivEl
                 </ThemedText>
                 
             </ImageBackground>
-        </div>;
-
-    return calendar as React.JSX.Element;
+        </DraggableContainer>
+    ) as React.JSX.Element;
 }
 
 const styles : any = (props: any) => StyleSheet.create({
