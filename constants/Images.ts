@@ -105,11 +105,19 @@ const pauseButtonClick = require('../assets/images/Sprites/Desk/pauseButton.gif'
 // Plant
 const plant = require('../assets/images/Sprites/Desk/plant.png');
 
+// Game item canvas
+const canvas = require('../assets/images/Sprites/Desk/canvas.png');
+
+// Maze game icon
+const maze = require('../assets/images/Sprites/Games/maze.png');
+
 // Smallest clear image gif
 // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
 const clearImg = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export const Images = {
+    maze,
+    canvas,
     plant,
     leftButtonClick,
     rightButtonClick,

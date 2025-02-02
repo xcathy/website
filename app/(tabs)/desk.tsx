@@ -10,6 +10,7 @@ import { Cloud } from '@/components/Cloud';
 import { RadioItem } from '@/components/RadioItem';
 import { PlantItem } from '@/components/PlantItem';
 import { CatSleep } from '@/components/CatSleep';
+import { GameItem } from '@/components/GameItem';
 
 interface Position {
     left: number
@@ -31,7 +32,8 @@ export default function TabTwoScreen() {
         "clock":  webView ? { left: 0.8 * screenW, top: 0.53 * screenH } : { left: 0.56 * screenW, top: 0.56 * screenH },
         "calendar": webView ? { left: 0.85 * screenW, top: 0.05 * screenH } : { left: 0.56 * screenW, top: 0.37 * screenH },
         "radio": webView ? { left: 0.45 * screenW, top: 0.4 * screenH } : { left: 0.13 * screenW, top: 0.3 * screenH },
-        "plant": webView ? { left: 0.6 * screenW, top: 0.13 * screenH } : { left: 0.65 * screenW, top: 0.18 * screenH },
+        "plant": webView ? { left: 0.75 * screenW, top: 0.16 * screenH } : { left: 0.65 * screenW, top: 0.18 * screenH },
+        "game": webView ? { left: 0.45 * screenW, top: 0.06 * screenH } : { left: 0.6 * screenW, top: 0.1 * screenH },
         "catSleep": webView ? { left: 0.02 * screenW, top: 0.45 * screenH } : { left: 0 * screenW, top: 0.63 * screenH },
     }
     const defaultSize: Record<string, Size> = 
@@ -40,6 +42,7 @@ export default function TabTwoScreen() {
         "calendar": webView ? { height: 0.4  * screenH, width: 0.2 * screenH } : { height: 0.3  * screenH, width: 0.15 * screenH },
         "radio": webView ? { height: 0.27 * screenH, width: 0.25 * screenH } : { height: 0.21 * screenH, width: 0.19 * screenH },
         "plant": { height: 0.2 * screenH, width: 0.1 * screenH },
+        "game": { height: 0.2 * screenH, width: 0.2 * screenH },
         "catSleep": webView ? { height: 0.6 * screenH, width: 0.6 * screenH } : { height: 0.4 * screenH, width: 0.4 * screenH },
     }
 
@@ -79,20 +82,31 @@ export default function TabTwoScreen() {
             W: defaultSize["plant"].width,
             H: defaultSize["plant"].height
         });
+    const [ gameBox, setGMBox ] = useState<ElemntBox>(
+    {
+        a: defaultPositions["game"].left,
+        b: defaultPositions["game"].top,
+        c: defaultPositions["game"].left + defaultSize["game"].width,
+        d: defaultPositions["game"].top + defaultSize["game"].height,
+        W: defaultSize["game"].width,
+        H: defaultSize["game"].height
+    });
 
     const moveItem = useCallback((id: string, e: PointerEvent, box: ElemntBox) => {
         if (box.W === 0.0 || box.H === 0.0) {
             if ( id === "clock" ) setCBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["clock"].width, H: defaultSize["clock"].height });
             if ( id === "calendar" ) setCLBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["calendar"].width, H: defaultSize["calendar"].height });
             if ( id === "radio" ) setRDBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["radio"].width, H: defaultSize["radio"].height });
+            if ( id === "game" ) setGMBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["game"].width, H: defaultSize["game"].height });
             if ( id === "plant" ) setPTBox({ a: box.a, b: box.b, c: box.c, d: box.d, W: defaultSize["plant"].width, H: defaultSize["plant"].height });
         } else {
             if ( id === "clock" ) setCBox(imageMove(e, box));
             if ( id === "calendar" ) setCLBox(imageMove(e, box));
             if ( id === "radio" ) setRDBox(imageMove(e, box));
+            if ( id === "game" ) setGMBox(imageMove(e, box));
             if ( id === "plant" ) setPTBox(imageMove(e, box));
         }
-    }, [ clockBox, calendarBox, radioBox, plantBox ]);
+    }, [ clockBox, calendarBox, radioBox, plantBox, gameBox ]);
   
     return (
         <SafeAreaView
@@ -144,6 +158,19 @@ export default function TabTwoScreen() {
                         height: defaultSize["plant"].height,
                         width: defaultSize["plant"].width,
                     }).draggableContainer,
+                )
+            }
+            {
+                GameItem(
+                    "game",
+                    (e) => moveItem("game", e, gameBox),
+                    styles({
+                        x: gameBox.a,
+                        y: gameBox.b,
+                        height: defaultSize["game"].height,
+                        width: defaultSize["game"].width,
+                    }).draggableContainer,
+                    () => window.open( "./game", "_self"),
                 )
             }
 
