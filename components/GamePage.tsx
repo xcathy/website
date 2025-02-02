@@ -4,10 +4,11 @@ import { ThemedText } from "./ThemedText";
 
 export function GamePage() {
     const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-        loaderUrl: "../../../builds/maze/1.2/maze1.2.loader.js",
-        dataUrl: "../../../builds/maze/1.2/maze1.2.data.unityweb",
-        frameworkUrl: "../../../builds/maze/1.2/maze1.2.framework.js.unityweb",
-        codeUrl: "../../../builds/maze/1.2/maze1.2.wasm.unityweb",
+        loaderUrl: "https://github.com/xcathy/website/raw/184223c0f54a60c312ec9961aa4cd58e2e4a3f9e/builds/maze/1.2/maze1.2.loader.js",
+        dataUrl: "https://github.com/xcathy/website/raw/184223c0f54a60c312ec9961aa4cd58e2e4a3f9e/builds/maze/1.2/maze1.2.data.unityweb",
+        frameworkUrl: "https://github.com/xcathy/website/raw/184223c0f54a60c312ec9961aa4cd58e2e4a3f9e/builds/maze/1.2/maze1.2.framework.js.unityweb",
+        codeUrl: "https://github.com/xcathy/website/raw/184223c0f54a60c312ec9961aa4cd58e2e4a3f9e/builds/maze/1.2/maze1.2.wasm.unityweb",
+        
     }); 
 
     const handleGameOver = useCallback(() => {
