@@ -5,7 +5,6 @@ import Tooltip from "react-native-walkthrough-tooltip";
 import { Images } from "@/constants/Images";
 
 export function Cat(dialogue?: string, defaultShow?: boolean, style?: StyleProp<ImageStyle>) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const spriteDimension = {w: 45, h: 45};
     const pathLength = Dimensions.get('window').width - spriteDimension.w;
     const pace = 5;
@@ -54,7 +53,6 @@ export function Cat(dialogue?: string, defaultShow?: boolean, style?: StyleProp<
                     <Image
                         style={styles().img}
                         source={Images.catWalkCycle}
-                        placeholder={blurhash}
                         contentFit="fill"
                         transition={1000}
                     />

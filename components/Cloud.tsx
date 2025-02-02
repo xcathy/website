@@ -4,7 +4,6 @@ import { ThemedView } from "./ThemedView";
 import { CSSProperties, useEffect, useState } from "react";
 
 export function Cloud(id: string, image: string, style?: CSSProperties | undefined, pace?: number, speed?: number ) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const windowW = Dimensions.get('window').width;
     const webView = (Dimensions.get('window').width > 800);
     const [ x, setX ] = useState<number>(0.0);
@@ -35,7 +34,6 @@ export function Cloud(id: string, image: string, style?: CSSProperties | undefin
                 <Image
                     style={styles({ x: x, height: style?.height, width: style?.width, zIndex: style?.zIndex }).cloud}
                     source={image}
-                    placeholder={blurhash}
                     contentFit="cover"
                     transition={1000}
                 />

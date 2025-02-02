@@ -6,7 +6,6 @@ import { ThemedView } from './ThemedView';
 import { useReducer } from 'react';
 
 export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle>, layout?: Object, title?: string, subtitle?: string, content?: string, signature?: string) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const [ flipped, flip ] = useReducer((prev) => !prev, false);
     const duration = 500;
     const webView = (Dimensions.get('window').width > 800);
@@ -37,7 +36,6 @@ export function BlogPost(id: string, image: string, style?: StyleProp<ImageStyle
                         <Image
                             style={[style, flipStyle]}
                             source={image}
-                            placeholder={blurhash}
                             contentFit='cover'
                             transition={1000}
                         />

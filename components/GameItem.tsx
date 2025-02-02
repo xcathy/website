@@ -5,7 +5,6 @@ import { Images } from "@/constants/Images";
 import { DraggableContainer } from "./DraggableContainer";
 
 export function GameItem(id: string, handleDrag: DragEventHandler<HTMLDivElement>, style: CSSProperties, handleClick?: React.MouseEventHandler<HTMLDivElement> | undefined ) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const webView = (Dimensions.get('window').width > 800);
 
     return (
@@ -16,14 +15,13 @@ export function GameItem(id: string, handleDrag: DragEventHandler<HTMLDivElement
             style={ style }
         > 
             <ImageBackground
-                source={Images.canvas || blurhash}
+                source={Images.canvas}
                 contentFit="cover"
                 style={styles({ height: style?.height, width: style?.width }).canvas}
             >
                 <Image
                     style={styles({ height: style?.height, width: style?.width }).icon}
                     source={Images.maze}
-                    placeholder={blurhash}
                     contentFit='cover'
                     transition={1000}
                 />

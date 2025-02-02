@@ -7,8 +7,6 @@ import { Images } from "@/constants/Images";
 import { DraggableContainer } from "./DraggableContainer";
 
 export function ClockItem(id: string, handleDrag: DragEventHandler<HTMLDivElement>, style: CSSProperties ) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-
     return (
         <DraggableContainer
             id={ id }
@@ -16,7 +14,7 @@ export function ClockItem(id: string, handleDrag: DragEventHandler<HTMLDivElemen
             style={ style }
         > 
             <ImageBackground
-                source={Images.clock || blurhash}
+                source={Images.clock}
                 contentFit="cover"
                 style={styles({ height: style?.height, width: style?.width }).clock}
             >

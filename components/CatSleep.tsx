@@ -5,7 +5,6 @@ import Tooltip from "react-native-walkthrough-tooltip";
 import { Images } from "@/constants/Images";
 
 export function CatSleep(dialogue?: string, defaultShow?: boolean, style?: CSSProperties) : React.JSX.Element {
-    const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
     const [ showTips, setShowTips ] = useState<boolean>(defaultShow || false);
 
     const catSleep =
@@ -27,7 +26,6 @@ export function CatSleep(dialogue?: string, defaultShow?: boolean, style?: CSSPr
                     <Image
                         style={styles({ height: style?.height, width: style?.width }).img}
                         source={Images.catSleep}
-                        placeholder={blurhash}
                         contentFit="fill"
                         transition={1000}
                     />
