@@ -1,13 +1,14 @@
 import { Fragment, useCallback, useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { ThemedText } from "./ThemedText";
+import { Games } from "@/constants/Games";
 
 export function GamePage() {
     const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
-        loaderUrl: "../../../builds/maze/1.2/maze1.2.loader.js",
-        dataUrl: "../../../builds/maze/1.2/maze1.2.data.unityweb",
-        frameworkUrl: "../../../builds/maze/1.2/maze1.2.framework.js.unityweb",
-        codeUrl: "../../../builds/maze/1.2/maze1.2.wasm.unityweb",
+        loaderUrl: Games.loaderUrl,
+        dataUrl: Games.dataUrl,
+        frameworkUrl: Games.frameworkUrl,
+        codeUrl: Games.codeUrl,
     }); 
 
     const handleGameOver = useCallback(() => {
