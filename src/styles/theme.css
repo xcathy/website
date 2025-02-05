@@ -38,7 +38,7 @@
 }
 .nunito-medium-thin {
     font-family: "Nunito", serif;
-    font-size: 22px;
+    font-size: 2em;
     font-weight: 100;
     font-style: normal;
 }
@@ -73,9 +73,24 @@
     font-weight: 200;
     font-style: normal;
 }
+.raleway-xs {
+    font-family: "Raleway", serif;
+    font-size: .8em;
+    font-weight: 200;
+    font-style: normal;
+}
 
 /*Dynamic mobile styling*/
 @media (max-width: 600px) {
+    /*Google Fonts*/
+    /*Nunito*/
+    .nunito-medium-thin {
+        font-family: "Nunito", serif;
+        font-size: 1.2em;
+        font-weight: 100;
+        font-style: normal;
+    }
+
     /*Raleway*/
     .raleway-large {
         font-family: "Raleway", serif;
@@ -98,6 +113,12 @@
     .raleway-small {
         font-family: "Raleway", serif;
         font-size: 1em;
+        font-weight: 200;
+        font-style: normal;
+    }
+    .raleway-xs {
+        font-family: "Raleway", serif;
+        font-size: .6em;
         font-weight: 200;
         font-style: normal;
     }

@@ -93,7 +93,7 @@ export function RadioItem(id, handleDrag, style ) {
                     className='radio'
                     style={{ left: style.left, top: style.top, height: style.height, width: style.width }}
                 />
-                <p className='now-playing raleway-small default-white'>
+                <p className='now-playing raleway-xs default-white'>
                     { status === 'init' ? 
                         'press right arrow to play! :)'
                         :
