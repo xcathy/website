@@ -5,9 +5,11 @@ import Scrollbar from 'react-scrollbars-custom';
 import '../styles/global.css';
 import '../styles/theme.css';
 import './home.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [hoverPosition, setHoverPosition] = useState({ L: -10.0, T: -10.0 });
+  const navigate = useNavigate();
 
   return (
     <div className='main-container'>
@@ -29,7 +31,7 @@ export default function Home() {
               const { offsetWidth, offsetHeight } = e.target;
               setHoverPosition(ImageHover(e, hoverPosition.L, hoverPosition.T, offsetWidth, offsetHeight));
             }}
-          onClick={ () => window.open( './blog', '_self') }
+          onClick={ () => navigate('/blog') }
           style={{
             position: 'absolute',
             width: '120%',

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/home';
 import Blog from './pages/blog';
 import Desk from './pages/desk';
@@ -10,7 +10,7 @@ import '../src/styles/global.css';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className='navigation'>
         <nav>
           <Link to="/" className='nunito-medium'>HOME</Link>
@@ -28,7 +28,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/game" element={<Game />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 

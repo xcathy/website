@@ -10,8 +10,10 @@ import { PlantItem } from '../components/PlantItem';
 import { RadioItem } from '../components/RadioItem';
 import { Cloud } from '../components/Cloud';
 import './desk.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Desk() {
+    const navigate = useNavigate();
     const screenW = Specs.screenWidth;
     const screenH = Specs.screenHeight;
     const webView = screenW > 800;
@@ -169,7 +171,7 @@ export default function Desk() {
                 GameItem(
                     "game",
                     (e) => moveItem("game", e, gameBox),
-                    () => window.open( "./game", "_self"),
+                    () => navigate('/game'),
                     {
                         position: 'absolute',
                         left: gameBox.a,

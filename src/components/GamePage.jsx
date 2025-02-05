@@ -1,21 +1,21 @@
-import { Fragment, useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Games } from '../constants/Games';
 import '../styles/global.css';
 import '../styles/theme.css';
 import './GamePage.css';
+import { useNavigate } from "react-router-dom";
 
 export function GamePage() {
+    const navigate = useNavigate();
     const { unityProvider, loadingProgression, isLoaded } = useUnityContext({
         loaderUrl: Games.loaderUrl,
         dataUrl: Games.dataUrl,
         frameworkUrl: Games.frameworkUrl,
         codeUrl: Games.codeUrl,
-    }); 
+    });
 
-    const handleGameOver = useCallback(() => {
-        window.open( "./desk", "_self")
-    }, []);
+    const handleGameOver = () => { navigate('/desk') };
 
     useEffect(() => {
         window.addEventListener("ExitGame", handleGameOver);
