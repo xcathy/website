@@ -1,0 +1,27 @@
+.calendar-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer,
+}
+.calendar {
+    user-select: none;
+    cursor: pointer;
+}
+.year {
+    position: absolute;
+    user-select: none;
+    padding-bottom: 8rem;
+}
+.day {
+    position: absolute;
+    user-select: none;
+}
+.month {
+    position: absolute;
+    user-select: none;
+    padding-top: 8rem;
+}

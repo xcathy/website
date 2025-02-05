@@ -1,0 +1,52 @@
+/*Universal stylings*/
+a {
+    text-decoration: none;
+    transition: filter 0.3s ease;
+}
+a:hover {
+    color: #5278a3;
+    transition: filter 0.3s ease;
+}
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.vertical-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.page {
+    margin: 5rem;
+}
+.light-blue-background {
+    background-color: #BDD5E7;
+}
+.banner-image {
+    width: 100vw;
+    height: 40vh;
+    box-shadow: 0 0 15px #001a3396;
+    align-items: center;
+    justify-content: flex-start;
+    object-fit: cover;
+}
+.default-title {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 40;
+}
+.default-content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 40;
+}

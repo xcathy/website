@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+.card .card-image {
+    border-radius: 15px;
+    box-shadow: 0 0 15px #001a335e;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+.card:hover .card-image {
+    filter: brightness(20%);
+    border-radius: 15px;
+    box-shadow: 0 0 15px #001a335e;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+.card .card-text {
+    cursor: pointer;
+    display: none;
+    transition: filter 0.3s ease;
+}
+.card:hover .card-text {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s ease;
+}
+.content  {
+    cursor: pointer;
+    padding: 2rem;
+}

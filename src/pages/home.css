@@ -1,0 +1,15 @@
+.home-title-container { 
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+}
+.home-content-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 80%;
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+.navigation {
+  background-color: #f5f6fd;
+  box-shadow: 0 0 15px #626c9b54;
+  height: 5rem;
+  width: 100%;
+  align-content: center;
+  position: fixed;
+  z-index: 99;
+} 
+
+.navigation nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li {
+  margin-left: 20px; 
+}
+
+.navigation a {
+  color: #314b61;
+}
+
+.navigation a:hover {
+  color: #6b95c5;
+}

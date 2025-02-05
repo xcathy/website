@@ -1,0 +1,7 @@
+
+.cat-sleep {
+    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}

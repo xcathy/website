@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*color templates*/
+.float-white {
+    color: white;
+    text-shadow: #193047 0 0 6px;
+}
+.default-white {
+    color: white;
+}
+.default-grey {
+    color: #2b2b2b;
+}
+.text-pink {
+    color: #F10C45;
+}
+.text-alert {
+    color: #ff7950;
+}
+.float {
+    text-shadow: #193047 0 0 6px;
+}
+
+/*Google Fonts*/
+/*Nunito*/
+.nunito-large {
+    font-family: "Nunito", serif;
+    font-size: 60px;
+    font-weight: bolder;
+    font-style: normal;
+}
+.nunito-medium {
+    font-family: "Nunito", serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+}
+.nunito-medium-thin {
+    font-family: "Nunito", serif;
+    font-size: 22px;
+    font-weight: 100;
+    font-style: normal;
+}
+.nunito-default {
+    font-family: "Nunito", serif;
+    font-size: 16px;
+    font-style: normal;
+}
+
+/*Raleway*/
+.raleway-large {
+    font-family: "Raleway", serif;
+    font-size: 60px;
+    font-weight: bold;
+    font-style: normal;
+}
+.raleway-large-thin {
+    font-family: "Raleway", serif;
+    font-size: 60px;
+    font-weight: 200;
+    font-style: normal;
+}
+.raleway-medium {
+    font-family: "Raleway", serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+}
+.raleway-medium-thin {
+    font-family: "Raleway", serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: normal;
+}
+.raleway-default {
+    font-family: "Raleway", serif;
+    font-size: 16px;
+    font-weight: 100;
+    font-style: normal;
+}
+.raleway-small {
+    font-family: "Raleway", serif;
+    font-size: 12px;
+    font-weight: 200;
+    font-style: normal;
+}
