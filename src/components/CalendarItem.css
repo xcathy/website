@@ -25,3 +25,17 @@
     user-select: none;
     padding-top: 8rem;
 }
+
+/*Dynamic mobile styling*/
+@media (max-width: 600px) {
+    .year {
+        position: absolute;
+        user-select: none;
+        padding-bottom: 5rem;
+    }
+    .month {
+        position: absolute;
+        user-select: none;
+        padding-top: 6rem;
+    }
+}

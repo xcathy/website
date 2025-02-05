@@ -3,7 +3,7 @@ import '../styles/global.css';
 import '../styles/theme.css';
 import './BlogPost.css';
 
-export function BlogPost(id, image, style, title, subtitle, content, signature) {
+export function BlogPost(id, image, style, title, content, signature) {
     const webView = Specs.screenWidth > 800;
 
     const defaultStyle = {
@@ -23,8 +23,7 @@ export function BlogPost(id, image, style, title, subtitle, content, signature) 
                 src={ image }
             />
             <div className='card-text'>
-                <p className='raleway-default default-white'>{ title }</p>
-                <p className='raleway-small default-white'>{ subtitle }</p>
+                <p className='raleway-small-bold default-white'>{ title }</p>
                 <p className='raleway-small default-white content'>{ content }</p>
                 <p className='raleway-small default-white'>{ signature }</p>
             </div>  
