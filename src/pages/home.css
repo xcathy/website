@@ -2,6 +2,7 @@
     position: absolute;
     z-index: 2;
     cursor: pointer;
+    padding: 5rem;
 }
 .home-content-container {
     position: absolute;

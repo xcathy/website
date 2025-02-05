@@ -34,8 +34,9 @@ export default function Home() {
           onClick={ () => navigate('/blog') }
           style={{
             position: 'absolute',
-            width: '120%',
-            height: 'auto',
+            width: '120vw',
+            height: '120vh',
+            objectFit: 'cover',
             left: `${hoverPosition.L}px`,
             top: `${hoverPosition.T}px`,
             zIndex: 0,
