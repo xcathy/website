@@ -23,10 +23,10 @@ export function BlogPost(id, image, style, title, subtitle, content, signature) 
                 src={ image }
             />
             <div className='card-text'>
-                <p className='raleway-medium-thin default-white'>{ title }</p>
-                <p className='raleway-default default-white'>{ subtitle }</p>
-                <p className='raleway-default default-white content'>{ content }</p>
-                <p className='raleway-default default-white'>{ signature }</p>
+                <p className='raleway-default default-white'>{ title }</p>
+                <p className='raleway-small default-white'>{ subtitle }</p>
+                <p className='raleway-small default-white content'>{ content }</p>
+                <p className='raleway-small default-white'>{ signature }</p>
             </div>  
         </div>
     );

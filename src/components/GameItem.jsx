@@ -29,7 +29,7 @@ export function GameItem(id, handleDrag, handleClick, style ) {
                     }}
                 />
                 <div className='canvas-text'>
-                    <p className='raleway-medium-thin default-white'>Maze Game</p>
+                    <p className='raleway-medium default-white'>Maze Game</p>
                     <p className='raleway-default default-white'>Click here to play!</p>
                 </div>
             </div>

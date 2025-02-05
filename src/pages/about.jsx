@@ -16,13 +16,13 @@ export default function About() {
       >
         <div className='page'>
           <div className='default-title'>
-            <p className='raleway-large-thin default-grey'>
+            <p className='raleway-large default-grey'>
               About
             </p>
           </div>
 
           <div className='default-content'>
-            <p className='raleway-medium-thin default-grey'>
+            <p className='raleway-default default-grey'>
               A portfolio, blog, and demo website<br/>
               Art, photos, music used created by: me<br/>
               Some apps used: VSCode, Chrome Music Lab, Pixilart, Piskel, Sketchbook, FireAlpaca, Unity

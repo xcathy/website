@@ -16,7 +16,7 @@ export default function Contacts() {
         >
           <div className='page'>
             <div className='default-title'>
-              <p className='raleway-large-thin default-grey'>
+              <p className='raleway-large default-grey'>
                 Contacts
               </p>
             </div>
@@ -25,7 +25,7 @@ export default function Contacts() {
               <a
                 href='https://www.linkedin.com/in/cathyxie97'
                 target='_blank'
-                className='raleway-medium-thin default-grey text-llink'
+                className='raleway-default default-grey text-llink'
               >
                 Linkedin
               </a>
@@ -33,7 +33,7 @@ export default function Contacts() {
               <a
                 href='https://github.com/xcathy'
                 target='_blank'
-                className='raleway-medium-thin default-grey text-link'
+                className='raleway-default default-grey text-link'
               >
                 Github
               </a>

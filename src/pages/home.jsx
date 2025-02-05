@@ -14,11 +14,11 @@ export default function Home() {
   return (
     <div className='main-container'>
       <div className='home-title-container'>
-        <h1 className='raleway-large-thin float-white'>Welcome to my blog!</h1>
+        <h1 className='raleway-large float-white'>Welcome to my blog!</h1>
       </div>
       <div className='home-content-container'>
-        <p className='raleway-medium-thin float-white'>Click anywhere to proceed to blog posts :D</p>
-        <p className='raleway-medium-thin text-alert float'>New update: Game added in Desk!</p>
+        <p className='raleway-medium float-white'>Click anywhere to proceed to blog posts :D</p>
+        <p className='raleway-medium text-alert float'>New update: Game added in Desk!</p>
       </div>
       <Scrollbar
         style={{ width: '100vw', height: '100vh' }} 

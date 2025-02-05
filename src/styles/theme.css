@@ -51,23 +51,11 @@
 /*Raleway*/
 .raleway-large {
     font-family: "Raleway", serif;
-    font-size: 60px;
-    font-weight: bold;
-    font-style: normal;
-}
-.raleway-large-thin {
-    font-family: "Raleway", serif;
     font-size: 4em;
     font-weight: 200;
     font-style: normal;
 }
 .raleway-medium {
-    font-family: "Raleway", serif;
-    font-size: 22px;
-    font-weight: bold;
-    font-style: normal;
-}
-.raleway-medium-thin {
     font-family: "Raleway", serif;
     font-size: .9em;
     font-weight: 300;
@@ -75,13 +63,42 @@
 }
 .raleway-default {
     font-family: "Raleway", serif;
-    font-size: 16px;
-    font-weight: 100;
+    font-size: 1.5em;
+    font-weight: 200;
     font-style: normal;
 }
 .raleway-small {
     font-family: "Raleway", serif;
-    font-size: 12px;
+    font-size: 1em;
     font-weight: 200;
     font-style: normal;
+}
+
+/*Dynamic mobile styling*/
+@media (max-width: 600px) {
+    /*Raleway*/
+    .raleway-large {
+        font-family: "Raleway", serif;
+        font-size: 2em;
+        font-weight: 200;
+        font-style: normal;
+    }
+    .raleway-medium {
+        font-family: "Raleway", serif;
+        font-size: .6em;
+        font-weight: 300;
+        font-style: normal;
+    }
+    .raleway-default {
+        font-family: "Raleway", serif;
+        font-size: 1.3em;
+        font-weight: 200;
+        font-style: normal;
+    }
+    .raleway-small {
+        font-family: "Raleway", serif;
+        font-size: 1em;
+        font-weight: 200;
+        font-style: normal;
+    }
 }
