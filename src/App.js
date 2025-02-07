@@ -30,7 +30,6 @@ function App() {
               className='collapse-icon'
               onClick={() => { setDisplayNav(false) }}  
             />
-
           </nav>
         </div>
         :
