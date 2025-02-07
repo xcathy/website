@@ -26,8 +26,8 @@ export function Cloud(image, style, pace, speed) {
                 top: style.top,
                 left: `${ left }px`,
                 zIndex: style.zIndex,
+                objectFit: 'cover',
             }}
-            contentFit="cover"
             transition={1000}
         />;
     return cloud;

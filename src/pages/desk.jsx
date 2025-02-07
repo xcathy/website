@@ -21,21 +21,21 @@ export default function Desk() {
     
     const defaultPositions = 
     {
-        "clock":  webView ? { left: 0.45 * screenW, top: 0.58 * screenH } : { left: 0.56 * screenW, top: 0.56 * screenH },
-        "calendar": webView ? { left: 0.85 * screenW, top: 0.1 * screenH } : { left: 0.56 * screenW, top: 0.37 * screenH },
-        "radio": webView ? { left: 0.8 * screenW, top: 0.35 * screenH } : { left: 0.13 * screenW, top: 0.3 * screenH },
-        "plant": webView ? { left: 0.78 * screenW, top: 0.18 * screenH } : { left: 0.65 * screenW, top: 0.18 * screenH },
-        "game": webView ? { left: 0.45 * screenW, top: 0.1 * screenH } : { left: 0.6 * screenW, top: 0.1 * screenH },
-        "catSleep": webView ? { left: 0.02 * screenW, top: 0.45 * screenH } : { left: 0 * screenW, top: 0.63 * screenH },
+        "clock":  webView ? { left: 0.45 * screenW, top: 0.58 * screenH } : { left: 0.56 * screenW, top: 0.59 * screenH },
+        "calendar": webView ? { left: 0.85 * screenW, top: 0.1 * screenH } : { left: 0.6 * screenW, top: 0.42 * screenH },
+        "radio": webView ? { left: 0.8 * screenW, top: 0.35 * screenH } : { left: 0 * screenW, top: 0.3 * screenH },
+        "plant": webView ? { left: 0.78 * screenW, top: 0.18 * screenH } : { left: 0.8 * screenW, top: 0.24 * screenH },
+        "game": webView ? { left: 0.45 * screenW, top: 0.1 * screenH } : { left: 0.1 * screenW, top: 0.55 * screenH },
+        "catSleep": webView ? { left: 0.02 * screenW, top: 0.45 * screenH } : { left: 0 * screenW, top: 0.65 * screenH },
     }
     const defaultSize = 
     {
         "clock": webView ? { height: 0.1  * screenH, width: 0.3 * screenH } : { height: 0.05 * screenH, width: 0.15 * screenH },
-        "calendar": webView ? { height: 0.2  * screenH, width: 0.2 * screenH } : { height: 0.15  * screenH, width: 0.15 * screenH },
-        "radio": webView ? { height: 0.27 * screenH, width: 0.25 * screenH } : { height: 0.21 * screenH, width: 0.19 * screenH },
-        "plant": { height: 0.2 * screenH, width: 0.1 * screenH },
-        "game": { height: 0.2 * screenH, width: 0.2 * screenH },
-        "catSleep": webView ? { height: 0.6 * screenH, width: 0.6 * screenH } : { height: 0.4 * screenH, width: 0.4 * screenH },
+        "calendar": webView ? { height: 0.2  * screenH, width: 0.2 * screenH } : { height: 0.13  * screenH, width: 0.13 * screenH },
+        "radio": webView ? { height: 0.27 * screenH, width: 0.25 * screenH } : { height: 0.16 * screenH, width: 0.16 * screenH },
+        "plant": webView ? { height: 0.2 * screenH, width: 0.1 * screenH } : { height: 0.14 * screenH, width: 0.07 * screenH },
+        "game": webView ? { height: 0.2 * screenH, width: 0.2 * screenH } :  { height: 0.1 * screenH, width: 0.1 * screenH },
+        "catSleep": webView ? { height: 0.6 * screenH, width: 0.6 * screenH } : { height: 0.34 * screenH, width: 0.34 * screenH },
     }
 
     const [ clockBox, setCBox ] = useState(
@@ -110,7 +110,14 @@ export default function Desk() {
             {
                 Cloud(
                     Images.clouds,
-                    { position: 'absolute', left: 0, top: 0, width: screenW, height: screenH, zIndex: -1 },
+                    {
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        width: screenW,
+                        height: screenH,
+                        zIndex: -1,
+                    },
                     0.005,
                     1
                 )

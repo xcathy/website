@@ -53,7 +53,11 @@ export function Cat(dialogue, style) {
                 }}
                 src={ Images.catWalkCycle }
             />
-            <Tooltip anchorSelect=".cat-tooltip" place="top">
+            <Tooltip
+                className='tool-tip-text'
+                anchorSelect=".cat-tooltip"
+                place="top"
+            >
                 { dialogue }
             </Tooltip>
         </div>

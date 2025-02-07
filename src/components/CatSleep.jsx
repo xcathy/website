@@ -18,7 +18,11 @@ export function CatSleep(dialogue, style) {
                     style={{ left: style.left, top: style.top, height: style.height, width: style.width }}
                 />
             </div>
-            <Tooltip anchorSelect=".cat-sleep" place="top">
+            <Tooltip
+                className='tool-tip-text'
+                anchorSelect=".cat-sleep"
+                place="top"
+            >
                 { dialogue }
             </Tooltip>
         </div>

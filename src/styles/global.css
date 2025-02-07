@@ -50,3 +50,7 @@ html {
     align-items: flex-start;
     margin: 40;
 }
+.tool-tip-text {
+    max-width: 70vw;
+    max-height: 70vh;
+}
