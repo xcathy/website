@@ -239,7 +239,9 @@ export default function Blog() {
         <div className='cat'>
           {
             Cat(
-              'You can drag the blog posts to reorder and hover to see description!',
+              mobileView ?
+                'You can click the blog posts to see description!' :
+                'You can drag the blog posts to reorder and hover to see description!',
               { width: screenH/10, height: screenH/10 }
             )
           }
