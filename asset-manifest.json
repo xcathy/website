@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/website/static/css/main.8fcb28cc.css",
-    "main.js": "/website/static/js/main.ef88e2fc.js",
+    "main.css": "/website/static/css/main.03838c2f.css",
+    "main.js": "/website/static/js/main.133e1ad6.js",
     "static/js/488.0870ce05.chunk.js": "/website/static/js/488.0870ce05.chunk.js",
     "static/media/flower44.png": "/website/static/media/flower44.fd28ac78a73d826be006.png",
     "static/media/flower17.png": "/website/static/media/flower17.01af514f7121f2b933de.png",
@@ -23,7 +23,6 @@
     "static/media/garden.png": "/website/static/media/garden.9330719def38599ba261.png",
     "static/media/flower37.png": "/website/static/media/flower37.b2f0ce2dc9380f85f741.png",
     "static/media/flower32.png": "/website/static/media/flower32.2f652cbe16ac5a492c7b.png",
-    "static/media/catSleep.webp": "/website/static/media/catSleep.3da1266f5cdea9e287e2.webp",
     "static/media/fish2.png": "/website/static/media/fish2.6a763d9b08972b91b4fa.png",
     "static/media/flower35.png": "/website/static/media/flower35.28fac8ad7dcf98bad119.png",
     "static/media/flower18.png": "/website/static/media/flower18.765bd3ada1e5412b5d00.png",
@@ -65,27 +64,19 @@
     "static/media/flower13.png": "/website/static/media/flower13.7c4f7e3436f458489079.png",
     "static/media/flower6.png": "/website/static/media/flower6.3c7e9a44de27de5152dd.png",
     "static/media/flower33.png": "/website/static/media/flower33.d4f6697131c661862605.png",
-    "static/media/plant.png": "/website/static/media/plant.137f9c109c88e59f74b1.png",
     "static/media/jellyfish2.png": "/website/static/media/jellyfish2.06c5d4f8338c704ee83b.png",
     "static/media/background_horizontal.png": "/website/static/media/background_horizontal.48cc45df0b8bf3bc10bf.png",
     "static/media/jellyfish1.png": "/website/static/media/jellyfish1.b4e31776f665a8eca154.png",
-    "static/media/clouds.png": "/website/static/media/clouds.6cc9bd32aadfe67d3f11.png",
     "static/media/background_vertical.png": "/website/static/media/background_vertical.b07a20b291de4faacf6c.png",
     "static/media/maze.png": "/website/static/media/maze.69501f56ec508da0470d.png",
-    "static/media/calendarTear.gif": "/website/static/media/calendarTear.3f323fcff1afcdbf00d9.gif",
-    "static/media/radio.png": "/website/static/media/radio.ad0cb2fcbfcabd8949d0.png",
     "static/media/CatWalkCycle.gif": "/website/static/media/CatWalkCycle.2fb1df1bbdab5fe82cd6.gif",
-    "static/media/pauseButton.gif": "/website/static/media/pauseButton.d476c572ffe93e08b34d.gif",
-    "static/media/leftButton.gif": "/website/static/media/leftButton.2b567454a49dbb0629ee.gif",
-    "static/media/calendar.png": "/website/static/media/calendar.207345d0cf11c3c7911d.png",
-    "static/media/rightButton.gif": "/website/static/media/rightButton.c4fc4b7d2f2280b42bdd.gif",
     "index.html": "/website/index.html",
-    "main.8fcb28cc.css.map": "/website/static/css/main.8fcb28cc.css.map",
-    "main.ef88e2fc.js.map": "/website/static/js/main.ef88e2fc.js.map",
+    "main.03838c2f.css.map": "/website/static/css/main.03838c2f.css.map",
+    "main.133e1ad6.js.map": "/website/static/js/main.133e1ad6.js.map",
     "488.0870ce05.chunk.js.map": "/website/static/js/488.0870ce05.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fcb28cc.css",
-    "static/js/main.ef88e2fc.js"
+    "static/css/main.03838c2f.css",
+    "static/js/main.133e1ad6.js"
   ]
 }
