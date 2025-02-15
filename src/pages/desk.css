@@ -1,28 +1,5 @@
-.main-container {
+.container {
     width: 100vw;
     height: 100vh;
-}
-.sky {
-    width: 100vw;
-    height: 100vh;
-    background-color: #87CEEB;
-    z-index: -2;
-    position: absolute;
-}
-.background {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    object-fit: cover;
-    z-index: 0;
-    background-color: transparent;
-}
-.draggable-container {
-    position: absolute;
-    z-index: 13;
-}
-.cat-sleep {
-    position: absolute;
-    z-index: 12;
-    user-select: none;
+    background-color: #231F20;
 }
