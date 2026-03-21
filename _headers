@@ -1,7 +1,7 @@
-/website/builds/Desk3Dv1.0/Build/*.br
+/builds/Desk3Dv1.0/Build/*.br
   Content-Encoding: br
   Content-Type: application/octet-stream
 
-/website/builds/Desk3Dv1.0/Build/*.gz
+/builds/Desk3Dv1.0/Build/*.gz
   Content-Encoding: gzip
   Content-Type: application/octet-stream
