@@ -14,9 +14,9 @@ const deskHtmlPath = deskGamePath + 'index.html';
 const deskBuildPath = deskGamePath + 'Build/';
 
 const deskLoaderUrl = deskBuildPath + "Desk3Dv1.0.loader.js";
-const deskDataUrl = deskBuildPath + "Desk3Dv1.0.data.br";
-const deskFrameworkUrl = deskBuildPath + "Desk3Dv1.0.framework.js.br";
-const deskCodeUrl = deskBuildPath + "Desk3Dv1.0.wasm.br";
+const deskDataUrl = deskBuildPath + "Desk3Dv1.0.data";
+const deskFrameworkUrl = deskBuildPath + "Desk3Dv1.0.framework.js";
+const deskCodeUrl = deskBuildPath + "Desk3Dv1.0.wasm";
 
 export const Games = {
     gamePath,
