@@ -1,7 +1,24 @@
-/builds/Desk3Dv1.0/Build/*.br
+/builds/Desk3Dv1.0/Build/*.framework.js.br
+  Content-Encoding: br
+  Content-Type: application/javascript
+
+/builds/Desk3Dv1.0/Build/*.wasm.br
+  Content-Encoding: br
+  Content-Type: application/wasm
+
+/builds/Desk3Dv1.0/Build/*.data.br
   Content-Encoding: br
   Content-Type: application/octet-stream
 
-/builds/Desk3Dv1.0/Build/*.gz
+/builds/Desk3Dv1.0/Build/*.framework.js.gz
+  Content-Encoding: gzip
+  Content-Type: application/javascript
+
+/builds/Desk3Dv1.0/Build/*.wasm.gz
+  Content-Encoding: gzip
+  Content-Type: application/wasm
+
+/builds/Desk3Dv1.0/Build/*.data.gz
   Content-Encoding: gzip
   Content-Type: application/octet-stream
+
