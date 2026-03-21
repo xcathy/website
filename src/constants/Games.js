@@ -8,6 +8,16 @@ const dataUrl = buildPath + "maze1.2.data.unityweb";
 const frameworkUrl = buildPath + "maze1.2.framework.js.unityweb";
 const codeUrl = buildPath + "maze1.2.wasm.unityweb";
 
+// Desk
+const deskGamePath = `${process.env.PUBLIC_URL}/builds/Desk3Dv1.0/`;
+const deskHtmlPath = deskGamePath + 'index.html';
+const deskBuildPath = deskGamePath + 'Build/';
+
+const deskLoaderUrl = deskBuildPath + "Desk3Dv1.0.loader.js";
+const deskDataUrl = deskBuildPath + "Desk3Dv1.0.data.br";
+const deskFrameworkUrl = deskBuildPath + "Desk3Dv1.0.framework.js.br";
+const deskCodeUrl = deskBuildPath + "Desk3Dv1.0.wasm.br";
+
 export const Games = {
     gamePath,
     htmlPath,
@@ -16,4 +26,11 @@ export const Games = {
     dataUrl,
     frameworkUrl,
     codeUrl,
+    deskGamePath,
+    deskHtmlPath,
+    deskBuildPath,
+    deskLoaderUrl,
+    deskDataUrl,
+    deskFrameworkUrl,
+    deskCodeUrl,
 };

@@ -82,29 +82,9 @@ export const Images = {
     // Sprites for desk
     hBackground: require('../assets/Images/Sprites/Desk/background_horizontal.png'),
     vBackground: require('../assets/Images/Sprites/Desk/background_vertical.png'),
-    clock: require('../assets/Images/Sprites/Desk/clock.png'),
-    calendar: require('../assets/Images/Sprites/Desk/calendar.png'),
-    calendarTear: require('../assets/Images/Sprites/Desk/calendarTear.gif'),
-
-    // Clouds
-    clouds: require('../assets/Images/Sprites/Desk/clouds.png'),
 
     // Cat walk
     catWalkCycle: require('../assets/Images/Sprites/Cat/CatWalkCycle.gif'),
-    // Cat sleep
-    catSleep: require('../assets/Images/Sprites/Desk/catSleep.webp'),
-
-    // Radio
-    radio: require('../assets/Images/Sprites/Desk/radio.png'),
-    leftButton: require('../assets/Images/Sprites/Desk/leftButton.png'),
-    rightButton: require('../assets/Images/Sprites/Desk/rightButton.png'),
-    pauseButton: require('../assets/Images/Sprites/Desk/pauseButton.png'),
-    leftButtonClick: require('../assets/Images/Sprites/Desk/leftButton.gif'),
-    rightButtonClick: require('../assets/Images/Sprites/Desk/rightButton.gif'),
-    pauseButtonClick: require('../assets/Images/Sprites/Desk/pauseButton.gif'),
-
-    // Plant
-    plant: require('../assets/Images/Sprites/Desk/plant.png'),
 
     // Game item canvas
     canvas: require('../assets/Images/Sprites/Desk/canvas.png'),
