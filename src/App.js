@@ -1,7 +1,7 @@
 import { HashRouter, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/home';
 import Blog from './pages/blog';
-import Desk from './pages/desk';
+import Games from './pages/game';
 import About from './pages/about';
 import Contacts from './pages/contacts';
 import Game from './pages/game';
@@ -22,7 +22,7 @@ function App() {
           <nav>
             <Link to="/" className='nunito-medium'>HOME</Link>
             <Link to="/blog" className='nunito-medium'>BLOG</Link>
-            <Link to="/desk" className='nunito-medium'>DESK</Link>
+            <Link to="/games" className='nunito-medium'>GAMES</Link>
             <Link to="/about" className='nunito-medium'>ABOUT</Link>
             <Link to="/contacts" className='nunito-medium'>CONTACTS</Link>
             <FontAwesomeIcon
@@ -44,7 +44,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/desk" element={<Desk />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/game" element={<Game />} />
