@@ -92,6 +92,9 @@ export const Images = {
     // Maze game icon
     maze: require('../assets/Images/Sprites/Games/maze.png'),
 
+    // Desk game icon
+    desk: require('../assets/Images/Sprites/Games/desk.jpg'),
+
     // Smallest clear image gif
     // Reference: https://stackoverflow.com/questions/6018611/smallest-data-uri-image-possible-for-a-transparent-image
     clearImg: 'data:image/gif,base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',

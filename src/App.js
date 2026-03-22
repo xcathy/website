@@ -1,10 +1,9 @@
 import { HashRouter, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/home';
 import Blog from './pages/blog';
-import Games from './pages/game';
+import Games from './pages/games';
 import About from './pages/about';
 import Contacts from './pages/contacts';
-import Game from './pages/game';
 import './App.css';
 import '../src/styles/global.css';
 import { useState } from 'react';
@@ -47,7 +46,6 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/game" element={<Game />} />
       </Routes>
     </HashRouter>
   );
