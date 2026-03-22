@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/website/static/css/main.a531098c.css",
-    "main.js": "/website/static/js/main.75cead02.js",
+    "main.css": "/website/static/css/main.5e224cb1.css",
+    "main.js": "/website/static/js/main.e23dd51b.js",
     "static/js/488.0870ce05.chunk.js": "/website/static/js/488.0870ce05.chunk.js",
     "static/media/flower44.png": "/website/static/media/flower44.fd28ac78a73d826be006.png",
     "static/media/flower17.png": "/website/static/media/flower17.01af514f7121f2b933de.png",
@@ -70,13 +70,14 @@
     "static/media/background_vertical.png": "/website/static/media/background_vertical.b07a20b291de4faacf6c.png",
     "static/media/maze.png": "/website/static/media/maze.69501f56ec508da0470d.png",
     "static/media/CatWalkCycle.gif": "/website/static/media/CatWalkCycle.2fb1df1bbdab5fe82cd6.gif",
+    "static/media/desk.jpg": "/website/static/media/desk.3f4b67ceacc32ffcae30.jpg",
     "index.html": "/website/index.html",
-    "main.a531098c.css.map": "/website/static/css/main.a531098c.css.map",
-    "main.75cead02.js.map": "/website/static/js/main.75cead02.js.map",
+    "main.5e224cb1.css.map": "/website/static/css/main.5e224cb1.css.map",
+    "main.e23dd51b.js.map": "/website/static/js/main.e23dd51b.js.map",
     "488.0870ce05.chunk.js.map": "/website/static/js/488.0870ce05.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a531098c.css",
-    "static/js/main.75cead02.js"
+    "static/css/main.5e224cb1.css",
+    "static/js/main.e23dd51b.js"
   ]
 }
