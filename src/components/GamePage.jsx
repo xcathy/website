@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Games } from '../constants/Games';
 import '../styles/global.css';
@@ -14,15 +14,6 @@ export function GamePage() {
         frameworkUrl: Games.deskFrameworkUrl,
         codeUrl: Games.deskCodeUrl,
     });
-
-    //const handleGameOver = () => { navigate('/game') };
-
-    //useEffect(() => {
-    //    window.addEventListener("ExitGame", handleGameOver);
-    //    return () => {
-    //        window.removeEventListener("ExitGame", handleGameOver);
-    //    };
-    //}, [Unity, handleGameOver]);
 
     return (
         <div className='main-container'>

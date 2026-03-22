@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Specs } from '../constants/Specs';
 import { GamePage } from '../components/GamePage';
 import { GameEntry } from '../components/GameEntry';
@@ -15,6 +16,10 @@ export default function Games() {
     const baseID = 'game';
     const cols = 1;
     const rowH = 300;
+    // set full screen mode to be true if playing on web
+    const [ fullScreen, setFullScreen ] = useState(false);
+    // set the current playing game's name
+    const [ currentGame, setCurrentGame ] = useState("");
 
     // Game Entries
     const gameEntries = [
@@ -23,7 +28,7 @@ export default function Games() {
             title: "The Desk 3D",
             desc: 'The Desk 3D is a small Unity game project I made.\nDownloadable in .exe, also playable in web!',
             exeLink: "https://xcathy.github.io/website/downloads/Desk3Dv1.3Win.zip",
-            webLink: "web link",
+            webLink: "Click Here to Play in Browser!",
         },
     ];
 
@@ -41,24 +46,40 @@ export default function Games() {
 
     const layout = generateLayout(gameEntries.length);
 
+    // set to full screen mode when web play mode is selected
+    const fullScreenMode = () => {
+        setFullScreen(true);
+    };
+
+    // quit full screen mode when game exit
+    window.OnUnityQuit = function() {
+        setFullScreen(false);
+    };
+
     // game page where the developed games are published
     // each entry will have downloadable packages as well as a webGL version available for online play
     return (
-    <div className='main-container light-blue-background'>
-        <Scrollbar
-            style={{ width: "100vw", height: "100vh" }} 
-        >
-            <div className='grid-page'>
-                <GridLayout
-                    cols={ cols }
-                    rowHeight={ rowH }
-                    width={screenW}
-                    preventCollision={true}
-                    allowOverlap={ false }
-                    className='layout'
-                    layout={ layout }
-                    isResizable={ false }
-                    isDraggable={ false }
+        fullScreen?
+            <div className='container'>
+                <GamePage />
+            </div>
+        :
+
+        <div className='main-container light-blue-background'>
+            <Scrollbar
+                style={{ width: "100vw", height: "100vh" }} 
+            >
+                <div className='grid-page'>
+                    <GridLayout
+                        cols={ cols }
+                        rowHeight={ rowH }
+                        width={screenW}
+                        preventCollision={true}
+                        allowOverlap={ false }
+                        className='layout'
+                        layout={ layout }
+                        isResizable={ false }
+                        isDraggable={ false }
                     >
                         {gameEntries.map((entry) => (
                             GameEntry(
@@ -66,27 +87,19 @@ export default function Games() {
                                 entry.src,
                                 entry.title,
                                 entry.desc,
+                                fullScreenMode,
                                 entry.exeLink,
                                 entry.apkLink,
                                 entry.webLink
                             )
                         ))}
                     </GridLayout>
-                    
+                        
                     <div className='footer'>
                         <p className='raleway-default default-grey'>you have reached the end</p>
                     </div>
                 </div>
-            
             </Scrollbar>
         </div>
     );
-    
-    /*
-    return (
-        <div className='container'>
-            
-            <GamePage />
-        </div>
-    );*/
 }

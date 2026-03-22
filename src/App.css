@@ -34,6 +34,14 @@
 .collapse-icon {
   display: none;
 }
+.text-link {
+  color: grey;
+  cursor: pointer;
+}
+.text-link:hover {
+  color: #6b95c5;
+  cursor: pointer;
+}
 
 /*Dynamic mobile styling*/
 @media (max-width: 600px) {
