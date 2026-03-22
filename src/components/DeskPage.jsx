@@ -27,7 +27,9 @@ export function DeskPage() {
     return (
         <div className='main-container'>
             {!isLoaded && (
-                <p className='raleway-default default-white' >Loading... {Math.round(loadingProgression * 100)}%</p>
+                <div className='sub-container'>
+                    <p className='raleway-default default-white' >Loading... {Math.round(loadingProgression * 100)}%</p>
+                </div>
             )}
             <Unity
                 unityProvider={unityProvider}

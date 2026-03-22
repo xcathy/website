@@ -2,4 +2,8 @@
     width: 100vw;
     height: 100vh;
     background-color: #231F20;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
 }
