@@ -5,7 +5,7 @@ import '../styles/theme.css';
 
 export default function Contacts() {
   return (
-      <div className='vertical-container light-blue-background'>
+      <div className='vertical-container main-background'>
         <img
           src={ Images.flower36 }
           alt='flower36'

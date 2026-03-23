@@ -234,7 +234,7 @@ export default function Blog() {
   const [layout, setLayout] = useState(generateRandomLayout(images.length));
 
   return (
-    <div className='main-container light-blue-background'>
+    <div className='main-container main-background'>
       <div className='screen-overlay'>
         <div className='cat'>
           {

@@ -66,7 +66,7 @@ export default function Games({ setDisplayNav }) {
             </div>
         :
 
-        <div className='main-container light-blue-background'>
+        <div className='main-container main-background'>
             <Scrollbar
                 style={{ width: "100vw", height: "100vh", top: "10%" }} 
             >

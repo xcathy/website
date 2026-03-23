@@ -5,7 +5,7 @@ import '../styles/theme.css';
 
 export default function About() {
   return (
-    <div className='vertical-container light-blue-background'>
+    <div className='vertical-container main-background'>
       <img
         src={ Images.frog1 }
         alt='frog'
