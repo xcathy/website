@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import { Games } from '../constants/Games';
 import '../styles/global.css';

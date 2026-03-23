@@ -11,7 +11,6 @@ import './games.css';
 
 export default function Games() {
     const screenW = Specs.screenWidth;
-    const screenH = Specs.screenHeight;
     const mobileView = screenW < 600;
     const baseID = 'game';
     const cols = 1;
@@ -38,7 +37,7 @@ export default function Games() {
         var i = 0;
         
         while (i < length) {
-            layoutArray.push({ i: `game${i + 1}`, x: 0, y: 0, w: 1, h: 1 });
+            layoutArray.push({ i: `game${i + 1}`, x: 0, y: 0, w: 1, h: mobileView ? 1.5 : 1 });
             i++;
         }
         return layoutArray;
@@ -67,7 +66,7 @@ export default function Games() {
 
         <div className='main-container light-blue-background'>
             <Scrollbar
-                style={{ width: "100vw", height: "100vh" }} 
+                style={{ width: "100vw", height: "100vh", top: "10%" }} 
             >
                 <div className='grid-page'>
                     <GridLayout
@@ -88,6 +87,7 @@ export default function Games() {
                                 entry.title,
                                 entry.desc,
                                 fullScreenMode,
+                                mobileView,
                                 entry.exeLink,
                                 entry.apkLink,
                                 entry.webLink
