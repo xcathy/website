@@ -9,7 +9,7 @@ import '../styles/global.css';
 import '../styles/theme.css';
 import './games.css';
 
-export default function Games() {
+export default function Games({ setDisplayNav }) {
     const screenW = Specs.screenWidth;
     const mobileView = screenW < 600;
     const baseID = 'game';
@@ -47,11 +47,13 @@ export default function Games() {
 
     // set to full screen mode when web play mode is selected
     const fullScreenMode = () => {
+        setDisplayNav(false);
         setFullScreen(true);
     };
 
     // quit full screen mode when game exit
     window.OnUnityQuit = function() {
+        setDisplayNav(true);
         setFullScreen(false);
     };
 

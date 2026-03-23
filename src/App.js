@@ -14,6 +14,7 @@ import { faBars, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 function App() {
   const mobileView = Specs.screenWidth < 600;
   const [ displayTab, setDisplayNav ] = useState(!mobileView);
+
   return (
     <HashRouter>
       { displayTab ?
@@ -43,7 +44,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/games" element={<Games />} />
+        <Route path="/games"
+          element={
+            <Games setDisplayNav={ setDisplayNav } />
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
