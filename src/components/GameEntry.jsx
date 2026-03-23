@@ -1,10 +1,13 @@
+import { Specs } from '../constants/Specs';
 import '../styles/global.css';
 import '../styles/theme.css';
 import './GameEntry.css';
 import '../App.css';
 
-export function GameEntry(id, image, title, desc, fullScreenMode, mobile, exeLink = null, apkLink = null, webLink = null) {
-    
+export function GameEntry(id, image, title, desc, fullScreenMode, exeLink = null, apkLink = null, webLink = null) {
+    const screenW = Specs.screenWidth;
+    const mobileView = screenW < 600;
+
     return (
         <div key={ id } className='entry'>
             <div className='entry-title'>
@@ -22,7 +25,7 @@ export function GameEntry(id, image, title, desc, fullScreenMode, mobile, exeLin
                         Download Windows Version Here
                     </a>
                     <p className='raleway-medium-bold default-grey'>{ apkLink }</p>
-                    { !mobile && <p className='raleway-medium-bold default-grey text-link' onClick={fullScreenMode}>{ webLink }</p> }
+                    { !mobileView && <p className='raleway-medium-bold default-grey text-link' onClick={fullScreenMode}>{ webLink }</p> }
                 </div>
                 
             </div>  

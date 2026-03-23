@@ -89,7 +89,6 @@ export default function Games({ setDisplayNav }) {
                                 entry.title,
                                 entry.desc,
                                 fullScreenMode,
-                                mobileView,
                                 entry.exeLink,
                                 entry.apkLink,
                                 entry.webLink
